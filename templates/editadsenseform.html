@@ -1,0 +1,43 @@
+##encoding: utf-8
+## 取得 user 與 title 等兩個變數資料
+## 兩個 pound signs 在 Mako 語法中為註解行
+## 多行註解則使用
+<%doc>
+    這是註解
+    使用 <%! %> 表示在模組層次運作的 Python 程式碼, 可以用來 import 模組或定義相關的函式或物件
+</%doc>
+<%!
+import cgi
+%>
+<html>
+        <head>
+                <title>Pygroup Adsense 編輯</title>
+</head><body>
+<style type="text/css" media="all">
+@import "/templates/style/base.css";
+</style>
+<%
+output = "<a href='/'>Go to main page</a> (<a href='/?flat=1'>flat</a>)"
+# 假如 user 非 anonymou 則列出 logout 連結
+if user != "anonymous":
+    output += " <a href='logout'>Logout</a> "
+if user == "anonymous":
+    output += " <a href='login'>Login</a> "
+if user == "admin":
+    output += " <a href='editconfigform'>Config</a>"
+output += "<br /><br />"
+output += "<br /><br />使用者:"+user+"<br /><br />"
+if id != 0:
+    output += "以下將編輯 adsense_content 檔案資料<br /><br />"
+output += '''
+    <form method='post' action='editadsense'> adsense 內容:<br /><textarea name='adsense_content' 
+    cols='50' rows='30'>'''+saved_adsense+'''</textarea>
+'''
+output += '''
+<input type='submit' value='edit'>
+</form>
+'''
+%>
+${output}
+
+

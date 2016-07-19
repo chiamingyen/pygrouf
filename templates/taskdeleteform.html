@@ -1,0 +1,69 @@
+##encoding: utf-8
+## 取得 user 與 title 等兩個變數資料
+## 兩個 pound signs 在 Mako 語法中為註解行
+## 多行註解則使用
+<%doc>
+    這是註解
+    使用 <%! %> 表示在模組層次運作的 Python 程式碼, 可以用來 import 模組或定義相關的函式或物件
+</%doc>
+<html>
+        <head>
+                <title>Pygroup 刪除表單</title>
+<script type="text/javascript" src="/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="/static/syntaxhighlighter/shBrushCss.js"></script>
+<link type="text/css" rel="stylesheet" href="/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<script language="javascript" type="text/javascript" src="/static/tinymce3/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="/static/tinymce3/init.js"></script>
+</head><body>
+<style type="text/css" media="all">
+@import "/templates/style/base.css";
+</style>
+<%
+# 這裡再加上表單
+outstring = "<a href='/'>Go to main page</a> (<a href='/?desc=1'>最新在前</a>) (<a href='/?flat=1'>flat</a> (<a href='/?flat=1&desc=1'>flat 最新在前</a>))"
+# 假如 user 非 anonymou 則列出 logout 連結
+if user != "anonymous":
+    outstring += " <a href='logout'>Logout</a> "
+if user == "anonymous":
+    outstring += " <a href='login'>Login</a> "
+if user == "admin":
+    outstring += " <a href='editconfigform'>Config</a> <a href='editadsenseform'>Adsense Config</a>"
+outstring += "<br /><br />使用者:"+user+"<br /><br />"
+if id != 0:
+    outstring += "<form method='post' action='taskdelete'>"
+    if type == "alone":
+        # 表示要刪除單筆資料
+        outstring += "以下將刪除 id="+str(data.id)+" 的資料<br /><br />"
+        # 若要刪除主緒資料, 則所有子緒資料在刪除前應該全部列出
+        outstring += '''
+        tasktype:'''+data.type+'''<br />
+        taskname:'''+data.name+'''<br />
+    '''
+        outstring += "taskcontent:<br />"+data.content+"<br />"
+    else:
+        # data 有多筆資料
+        for task in data:
+            outstring += "以下將刪除 id="+str(task.id)+" 的資料<br /><br />"
+            # 若要刪除主緒資料, 則所有子緒資料在刪除前應該全部列出
+            outstring += '''
+        tasktype:'''+task.type+'''<br />
+        taskname:'''+task.name+'''<br />
+    '''
+            outstring += "taskcontent:<br />"+task.content+"<br />"
+    outstring += '''
+    <input type='hidden' name='id' value="'''+str(id)+'''">
+    <input type='submit' value='delete'>
+    </form>
+'''
+%>
+${outstring}
+
+

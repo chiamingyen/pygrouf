@@ -58,43 +58,29 @@
 <v t="amd.20160719105234.1"><vh>@edit setup.py</vh></v>
 <v t="amd.20160719105442.1"><vh>@edit .gitignore</vh></v>
 <v t="amd.20160719105308.1"><vh>@edit wsgi.py</vh></v>
+<v t="amd.20160719223506.1"><vh>@edit init.py</vh></v>
 <v t="amd.20160719105348.1" a="E"><vh>@clean flaskapp.py</vh>
 <v t="amd.20160719105410.1"><vh>flaskapp declarations</vh></v>
-<v t="amd.20160719125653.1"><vh>class Task</vh></v>
-<v t="amd.20160719125734.1"><vh>class Pygroup</vh>
-<v t="amd.20160719125734.2"><vh>__init__</vh></v>
-<v t="amd.20160719125734.3"><vh>usermenu</vh></v>
-<v t="amd.20160719125734.4"><vh>printuser</vh></v>
-<v t="amd.20160719125734.5"><vh>taskform</vh></v>
-<v t="amd.20160719125734.6"><vh>taskaction</vh></v>
-<v t="amd.20160719125734.7"><vh>index (tasklist)</vh></v>
-<v t="amd.20160719130552.1"><vh>index2</vh></v>
-<v t="amd.20160719125734.8"><vh>allow_pass</vh></v>
-<v t="amd.20160719125734.9"><vh>strip_tags</vh></v>
-<v t="amd.20160719125734.10"><vh>client_ip</vh></v>
-<v t="amd.20160719125734.11"><vh>default</vh></v>
-<v t="amd.20160719125734.12"><vh>save_program</vh></v>
-<v t="amd.20160719125734.13"><vh>login</vh></v>
-<v t="amd.20160719125734.14"><vh>login (authomatic)</vh></v>
-<v t="amd.20160719125734.15"><vh>logincheck</vh></v>
-<v t="amd.20160719125734.16"><vh>logincheck (authomatic)</vh></v>
-<v t="amd.20160719125734.17"><vh>editconfig</vh></v>
-<v t="amd.20160719125734.18"><vh>editconfigform</vh></v>
-<v t="amd.20160719125734.19"><vh>editadsense</vh></v>
-<v t="amd.20160719125734.20"><vh>editadsenseform</vh></v>
-<v t="amd.20160719125734.21"><vh>parse_config</vh></v>
-<v t="amd.20160719125734.22"><vh>logout</vh></v>
-<v t="amd.20160719125734.23"><vh>taskeditform</vh></v>
-<v t="amd.20160719125734.24"><vh>taskedit</vh></v>
-<v t="amd.20160719125734.25"><vh>taskdeleteform</vh></v>
-<v t="amd.20160719125734.26"><vh>taskdelete</vh></v>
-<v t="amd.20160719125734.27"><vh>tasksearchform</vh></v>
-</v>
-<v t="amd.20160719105410.2"><vh>index</vh></v>
-<v t="amd.20160719105410.3"><vh>user</vh></v>
-<v t="amd.20160719105410.4"><vh>red</vh></v>
-<v t="amd.20160719105410.5"><vh>guessform</vh></v>
-<v t="amd.20160719105410.6"><vh>docheck</vh></v>
+<v t="amd.20160719220510.1"><vh>### transfer from pygroup start</vh></v>
+<v t="amd.20160719222018.1"><vh>class Task</vh></v>
+<v t="amd.20160719215604.1"><vh>printuser</vh></v>
+<v t="amd.20160719220333.1"><vh>parse_config</vh></v>
+<v t="amd.20160719215515.1"><vh>index</vh></v>
+<v t="amd.20160720000420.1"><vh>usermenu</vh></v>
+<v t="amd.20160720000517.1"><vh>taskform</vh></v>
+<v t="amd.20160720000552.1"><vh>taskaction</vh></v>
+<v t="amd.20160720000752.1"><vh>allow_pass</vh></v>
+<v t="amd.20160720000817.1"><vh>strip_tags</vh></v>
+<v t="amd.20160720000912.1"><vh>editconfig</vh></v>
+<v t="amd.20160720001027.1"><vh>editconfigform</vh></v>
+<v t="amd.20160720001124.1"><vh>editadsense</vh></v>
+<v t="amd.20160720001211.1"><vh>editadsenseform</vh></v>
+<v t="amd.20160720001311.1"><vh>taskeditform</vh></v>
+<v t="amd.20160720001423.1"><vh>taskedit</vh></v>
+<v t="amd.20160720001523.1"><vh>taskdeleteform</vh></v>
+<v t="amd.20160720001631.1"><vh>taskdelete</vh></v>
+<v t="amd.20160720001715.1"><vh>tasksearchform</vh></v>
+<v t="amd.20160719220537.1"><vh>### transfer from pygroup end</vh></v>
 <v t="amd.20160719105410.7"><vh>option</vh></v>
 <v t="amd.20160719105410.8"><vh>optionaction</vh></v>
 <v t="amd.20160719105410.9"><vh>fileaxupload</vh></v>
@@ -112,71 +98,12 @@
 <v t="amd.20160719105410.21"><vh>alogin</vh></v>
 <v t="amd.20160719105410.22"><vh>alogin_check</vh></v>
 </v>
-<v t="amd.20160719132540.1" a="E"><vh>@clean pygroup.py</vh>
-<v t="amd.20160719132540.2"><vh>&lt;&lt;declarations&gt;&gt;</vh></v>
-<v t="amd.20160719132540.3"><vh>helloworld</vh></v>
-<v t="amd.20160719132540.4"><vh>threegear</vh></v>
-<v t="amd.20160719132540.5"><vh>canvas</vh></v>
-<v t="amd.20160719132540.6"><vh>listfiles</vh></v>
-<v t="amd.20160719132540.7"><vh>getfiles</vh></v>
-</v>
-</v>
-<v t="course-mde-tw.20140417093332.2027" a="E"><vh>@path wsgi</vh>
-<v t="2014spring.20140803093407.1974" a="E"><vh>@path static</vh>
-<v t="2015.20140912081657.3041"><vh>@edit editor.py</vh></v>
-<v t="2014spring.20140803093407.1975"><vh>@path templates</vh>
-<v t="2014spring.20140803093407.1979"><vh>@edit usermenu.html</vh></v>
-<v t="2015.20140829105017.2097"><vh>@edit login.html</vh></v>
-<v t="2014spring.20140804092018.1988"><vh>@edit tasklist.html</vh></v>
-<v t="2014spring.20140805082611.1991"><vh>@edit taskform.html</vh></v>
-<v t="2014spring.20140818083129.2252"><vh>@edit taskeditform.html</vh></v>
-<v t="2015.20140825203447.2082"><vh>@edit editconfigform.html</vh></v>
-<v t="2015.20140826084958.2085"><vh>@edit editadsenseform.html</vh></v>
-<v t="2014spring.20140820104632.1921"><vh>@edit taskdeleteform.html</vh></v>
-<v t="2014spring.20140806131244.1912"><vh>@edit tasksearchform.html</vh></v>
-<v t="2014spring.20140803093407.1978"><vh>@edit meta.html</vh></v>
-<v t="2014spring.20140803093407.1976"><vh>@path style</vh>
-<v t="2014spring.20140803093407.1977"><vh>@edit base.css</vh></v>
-</v>
-</v>
-</v>
-<v t="2014fall.20140821113240.3137" a="E"><vh>@clean application</vh>
-<v t="2014fall.20140821113240.3138"><vh>&lt;&lt;declarations&gt;&gt;</vh></v>
-</v>
-<v t="2014fall.20140821113240.3105"><vh>@clean pygroup.py</vh>
-<v t="2014fall.20140821113240.3106"><vh>&lt;&lt;declarations&gt;&gt; (pygroup)</vh></v>
-<v t="2014fall.20140821113240.3107"><vh>class Task</vh></v>
-<v t="2014fall.20140821113240.3108" a="E"><vh>class Pygroup</vh>
-<v t="2014fall.20140821113240.3109"><vh>__init__</vh></v>
-<v t="2014fall.20140821113240.3111"><vh>usermenu</vh></v>
-<v t="2014fall.20140821113240.3112"><vh>printuser</vh></v>
-<v t="2014fall.20140821113240.3113"><vh>taskform</vh></v>
-<v t="2014fall.20140821113240.3114"><vh>taskaction</vh></v>
-<v t="2014fall.20140821113240.3115"><vh>index (tasklist)</vh></v>
-<v t="2015.20140824143250.2080"><vh>allow_pass</vh></v>
-<v t="2015.20140830081045.4015"><vh>strip_tags</vh></v>
-<v t="2014fall.20140821113240.3117"><vh>client_ip</vh></v>
-<v t="2014fall.20140821113240.3118"><vh>default</vh></v>
-<v t="2014fall.20140821113240.3119"><vh>save_program</vh></v>
-<v t="2015.20140829105017.2096"><vh>login</vh></v>
-<v t="amd.20151026211831.1"><vh>login (authomatic)</vh></v>
-<v t="2014fall.20140821113240.3127"><vh>logincheck</vh></v>
-<v t="amd.20151026211800.1"><vh>logincheck (authomatic)</vh></v>
-<v t="2015.20140825203447.2081"><vh>editconfig</vh></v>
-<v t="2015.20140825203447.2080"><vh>editconfigform</vh></v>
-<v t="2015.20140826084958.2086"><vh>editadsense</vh></v>
-<v t="2015.20140826084958.2084"><vh>editadsenseform</vh></v>
-<v t="2015.20140824143250.2078"><vh>parse_config</vh></v>
-<v t="2014fall.20140821113240.3128"><vh>logout</vh></v>
-<v t="2014fall.20140821113240.3129"><vh>taskeditform</vh></v>
-<v t="2014fall.20140821113240.3130"><vh>taskedit</vh></v>
-<v t="2014fall.20140821113240.3131"><vh>taskdeleteform</vh></v>
-<v t="2014fall.20140821113240.3132"><vh>taskdelete</vh></v>
-<v t="2014fall.20140821113240.3133"><vh>tasksearchform</vh></v>
-</v>
-</v>
 </v>
 <v t="2014spring.20140726005348.1759"><vh>@edit setup.py</vh></v>
+<v t="amd.20160719222956.1" a="E"><vh>@path templates</vh>
+<v t="amd.20160719223002.1"><vh>@edit tasklist.html</vh></v>
+<v t="amd.20160720002945.1"><vh>@edit taskform.html</vh></v>
+</v>
 <v t="course-mde-tw.20140417093332.2058"><vh>利用 pandoc 進行格式轉換</vh>
 <v t="course-mde-tw.20140422221207.1747"><vh>注意事項</vh></v>
 <v t="course-mde-tw.20140417093332.2059"><vh>@button pandoc</vh></v>
@@ -199,938 +126,6 @@
 </v>
 </vnodes>
 <tnodes>
-<t tx="2014fall.20140821113240.3105"># -*- coding: utf-8 -*-
-'''
-Copyright © 2014 Chiaming Yen
-
-Pygroup is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-Pygroup is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with Pygroup. If not, see &lt;http://www.gnu.org/licenses/&gt;.
-
-***********************************************************************
-'''
-########################### 1. 導入所需模組
-@language python
-@tabwidth -4
-
-&lt;&lt;declarations&gt;&gt;
-@others
-########################### 4. 安排啟動設定
-# 配合程式檔案所在目錄設定靜態目錄或靜態檔案
-application_conf = {
-        '/static':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': _curdir+"/static"},
-        'images':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': data_dir+"/images"},
-        'downloads':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': data_dir+"/downloads"},
-        'brython_programs':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': data_dir+"/brython_programs"},
-        'calc_programs':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': data_dir+"/calc_programs"},
-        '/':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': _curdir+"/static/openjscad"},
-        # 設定靜態 templates 檔案目錄對應
-        '/templates':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.root': template_root_dir,
-        'tools.staticdir.dir': 'templates',
-        'tools.staticdir.index' : 'index.htm'
-        }
-    }
-
-########################### 5. 在近端或遠端啟動程式
-# 利用 Pygroup() class 產生案例物件
-root = Pygroup()
-# 導入 CMSimply 內容管理模組
-#root.cmsimply = cmsimply.CMSimply()
-# 使用命名節點中所定義的 cmsimply_group 類別
-#root.cmsimply = cmsimply_group()
-root.cmsimply = cmsimply.CMSimply()
-# 導入 Download
-root.cmsimply.download = cmsimply.Download()
-
-if __name__ == '__main__':
-    # 假如在 os 環境變數中存在 'OPENSHIFT_REPO_DIR', 表示程式在 OpenShift 環境中執行
-    if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
-        # 雲端執行啟動
-        application = cherrypy.Application(root, config = application_conf)
-    else:
-        # 近端執行啟動
-        '''
-        cherrypy.server.socket_port = 8083
-        cherrypy.server.socket_host = '127.0.0.1'
-        '''
-        cherrypy.quickstart(root, config = application_conf)
-</t>
-<t tx="2014fall.20140821113240.3106">import cherrypy
-import os
-### for logincheck
-import smtplib
-from email.mime.text import MIMEText  
-from email.header import Header
-### for cmsimply
-import cmsimply
-### 取得目前時區時間
-from time import strftime, localtime
-import datetime, pytz
-### for pagination
-import math
-# for mako
-from mako.template import Template
-from mako.lookup import TemplateLookup
-# for bs4
-from bs4 import BeautifulSoup, Comment
-# 計算執行時間
-import time
-# for mysql
-import pymysql
-# for skylark
-#from skylark import Database, Model, Field, PrimaryKey, ForeignKey
-# use cgi.escape() to resemble php htmlspecialchars()
-# use cgi.escape() or html.escape to generate data for textarea tag, otherwise Editor can not deal with some Javascript code.
-import cgi
-# for logincheck and parse_config methods
-import hashlib
-# for unescape content
-import html.parser
-# for logging
-import logging
-# for strip_tags
-import re
-# for sqlite
-import sqlite3
-# 用於 pybean 資料儲存
-from pybean import Store, SQLiteWriter
-# 再 try peewee
-from peewee import SqliteDatabase, Model, CharField, TextField, IntegerField, MySQLDatabase
-
-#logging.basicConfig(level=logging.DEBUG)
-
-#logger = logging.getLogger( __name__ )
-
-########################### 2. 設定近端與遠端目錄
-# 確定程式檔案所在目錄, 在 Windows 有最後的反斜線
-_curdir = os.path.join(os.getcwd(), os.path.dirname(__file__))
-# 設定在雲端與近端的資料儲存目錄
-if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
-    # 表示程式在雲端執行
-    download_root_dir = os.environ['OPENSHIFT_DATA_DIR']
-    data_dir = os.environ['OPENSHIFT_DATA_DIR']
-    template_root_dir = os.environ['OPENSHIFT_REPO_DIR']+"/wsgi/static"
-    # template_root_dir = _curdir + "/static"
-else:
-    # 表示程式在近端執行
-    download_root_dir = _curdir + "/local_data/"
-    data_dir = _curdir + "/local_data/"
-    template_root_dir = _curdir + "/static"
-# 資料庫選用
-# 內建使用 sqlite3
-ormdb = "sqlite"
-#ormdb = "mysql"
-#ormdb = "postgresql"
-if ormdb == "sqlite":
-    # 針對 sqlite3 指定資料庫檔案
-    db = SqliteDatabase(data_dir+"task.db", check_same_thread=False)
-
-elif ormdb == "mysql":
-    # 選用 MySQL
-    # 注意 port 必須為整數, 而非字串
-    if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
-        db = MySQLDatabase(database='cadp', host=os.environ[str('OPENSHIFT_MYSQL_DB_HOST')],  \
-            port=int(os.environ['OPENSHIFT_MYSQL_DB_PORT']), \
-            user=os.environ['OPENSHIFT_MYSQL_DB_USERNAME'], \
-            passwd=os.environ['OPENSHIFT_MYSQL_DB_PASSWORD'], charset='utf8')
-    else:
-        # peewee 版本
-        db = MySQLDatabase(database='yourdb', host='yourhost', \
-             port=3306, user='youruser', passwd='yourpassword', charset='utf8')
-else:
-    # 選用 PostgreSQL
-    # 注意 port 必須為整數, 而非字串
-    if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
-        db = PostgreSQLDatabase(database='cadp', host=os.environ[str('OPENSHIFT_POSTGRESQL_DB_HOST')],  \
-            port=int(os.environ['OPENSHIFT_POSTGRESQL_DB_PORT']), \
-            user=os.environ['OPENSHIFT_POSTGRESQL_DB_USERNAME'], \
-            passwd=os.environ['OPENSHIFT_POSTGRESQL_DB_PASSWORD'], charset='utf8')
-    else:
-        # peewee 版本
-        db = PostgreSQLDatabase(database='cadp', host='localhost', \
-             port=3306, user='root', passwd='root', charset='utf8')
-</t>
-<t tx="2014fall.20140821113240.3107"># 在此建立資料表欄位
-    
-class Task(Model):
-    # peewee 內定 id 為 PrimaryKey
-    #id = PrimaryKey()
-    follow = IntegerField()
-    owner = CharField()
-    name = CharField()
-    type = CharField()
-    time = CharField()
-    content = TextField()
-    ip = CharField()
-
-    class Meta:
-        database = db # This model uses the data_dir+"task.db" database.
-</t>
-<t tx="2014fall.20140821113240.3108">########################### 3. 建立主物件
-class Pygroup(object):
-    _cp_config = {
-    # if there is no utf-8 encoding, no Chinese input available
-    'tools.encode.encoding': 'utf-8',
-    'tools.sessions.on' : True,
-    'tools.sessions.storage_type' : 'file',
-    #'tools.sessions.locking' : 'explicit',
-    'tools.sessions.locking' : 'early',
-    'tools.sessions.storage_path' : data_dir+'/tmp',
-    # session timeout is 60 minutes
-    'tools.sessions.timeout' : 60,
-    'tools.caching.on' : False
-    }
-    
-    @others
-</t>
-<t tx="2014fall.20140821113240.3109">def __init__(self):
-    # hope to create downloads and images directories　
-    if not os.path.isdir(download_root_dir+"downloads"):
-        try:
-            os.makedirs(download_root_dir+"downloads")
-        except:
-            print("mkdir error")
-    if not os.path.isdir(download_root_dir+"images"):
-        try:
-            os.makedirs(download_root_dir+"images")
-        except:
-            print("mkdir error")
-    if not os.path.isdir(download_root_dir+"tmp"):
-        try:
-            os.makedirs(download_root_dir+"tmp")
-        except:
-            print("mkdir error")
-    if not os.path.isdir(data_dir+"calc_programs"):
-        try:
-            os.makedirs(data_dir+"calc_programs")
-        except:
-            print("mkdir error")
-    # 若無字典檔案, 則從 local_目錄中複製
-    #if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
-        #if not os.path.isfile(data_dir+"webster_vocabulary.sqlite"):
-            # 尚未完成
-    # 假如沒有 adsense_content 則建立一個空白檔案
-    if not os.path.isfile(data_dir+"adsense_content"):
-        try:
-            file = open(data_dir+"adsense_content", "w", encoding="utf-8")
-            #  寫入內建的 adsense_content 內容
-            adsense_content = '''
-&lt;script type="text/javascript"&gt;&lt;!--
-		google_ad_client = "pub-2140091590744860";
-		google_ad_width = 300;
-		google_ad_height = 250;
-		google_ad_format = "300x250_as";
-		google_ad_type = "image";
-		google_ad_channel ="";
-		google_color_border = "000000";
-		google_color_link = "0000FF";
-		google_color_bg = "FFFFFF";
-		google_color_text = "000000";
-		google_color_url = "008000";
-		google_ui_features = "rc:0";
-		//--&gt;&lt;/script&gt;
-		&lt;script type="text/javascript"
-		src="http://pagead2.googlesyndication.com/pagead/show_ads.js"&gt;
-		&lt;/script&gt;
-
-&lt;script type="text/javascript"&gt;&lt;!--
-		google_ad_client = "pub-2140091590744860";
-		google_ad_width = 300;
-		google_ad_height = 250;
-		google_ad_format = "300x250_as";
-		google_ad_type = "image";
-		google_ad_channel ="";
-		google_color_border = "000000";
-		google_color_link = "0000FF";
-		google_color_bg = "FFFFFF";
-		google_color_text = "000000";
-		google_color_url = "008000";
-		google_ui_features = "rc:0";
-		//--&gt;&lt;/script&gt;
-		&lt;script type="text/javascript"
-		src="http://pagead2.googlesyndication.com/pagead/show_ads.js"&gt;
-		&lt;/script&gt;&lt;br /&gt;
-'''
-            file.write(adsense_content+"\n")
-            file.close()
-        except:
-            print("mkdir error")
-    if ormdb == "sqlite":
-        # 資料庫使用 SQLite
-        # 這裡應該要使用 peewee 建立資料庫與表格
-        try:
-            conn = sqlite3.connect(data_dir+"task.db")
-            cur = conn.cursor()
-            # 建立資料表
-            cur.execute("CREATE TABLE IF NOT EXISTS task( \
-                    id INTEGER PRIMARY KEY AUTOINCREMENT, \
-                    name TEXT, \
-                    owner TEXT, \
-                    type TEXT, \
-                    time TEXT, \
-                    content TEXT, \
-                    ip TEXT, \
-                    follow INTEGER);")
-            cur.close()
-            conn.close()
-        except:
-            print("can not create db and table")
-    elif ormdb == "mysql":
-        # 嘗試建立資料庫與資料表
-        # 這裡應該要使用 peewee 建立資料庫與表格
-        if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
-            host=str(os.environ[str('OPENSHIFT_MYSQL_DB_HOST')])
-            port=int(os.environ[str('OPENSHIFT_MYSQL_DB_PORT')])
-            db='cadp'
-            user=str(os.environ[str('OPENSHIFT_MYSQL_DB_USERNAME')])
-            passwd=str(os.environ[str('OPENSHIFT_MYSQL_DB_PASSWORD')])
-        else:
-            host="yourhost"
-            port=3306
-            db='yourdb'
-            user='youruser'
-            passwd='yourpassword'
-        charset='utf8'
-        # 案例建立時, 就嘗試建立資料庫與資料表
-        try:
-            conn = pymysql.connect(host=host, port=port, user=user, passwd=passwd, charset=charset)
-            # 建立資料庫
-            cur = conn.cursor()
-            cur.execute("CREATE DATABASE IF NOT EXISTS "+db+" CHARACTER SET UTF8;")
-            # 建立資料表
-            cur.execute("USE "+db+";")
-            cur.execute("CREATE TABLE IF NOT EXISTS `task` ( \
-                `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT, \
-                `name` VARCHAR(255) NOT NULL COLLATE 'utf8_unicode_ci', \
-                `owner` VARCHAR(255) NOT NULL COLLATE 'utf8_unicode_ci', \
-                `type` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8_unicode_ci', \
-                `time` DATETIME NOT NULL COLLATE 'utf8_unicode_ci', \
-                `content` LONGTEXT COLLATE 'utf8_unicode_ci', \
-                `ip` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8_unicode_ci', \
-                `follow` BIGINT(20) UNSIGNED NOT NULL DEFAULT '0', \
-                PRIMARY KEY (`id`)) \
-                COLLATE='utf8_general_ci' default charset=utf8 ENGINE=InnoDB;")
-            cur.close()
-            conn.close()
-        except:
-            print("can not create db and table")
-    else:
-        # 使用 PostgreSQL
-        # 嘗試建立資料庫與資料表
-        # 這裡應該要使用 peewee 建立資料庫與表格
-        if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
-            host=str(os.environ[str('OPENSHIFT_POSTGRESQL_DB_HOST')])
-            port=int(os.environ[str('OPENSHIFT_POSTGRESQL_DB_PORT')])
-            db='cadp'
-            user=str(os.environ[str('OPENSHIFT_POSTGRESQL_DB_USERNAME')])
-            passwd=str(os.environ[str('OPENSHIFT_POSTGRESQL_DB_PASSWORD')])
-        else:
-            host="localhost"
-            port=3306
-            db='cadp'
-            user='root'
-            passwd='root'
-        charset='utf8'
-        # 案例建立時, 就嘗試建立資料庫與資料表
-        try:
-            conn = pymysql.connect(host=host, port=port, user=user, passwd=passwd, charset=charset)
-            # 建立資料庫
-            cur = conn.cursor()
-            cur.execute("CREATE DATABASE IF NOT EXISTS "+db+";")
-            # 建立資料表
-            cur.execute("USE "+db+";")
-            cur.execute("CREATE TABLE IF NOT EXISTS `task` ( \
-                `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT, \
-                `name` VARCHAR(255) NOT NULL COLLATE 'utf8_unicode_ci', \
-                `owner` VARCHAR(255) NOT NULL COLLATE 'utf8_unicode_ci', \
-                `type` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8_unicode_ci', \
-                `time` DATETIME NOT NULL COLLATE 'utf8_unicode_ci', \
-                `content` LONGTEXT COLLATE 'utf8_unicode_ci', \
-                `ip` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8_unicode_ci', \
-                `follow` BIGINT(20) UNSIGNED NOT NULL DEFAULT '0', \
-                PRIMARY KEY (`id`)) \
-                COLLATE='utf8_general_ci' default charset=utf8 ENGINE=InnoDB;")
-            cur.close()
-            conn.close()
-        except:
-            print("can not create db and table")
-</t>
-<t tx="2014fall.20140821113240.3111">@cherrypy.expose
-def usermenu(self):
-    # 這裡包括列出用戶以及列印表單
-    user = self.printuser()
-    menu = ["login", "logout", "usermenu", "cmsimply", \
-                 "tasklist"]
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    # 必須要從 templates 目錄取出 usermenu.html
-    mytemplate = template_lookup.get_template("usermenu.html")
-    return mytemplate.render(user=user, menu=menu)
-</t>
-<t tx="2014fall.20140821113240.3112">def printuser(self):
-    # 取得 user 資料
-    try:
-        user = cherrypy.session["user"]
-    except:
-        user = "anonymous"
-    if user == "":
-        user = "anonymous"
-    return user
-</t>
-<t tx="2014fall.20140821113240.3113"># 不允許使用者直接呼叫 taskform
-def taskform(self, id=0, *args, **kwargs):
-    user = self.printuser()
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    # 必須要從 templates 目錄取出 tasklist.html
-    # 針對 id != 0 時, 表示要回應主資料緒, 希望取出與 id 對應的資料標頭, 然後加上 Re:
-    mytemplate = template_lookup.get_template("taskform.html")
-    return mytemplate.render(user=user, id=id)
-</t>
-<t tx="2014fall.20140821113240.3114">@cherrypy.expose
-def taskaction(self, type=None, name=None, follow=0, content=None, ip=None, *args, **kwargs):
-    if content == None or name == "":
-        return "標題與內容都不可空白!&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-    else:
-        start_time = time.time()
-        owner = self.printuser()
-        if self.allow_pass(owner) == "no":
-            raise cherrypy.HTTPRedirect("login")
-        ip = self.client_ip()
-        now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
-        '''
-        # 因為登入後就將 @ 代換為 _at_, 所以此地不用再換
-        # user 若帶有 @ 則用 at 代替
-        if "@" in owner:
-            owner = owner.replace('@', '_at_')
-        '''
-        content = content.replace('\n', '')
-        valid_tags = ['a', 'br', 'h1', 'h2', 'h3', 'p', 'div', 'hr', 'img', 'iframe', 'li', 'ul', 'b', 'ol', 'pre']
-        tags = ''
-        for tag in valid_tags:
-            tags += tag
-        content = self.strip_tags(content, tags)
-        # 這裡要除掉 &lt;/br&gt; 關閉 break 的標註, 否則在部分瀏覽器會產生額外的跳行
-        content = str(content).replace('&lt;/br&gt;', '')
-        time_elapsed = round(time.time() - start_time, 5)
-        # last insert id 為 data.id
-        db.connect()
-        # peewee 版本
-        data = Task.create(owner=owner, name=str(name), type=type, time=str(now), follow=follow, content=content, ip=str(ip))
-        data.save()
-        # 這裡要與 taskedit 相同, 提供回到首頁或繼續編輯按鈕
-        output = "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-        output +="&lt;a href='/taskeditform?id="+str(data.id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
-        output += '''以下資料已經更新:&lt;br /&gt;&lt;br /&gt;
-        owner:'''+owner+'''&lt;br /&gt;
-        name:'''+name+'''&lt;br /&gt;
-        type:'''+type+'''&lt;br /&gt;
-        time:'''+str(now)+'''&lt;br /&gt;
-        content:'''+str(content)+'''&lt;br /&gt;&lt;br /&gt;
-        &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
-    '''
-        output +="&lt;a href='/taskeditform?id="+str(data.id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
-        db.close()
-        return output
-    # 原先直接轉到 tasklist 方法 (index)
-    #raise cherrypy.HTTPRedirect("tasklist")
-</t>
-<t tx="2014fall.20140821113240.3115">@cherrypy.expose
-# 從 tasklist 改為 index
-def index(self, page=1, item_per_page=5, id=0, flat=0, desc=0, keyword=None, *args, **kwargs):
-    user = self.printuser()
-    # 這裡不用 self.allow_pass 原因在於需要 adsense 變數
-    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    if user == "anonymous" and anonymous != "yes":
-        if id != 0:
-            raise cherrypy.HTTPRedirect("login?id="+id)
-        else:
-            raise cherrypy.HTTPRedirect("login")
-    if adsense == "yes":
-        filename = data_dir+"adsense_content"
-        with open(filename, encoding="utf-8") as file:
-            adsense_content = file.read()
-    else:
-        adsense_content = ""
-    #ip = cherrypy.request.remote.ip
-    ip = self.client_ip()
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    # 必須要從 templates 目錄取出 tasklist2.html
-    mytemplate = template_lookup.get_template("tasklist.html")
-    # 這裡要加入單獨根據 id 號, 列出某一特定資料緒的分支
-    # 若 id 為 0 表示非指定列出各別主緒資料, 而是列出全部資料
-    # 這時可再根據各筆資料列印時找出各主緒資料的附屬資料筆數
-    # 加入 flat = 1 時, 列出所有資料
-    # 請注意這裡直接從 tasksearchform.html 中的關鍵字查詢, 指定以 tasklist 執行, 但是無法單獨列出具有關鍵字的 task 資料, 而是子緒有關鍵字時, 也是列出主緒資料
-    # 單獨 db 連結與結束
-    db.connect()
-    if keyword == None:
-        if id == 0:
-            if flat == 0:
-                # 只列出主資料緒
-                # desc 為 0 表示要 id 由小到大排序列出資料
-                if desc == 0:
-                    method = "?"
-                    data = Task.select().where(Task.follow==0)
-                else:
-                    # desc 為 1 表示 id 反向排序
-                    method = "?desc=1"
-                    data = Task.select().where(Task.follow==0).order_by(Task.id.desc())
-            else:
-                # flat 為 1 表示要列出所有資料
-                # 原先沒有反向排序, 內建使用正向排序
-                if desc == 0:
-                    method = "?flat=1"
-                    data = Task.select()
-                else:
-                    method = "?flat=1&amp;desc=1"
-                    data = Task.select().order_by(Task.id.desc())
-        else:
-            method = "?id="+str(id)
-            # 設法列出主資料與其下屬資料緒, 這裡是否可以改為 recursive 追蹤多緒資料
-            # 只列出主緒與下一層子緒資料
-            data = Task.select().where((Task.id == id) | (Task.follow == id))
-    else:
-        # 有關鍵字查詢時(只查 owner, content, type 與 name), 只列出主資料緒
-        #flat = 1
-        method = "?keyword="+keyword+"&amp;flat="+str(flat)
-        data = Task.select().where((Task.content ** ('%%%s%%' % (keyword))) | (Task.name ** ('%%%s%%' % (keyword))) | \
-        (Task.owner ** ('%%%s%%' % (keyword))) | \
-        (Task.type ** ('%%%s%%' % (keyword))) \
-            )
-    follow = []
-    for task in data:
-        follow_data = Task.select().where(Task.follow == task.id).count()
-        follow.append(follow_data)
-    db.close()
-    #
-    # 送出 user, id, flat, method 與 data
-    #
-    # 增加傳送 read_only, 若 read_only = yes 則不列出 taskform, 而且所有新增編輯刪除功能均失效
-    #
-    return mytemplate.render(user=user, id=id, flat=flat, method=method, data=data,  \
-        page=page, item_per_page=item_per_page, ip=ip, follow=follow, keyword=keyword, \
-        adsense_content=adsense_content, adsense=adsense, anonymous=anonymous, \
-        site_closed=site_closed, read_only=read_only)
-    # 其餘分頁 logic 在 mako template tasklist.html 中完成
-</t>
-<t tx="2014fall.20140821113240.3117">def client_ip(self):
-    try:
-        return cherrypy.request.headers["X-Forwarded-For"]
-    except:
-        return cherrypy.request.headers["Remote-Addr"]
-</t>
-<t tx="2014fall.20140821113240.3118"># default method, if there is no corresponding method, cherrypy will redirect to default method
-# need *args and **kwargs as input variables for all possible URL links
-@cherrypy.expose
-# default can not live with calc method?
-def default(self, attr='default', *args, **kwargs):
-    raise cherrypy.HTTPRedirect("/")
-</t>
-<t tx="2014fall.20140821113240.3119">@cherrypy.expose
-def save_program(self, filename=None, sheet_content=None):
-    with open(data_dir+"/calc_programs/"+filename, "wt", encoding="utf-8") as out_file:
-        data = sheet_content.replace("\r\n", "\n")
-        out_file.write(data)
-
-    return str(filename)+" saved!&lt;br /&gt;"
-@cherrypy.expose
-</t>
-<t tx="2014fall.20140821113240.3127">@cherrypy.expose
-def logincheck(self, id=0, account=None, password=None):
-    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    if account != None and password != None:
-        # 這裡要加入用戶名稱為 admin 的管理者登入模式
-        if account == "admin":
-            # 進入 admin 密碼查驗流程
-            hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
-            if hashed_password == saved_password:
-                cherrypy.session['user'] = "admin"
-                raise cherrypy.HTTPRedirect("/?id="+str(id))
-            else:
-                return "login failed.&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-        else:
-            # 一般帳號查驗
-            if site_closed == "yes":
-                return "抱歉!網站關閉中"
-            elif not mail_suffix in account or mail_suffix != "":
-                return "抱歉!此類帳號不允許登入"
-            else:
-                server = smtplib.SMTP('smtp.gmail.com:587')
-                server.ehlo()
-                server.starttls()
-                try:
-                    server.login(account, password)
-                    server.quit()
-                    if "@" in account:
-                        account = account.replace('@', '_at_')
-                    cherrypy.session["user"] = account
-                    #return account+" login successfully."
-                    #若登入成功, 則離開前跳到根目錄
-                except:
-                    server.quit()
-                    return "login failed.&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-    else:
-        raise cherrypy.HTTPRedirect("login?id="+str(id))
-    raise cherrypy.HTTPRedirect("/?id="+str(id))
-</t>
-<t tx="2014fall.20140821113240.3128">@cherrypy.expose
-def logout(self, *args, **kwargs):
-    cherrypy.session.delete()
-    return "已經登出!&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-    #raise cherrypy.HTTPRedirect("")
-</t>
-<t tx="2014fall.20140821113240.3129">@cherrypy.expose
-def taskeditform(self, id=None, *args, **kwargs):
-    user = self.printuser()
-    password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    if read_only == "yes" and user != "admin":
-        return "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;error, site is read only!"
-    if user == "anonymous" and anonymous != "yes":
-        raise cherrypy.HTTPRedirect("login")
-    else:
-        try:
-            db.connect()
-            # 用 get() 取單筆資料
-            data = Task.select().where(Task.id==int(id)).get()
-            output = "user:"+user+", owner:"+data.owner+"&lt;br /&gt;&lt;br /&gt;"
-            if user != data.owner:
-                if user != "admin":
-                    db.close()
-                    return output + "error! Not authorized!"
-                else:
-                    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-                    mytemplate = template_lookup.get_template("taskeditform.html")
-                    db.close()
-                    return mytemplate.render(user=user, id=id, data=data)
-            else:
-                template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-                mytemplate = template_lookup.get_template("taskeditform.html")
-                db.close()
-                return mytemplate.render(user=user, id=id, data=data)
-        except:
-            db.close()
-            return "error! Not authorized!"
-</t>
-<t tx="2014fall.20140821113240.3130">@cherrypy.expose
-def taskedit(self, id=None, type=None, name=None, content=None, *args, **kwargs):
-    # check user and data owner
-    if id == None:
-        return "error&lt;br /&gt;&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-    user = self.printuser()
-    password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    if read_only == "yes" and user != "admin":
-        return "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;error, site is read only!"
-    if user == "anonymous" and anonymous != "yes":
-        raise cherrypy.HTTPRedirect("login")
-    try:
-        db.connect()
-    except:
-        time.sleep(0.300)
-        db.connect()
-    data = Task.select().where(Task.id==int(id)).get()
-    now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
-    # 過濾資料
-    content = content.replace('\n', '')
-    valid_tags = ['a', 'br', 'h1', 'h2', 'h3', 'p', 'div', 'hr', 'img', 'iframe', 'li', 'ul', 'b', 'ol', 'pre']
-    tags = ''
-    for tag in valid_tags:
-        tags += tag
-    content = self.strip_tags(content, tags)
-    # 這裡要除掉 &lt;/br&gt; 關閉 break 的標註, 否則在部分瀏覽器會產生額外的跳行
-    content = str(content).replace('&lt;/br&gt;', '')
-    output = "user:"+user+", owner:"+data.owner+"&lt;br /&gt;&lt;br /&gt;"
-    if user != data.owner:
-        if  user != "admin":
-            db.close()
-            return "error! Not authorized!"
-        else:
-            # 請注意這裡曾經犯了 where(id==int(id) 的重大錯誤, 讓所有資料在 update 時只留下一筆資料
-            query = Task.update(type=type, name=name, content=str(content), time=str(now)).where(Task.id==int(id))
-            query.execute()
-            output += "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-            output +="&lt;a href='/taskeditform?id="+str(id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
-            output += '''以下資料已經更新:&lt;br /&gt;&lt;br /&gt;
-            owner:'''+data.owner+'''&lt;br /&gt;
-            name:'''+name+'''&lt;br /&gt;
-            type:'''+type+'''&lt;br /&gt;
-            time:'''+str(now)+'''&lt;br /&gt;
-            content:'''+str(content)+'''&lt;br /&gt;&lt;br /&gt;
-            &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
-'''
-            output +="&lt;a href='/taskeditform?id="+str(id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;"
-    else:
-        query = Task.update(type=type, name=name, content=str(content), time=str(now)).where(Task.id==int(id))
-        query.execute()
-        output += "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-        output +="&lt;a href='/taskeditform?id="+str(id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
-        output += '''以下資料已經更新:&lt;br /&gt;&lt;br /&gt;
-        owner:'''+data.owner+'''&lt;br /&gt;
-        name:'''+name+'''&lt;br /&gt;
-        type:'''+type+'''&lt;br /&gt;
-        time:'''+str(now)+'''&lt;br /&gt;
-        content:'''+str(content)+'''&lt;br /&gt;&lt;br /&gt;
-        &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
-'''
-        output +="&lt;a href='/taskeditform?id="+str(id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;"
-    db.close()
-    return output
-</t>
-<t tx="2014fall.20140821113240.3131">@cherrypy.expose
-def taskdeleteform(self, id=None, *args, **kwargs):
-    user = self.printuser()
-    password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    if read_only == "yes" and user != "admin":
-        return "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;error, site is read only!"
-    if user == "anonymous" and anonymous != "yes":
-        raise cherrypy.HTTPRedirect("login")
-    else:
-        try:
-            # 這裡要區分刪除子緒或主緒資料
-            # 若刪除子緒, 則 data 只包含子緒資料, 若為主緒, 則 data 必須包含所有資料
-            # 先找出資料, 判定是否為主緒
-            # 用 get() 取單筆資料
-            db.connect()
-            data= Task.select().where(Task.id==int(id)).get()
-            owner = data.owner
-            if user != data.owner:
-                if user != "admin":
-                    db.close()
-                    return output + "error! 非資料擁有者, Not authorized!"
-                else:
-                    if data.follow == 0:
-                        # 表示該資料為主緒資料
-                        # 資料要重新搜尋, 納入子資料
-                        data = Task.select().where((Task.id == id) | (Task.follow == id))
-                        output = "資料為主緒資料&lt;br /&gt;"
-                        # 增加一個資料類型判斷, main 表資料為主緒
-                        type = "main"
-                    else:
-                        # 表示該資料為子緒資料
-                        # 直接採用 data 資料送到 taskdeleteform.html
-                        output = "資料為子緒資料&lt;br /&gt;"
-                        # 增加一個資料類型判斷, alone 表資料為子緒
-                        type = "alone"
-                    output += "user:"+user+", owner:"+owner+"&lt;br /&gt;&lt;br /&gt;"
-                    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-                    mytemplate = template_lookup.get_template("taskdeleteform.html")
-                    # 這裡的 type 為所要刪除資料的類型, 為 main 或為 alone
-                    db.close()
-                    return mytemplate.render(user=user, id=id, data=data, type=type)
-            else:
-                if data.follow == 0:
-                    # 表示該資料為主緒資料
-                    # 資料要重新搜尋, 納入子資料
-                    data = Task.select().where((Task.id == id) | (Task.follow == id))
-                    output = "資料為主緒資料&lt;br /&gt;"
-                    # 增加一個資料類型判斷, main 表資料為主緒
-                    type = "main"
-                else:
-                    # 表示該資料為子緒資料
-                    # 直接採用 data 資料送到 taskdeleteform.html
-                    output = "資料為子緒資料&lt;br /&gt;"
-                    # 增加一個資料類型判斷, alone 表資料為子緒
-                    type = "alone"
-                output += "user:"+user+", owner:"+owner+"&lt;br /&gt;&lt;br /&gt;"
-                template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-                mytemplate = template_lookup.get_template("taskdeleteform.html")
-                # 這裡的 type 為所要刪除資料的類型, 為 main 或為 alone
-                db.close()
-                return mytemplate.render(user=user, id=id, data=data, type=type)
-        except:
-            db.close()
-            return "error! 無法正確查詢資料, Not authorized!"
-</t>
-<t tx="2014fall.20140821113240.3132">@cherrypy.expose
-def taskdelete(self, id=None, type=None, name=None, content=None, *args, **kwargs):
-    # check user and data owner
-    user = self.printuser()
-    password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    if read_only == "yes" and user != "admin":
-        return "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;error, site is read only!"
-    if user == "anonymous" and anonymous != "yes":
-        raise cherrypy.HTTPRedirect("login")
-    # 用 get() 取單筆資料
-    db.connect()
-    data = Task.select().where(Task.id==int(id)).get()
-    now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
-    output = "user:"+user+", owner:"+data.owner+"&lt;br /&gt;&lt;br /&gt;"
-    if user != data.owner:
-        if user != "admin":
-            db.close()
-            return "error! Not authorized!"
-        else:
-            # 若資料為主緒則一併刪除子緒, 若為子緒, 則只刪除該子緒
-            if data.follow == 0:
-                # 表示資料為主緒
-                # 先刪除主緒
-                query = Task.at(int(id)).delete()
-                query.execute()
-                # 再刪除所有對應子緒
-                query = Task.delete().where(follow=int(id))
-                query.execute()
-                output += "所有序列資料已經刪除!&lt;br /&gt;"
-            else:
-                # 表示資料為子緒
-                query = Task.delete().where(Task.id==int(id))
-                query.execute()
-                output += "資料已經刪除!&lt;br /&gt;"
-    else:
-        # 若資料為主緒則一併刪除子緒, 若為子緒, 則只刪除該子緒
-        if data.follow == 0:
-            # 表示資料為主緒
-            # 先刪除主緒
-            query = Task.delete().where(Task.id==int(id))
-            query.execute()
-            # 再刪除所有對應子緒
-            query = Task.delete().where(Task.follow==int(id))
-            query.execute()
-            output += '''所有序列資料已經刪除!&lt;br /&gt;&lt;br /&gt;
-            &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
-'''
-        else:
-            # 表示資料為子緒
-            query = Task.delete().where(Task.id==int(id))
-            query.execute()
-            output += '''資料已經刪除!&lt;br /&gt;&lt;br /&gt;
-            &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
-'''
-    db.close()
-    return output
-</t>
-<t tx="2014fall.20140821113240.3133"># 不允許使用者直接呼叫 tasksearchform
-def tasksearchform(self, *args, **kwargs):
-    user = self.printuser()
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    # 必須要從 templates 目錄取出 tasksearchform.html
-    mytemplate = template_lookup.get_template("tasksearchform.html")
-    return mytemplate.render(user=user)
-</t>
-<t tx="2014fall.20140821113240.3137">########################### 1. 導入啟動 cherrypy, 所在目錄, 物件所需模組
-@language python
-@tabwidth -4
-
-&lt;&lt;declarations&gt;&gt;
-@others
-</t>
-<t tx="2014fall.20140821113240.3138">import cherrypy
-import os
-import cmsimply
-import pygroup
-# for createdb 
-import pymysql
-# for webster and wordnet
-import wordnet
-import webster
-
-########################### 2. 設定近端與遠端目錄
-# 確定程式檔案所在目錄, 在 Windows 有最後的反斜線
-_curdir = os.path.join(os.getcwd(), os.path.dirname(__file__))
-# 設定在雲端與近端的資料儲存目錄
-if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
-    # 表示程式在雲端執行
-    download_root_dir = os.environ['OPENSHIFT_DATA_DIR']
-    data_dir = os.environ['OPENSHIFT_DATA_DIR']
-    template_root_dir = os.environ['OPENSHIFT_REPO_DIR']+"/wsgi/static"
-    # template_root_dir = _curdir + "/static"
-else:
-    # 表示程式在近端執行
-    download_root_dir = _curdir + "/local_data/"
-    data_dir = _curdir + "/local_data/"
-    template_root_dir = _curdir + "/static"
-
-########################### 3. 設定根目錄與子目錄啟動
-# 利用 CDProject() class 產生案例物件
-#root = CDProject()
-# 希望從物件案例建立時, 指定資料庫與資料表的建立流程
-# 例如 root = pygroup.Pygroup(資料庫, 資料表, 其他參數)
-root = pygroup.Pygroup()
-# 導入 CMSimply 內容管理模組
-#root.cmsimply = cmsimply.CMSimply()
-# 使用命名節點中所定義的 cmsimply_group 類別
-#root.cmsimply = cmsimply_group()
-root.c = cmsimply.CMSimply()
-# 導入 Download
-root.c.download = cmsimply.Download()
-# 從 wordnet 與 webster 模組建立應用案例
-root.wordnet = wordnet.MyCheck()
-root.webster = webster.MyCheck()
-
-########################### 4. 安排啟動設定
-# 配合程式檔案所在目錄設定靜態目錄或靜態檔案
-application_conf = {
-        '/static':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': _curdir+"/static"},
-        '/images':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': data_dir+"/images"},
-        '/downloads':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': data_dir+"/downloads"},
-        '/brython_programs':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': data_dir+"/brython_programs"},
-        '/calc_programs':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': data_dir+"/calc_programs"},
-        '/':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': _curdir+"/static/openjscad"},
-        # 設定靜態 templates 檔案目錄對應
-        '/templates':{
-        'tools.staticdir.on': True,
-        'tools.staticdir.root': template_root_dir,
-        'tools.staticdir.dir': 'templates',
-        'tools.staticdir.index' : 'index.htm'
-        }
-    }
-
-########################### 5. 在近端或遠端啟動程式
-# 假如在 os 環境變數中存在 'OPENSHIFT_REPO_DIR', 表示程式在 OpenShift 環境中執行
-if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
-    # 雲端執行啟動
-    application = cherrypy.Application(root, config = application_conf)
-else:
-    # 近端執行啟動
-    '''
-    cherrypy.server.socket_port = 8443
-    cherrypy.server.socket_host = 'your_ip'
-    cherrypy.server.ssl_certificate = 'new_pygroup/wsgi/ssl_cert.pem'
-    cherrypy.server.ssl_private_key = 'new_pygroup/wsgi/ssl_cert.pem'
-    cherrypy.config.update({'engine.autoreload.on':False,
-                        'log.access_file': data_dir+'/downloads/access.log',
-                        'log.error_file': data_dir+'/downloads/error.log'})
-    '''
-    # 避開 winreg 模組無法找到的問題"
-    # Ubuntu 14.04, Python 3.4.0, CherryPy 3.5.0
-    cherrypy.config.update({'engine.autoreload_on':False})
-    # 若在近端以 Python 直接執行, 則使用下一行啟動
-    cherrypy.quickstart(root, config = application_conf)
-    # 若在近端使用 uwsgi 啟動則與 OpenShift 平台上的啟動方式相同
-    #application = cherrypy.Application(root, config = application_conf)
-</t>
 <t tx="2014fall.20140821113240.3139">https://pypi.python.org/pypi/skylark/0.9.0
 
 https://github.com/hit9/skylark
@@ -1256,9 +251,6 @@ course-mde-tw 為協同人員
 4. 各課程按照學員座號, 可以進入學員首頁, 並且查詢學員所增加的相關資料
 
 5. 系統只接受文字與連結資料, 其他圖片, 影音, 文件檔案, 一律各自存放在 copy.com 與 Vimeo.</t>
-<t tx="2014spring.20140803093407.1974"></t>
-<t tx="2014spring.20140803093407.1975"></t>
-<t tx="2014spring.20140803093407.1976"></t>
 <t tx="2015.20140824143250.2077">tasklist 直接當成 index
 
 配置管理者登入模式
@@ -1270,120 +262,6 @@ pygroup_config
 新增最上方使用者 menu bar 設計
 
 線上管理各設定內容</t>
-<t tx="2015.20140824143250.2078">def parse_config(self, filename):
-    #filename = "pygroup_config"
-    if not os.path.isfile(data_dir+filename):
-        # create config file if there is no config file
-        file = open(data_dir+filename, "w", encoding="utf-8")
-        # 若無設定檔案, 則逐一寫入 default 值
-        # default password is admin
-        password="admin"
-        hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
-        # adsense 為 yes 表示要放廣告, 內建 adsense 為 no
-        # anonymouse 為 yes 表示允許無登入者可以檢視內容, 內建 anonymous 為 no
-        file.write("password:"+hashed_password+"\n \
-            adsense:no\n \
-            anonymous:no\n \
-            user_mail_suffix:\n \
-            site_closed:no\n \
-            read_only:no\n")
-        file.close()
-    # 取出設定值後, 傳回
-    with open(data_dir+filename, encoding="utf-8") as file:
-        config = file.read()
-    config_data = config.split("\n")
-    password = config_data[0].split(":")[1]
-    adsense = config_data[1].split(":")[1]
-    anonymous = config_data[2].split(":")[1]
-    mail_suffix = config_data[3].split(":")[1]
-    site_closed = config_data[4].split(":")[1]
-    read_only = config_data[5].split(":")[1]
-    return password, adsense, anonymous, mail_suffix, site_closed, read_only
-</t>
-<t tx="2015.20140824143250.2080">def allow_pass(self, user="anonymous"):
-    password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    if user == "anonymous" and anonymous != "yes":
-        return "no"
-    else:
-        return "yes"
-</t>
-<t tx="2015.20140825203447.2080">@cherrypy.expose
-def editconfigform(self, *args, **kwargs):
-    user = self.printuser()
-    # 只有系統管理者可以編輯 config 設定檔案
-    if user != "admin":
-        raise cherrypy.HTTPRedirect("login")
-    # 以下設法列出 config 編輯表單
-    # 取出目前的設定值
-    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    mytemplate = template_lookup.get_template("editconfigform.html")
-    return mytemplate.render(user=user, saved_password=saved_password, adsense=adsense, anonymous=anonymous, mail_suffix=mail_suffix, site_closed=site_closed, read_only=read_only)
-</t>
-<t tx="2015.20140825203447.2081">@cherrypy.expose
-def editconfig(self, password=None, password2=None, adsense=None, anonymous=None, \
-                mail_suffix=None, site_closed=None, read_only=None):
-    filename = "pygroup_config"
-    user = self.printuser()
-    # 只有系統管理者可以編輯 config 設定檔案
-    if user != "admin":
-        raise cherrypy.HTTPRedirect("login")
-    if password == None or adsense == None or anonymous == None:
-        return self.error_log("no content to save!")
-    # 取出目前的設定值
-    old_password, old_adsense, old_anonymous, old_mail_suffix, old_site_closed, old_read_only = self.parse_config(filename=filename)
-    if adsense == None or password == None or password2 != old_password or password == '':
-        # 傳回錯誤畫面
-        return "error&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-    else:
-        if password == password2 and password == old_password:
-            hashed_password = old_password
-        else:
-            hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
-        # 將新的設定值寫入檔案
-        file = open(data_dir+filename, "w", encoding="utf-8")
-        #  將新的設定值逐一寫入設定檔案中
-        file.write("password:"+hashed_password+"\n \
-            adsense:"+adsense+"\n \
-            anonymous:"+anonymous+"\n \
-            mail_suffix:"+mail_suffix+"\n \
-            site_closed:"+site_closed+"\n \
-            read_only:"+read_only+"\n")
-        file.close()
-        # 傳回設定檔案已經儲存
-        return "config file saved&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-</t>
-<t tx="2015.20140826084958.2084">@cherrypy.expose
-def editadsenseform(self, *args, **kwargs):
-    user = self.printuser()
-    # 只有系統管理者可以編輯 adsense_content 檔案
-    if user != "admin":
-        raise cherrypy.HTTPRedirect("login")
-    # 以下設法列出 adsense_content 編輯表單
-    # 取出目前的設定值
-    filename="adsense_content"
-    # 取出 adsense_content 後, 傳回
-    with open(data_dir+filename, encoding="utf-8") as file:
-        saved_adsense = file.read()
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    mytemplate = template_lookup.get_template("editadsenseform.html")
-    return mytemplate.render(user=user, saved_adsense=saved_adsense)
-</t>
-<t tx="2015.20140826084958.2086">@cherrypy.expose
-def editadsense(self, adsense_content=None):
-    filename = "adsense_content"
-    user = self.printuser()
-    # 只有系統管理者可以編輯 config 設定檔案
-    if user != "admin":
-        raise cherrypy.HTTPRedirect("login")
-    # 將新的設定值寫入檔案
-    file = open(data_dir+filename, "w", encoding="utf-8")
-    #  將新的設定值逐一寫入設定檔案中
-    file.write(adsense_content+"\n")
-    file.close()
-    # 傳回設定檔案已經儲存
-    return "adsense_content file saved"
-</t>
 <t tx="2015.20140826151106.2090">password:encrypted password
 adsense:no/yes
 anonymous:no/yes
@@ -1407,44 +285,6 @@ anonymous: yse/no
 mail_suffix:
 site_closed: yes/no
 read_only: yes/no</t>
-<t tx="2015.20140829105017.2096">@cherrypy.expose
-# 登入表單, 使用 gmail 帳號與密碼登入
-def login(self, id=0, *args, **kwargs):
-    # 當使用者要求登入時, 將 user session 清除
-    #cherrypy.session["user"] = ""
-    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    mytemplate = template_lookup.get_template("login.html")
-    return mytemplate.render(site_closed=site_closed, read_only=read_only, id=id)</t>
-<t tx="2015.20140830081045.4015">## Remove xml style tags from an input string.
-#
-#  @param string The input string.
-#  @param allowed_tags A string to specify tags which should not be removed.
-def strip_tags(self, string, allowed_tags=''):
-  if allowed_tags != '':
-    # Get a list of all allowed tag names.
-    allowed_tags_list = re.sub(r'[\\/&lt;&gt; ]+', '', allowed_tags).split(',')
-    allowed_pattern = ''
-    for s in allowed_tags_list:
-      if s == '':
-       continue;
-      # Add all possible patterns for this tag to the regex.
-      if allowed_pattern != '':
-        allowed_pattern += '|'
-      allowed_pattern += '&lt;' + s + ' [^&gt;&lt;]*&gt;$|&lt;' + s + '&gt;|&lt;!--' + s + '--&gt;'
-    # Get all tags included in the string.
-    all_tags = re.findall(r'&lt;!--?[^--&gt;&lt;]+&gt;', string, re.I)
-    for tag in all_tags:
-      # If not allowed, replace it.
-      if not re.match(allowed_pattern, tag, re.I):
-        string = string.replace(tag, '')
-  else:
-    # If no allowed tags, remove all.
-    string = re.sub(r'&lt;[^&gt;]*?&gt;', '', string)
- 
-  return string
-</t>
 <t tx="2015.20140901003454.2095">若登入有用戶想要連結的 ip, 則登入後直接轉到該 ip 對應資料</t>
 <t tx="2015.20140902161836.5388">原先考慮要利用 shutil 複製檔案用
 
@@ -1510,54 +350,6 @@ cherrypy.quickstart(root, config = application_conf)
 
 可以利用 oauth2 協定讓使用者登入, 也能夠透過 github3.py 控管協同 Github 倉儲</t>
 <t tx="amd.20151026211514.1"></t>
-<t tx="amd.20151026211800.1">@cherrypy.expose
-def logincheck2(self, id=0, account=None, password=None):
-    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    if account != None and password != None:
-        # 這裡要加入用戶名稱為 admin 的管理者登入模式
-        if account == "admin":
-            # 進入 admin 密碼查驗流程
-            hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
-            if hashed_password == saved_password:
-                cherrypy.session['user'] = "admin"
-                raise cherrypy.HTTPRedirect("/?id="+str(id))
-            else:
-                return "login failed.&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-        else:
-            # 一般帳號查驗
-            if site_closed == "yes":
-                return "抱歉!網站關閉中"
-            elif not mail_suffix in account or mail_suffix != "":
-                return "抱歉!此類帳號不允許登入"
-            else:
-                server = smtplib.SMTP('smtp.gmail.com:587')
-                server.ehlo()
-                server.starttls()
-                try:
-                    server.login(account, password)
-                    server.quit()
-                    if "@" in account:
-                        account = account.replace('@', '_at_')
-                    cherrypy.session["user"] = account
-                    #return account+" login successfully."
-                    #若登入成功, 則離開前跳到根目錄
-                except:
-                    server.quit()
-                    return "login failed.&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-    else:
-        raise cherrypy.HTTPRedirect("login?id="+str(id))
-    raise cherrypy.HTTPRedirect("/?id="+str(id))
-</t>
-<t tx="amd.20151026211831.1">@cherrypy.expose
-# 登入表單, 使用 gmail 帳號與密碼登入
-def login2(self, id=0, *args, **kwargs):
-    # 當使用者要求登入時, 將 user session 清除
-    #cherrypy.session["user"] = ""
-    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    mytemplate = template_lookup.get_template("login.html")
-    return mytemplate.render(site_closed=site_closed, read_only=read_only, id=id)</t>
 <t tx="amd.20160719104503.1">準備將 PyGroup 改為 Flask based 名稱就叫作 PyGrouf</t>
 <t tx="amd.20160719104851.1"></t>
 <t tx="amd.20160719104919.1">開始進行 Flask 網際框架的導入
@@ -1635,8 +427,6 @@ import logging
 import re
 # for sqlite
 import sqlite3
-# 用於 pybean 資料儲存
-from pybean import Store, SQLiteWriter
 # 再 try peewee
 from peewee import SqliteDatabase, Model, CharField, TextField, IntegerField, MySQLDatabase
 # 確定程式檔案所在目錄, 在 Windows 有最後的反斜線
@@ -1646,13 +436,12 @@ if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     # 表示程式在雲端執行
     download_root_dir = os.environ['OPENSHIFT_DATA_DIR']
     data_dir = os.environ['OPENSHIFT_DATA_DIR']
-    template_root_dir = os.environ['OPENSHIFT_REPO_DIR']+"/wsgi/static"
-    # template_root_dir = _curdir + "/static"
+    template_root_dir = os.environ['OPENSHIFT_REPO_DIR']+"/templates"
 else:
     # 表示程式在近端執行
     download_root_dir = _curdir + "/local_data/"
     data_dir = _curdir + "/local_data/"
-    template_root_dir = _curdir + "/static"
+    template_root_dir = _curdir + "/templates"
 # 資料庫選用
 # 內建使用 sqlite3
 ormdb = "sqlite"
@@ -1686,9 +475,6 @@ else:
         # peewee 版本
         db = PostgreSQLDatabase(database='cadp', host='localhost', \
              port=3306, user='root', passwd='root', charset='utf8')
-### from PyGroup end
-# 導入 pygroup.py
-import pygroup
 
 # 確定程式檔案所在目錄, 在 Windows 有最後的反斜線
 _curdir = os.path.join(os.getcwd(), os.path.dirname(__file__))
@@ -1724,9 +510,7 @@ authomatic = Authomatic(CONFIG, 'A0Zr9@8j/3yX R~XHH!jmN]LWX/,?R@T', report_error
 # In order to use sessions you have to set a secret key
 # set the secret key.  keep this really secret:
 app.secret_key = 'A0Zr9@8j/3yX R~XHH!jmN]LWX/,?R@T'
-
-# blueprint 註冊區
-app.register_blueprint(pygroup.pygroup_app)</t>
+</t>
 <t tx="amd.20160719105410.10">@app.route('/fileuploadform')
 def fileuploadform():
     # 先檢查使用者是否處於登入狀態, 若尚未登入則跳轉到登入畫面
@@ -1879,18 +663,6 @@ def logout():
     #return redirect(url_for('menu'))
     return redirect(url_for('login'))
 </t>
-<t tx="amd.20160719105410.2">@app.route("/")
-def index():
-    #這是猜數字遊戲的起始表單, 主要在產生答案, 並且將 count 歸零
-    # 將標準答案存入 answer session 對應區
-    theanswer = random.randint(1, 100)
-    thecount = 0
-    # 將答案與計算次數變數存進 session 對應變數
-    session['answer'] = theanswer
-    session['count'] = thecount
-
-    return render_template("index.html", answer=theanswer, count=thecount)
-</t>
 <t tx="amd.20160719105410.20">@app.route('/menu')
 @app.route('/index')
 @nocache
@@ -1930,58 +702,6 @@ def alogin_check():
             else:
                 return redirect(url_for('login'))
     return redirect(url_for('login'))
-</t>
-<t tx="amd.20160719105410.3">@app.route('/user/&lt;name&gt;')
-def user(name):
-    return render_template("user.html", name=name)
-</t>
-<t tx="amd.20160719105410.4">@app.route('/red')
-def red():
-    # 重新導向 google
-    return redirect("http://www.google.com")
-</t>
-<t tx="amd.20160719105410.5">@app.route('/guessform')
-def guessform():
-    session["count"] += 1
-    guess = session.get("guess")
-    theanswer = session.get("answer")
-    count = session.get("count")
-    return render_template("guessform.html", guess=guess, answer=theanswer, count=count)
-</t>
-<t tx="amd.20160719105410.6">@app.route('/docheck', methods=['POST'])
-def docheck():
-    # session[] 存資料
-    # session.get() 取 session 資料
-    # 利用 request.form[] 取得表單欄位資料, 然後送到 template
-    guess = request.form["guess"]
-    session["guess"] = guess
-    # 假如使用者直接執行 doCheck, 則設法轉回根方法
-    if guess is None:
-        redirect("/")
-    # 從 session 取出 answer 對應資料, 且處理直接執行 docheck 時無法取 session 值情況
-    try:
-        theanswer = int(session.get('answer'))
-    except:
-        redirect("/")
-    # 經由表單所取得的 guess 資料型別為 string
-    try:
-        theguess = int(guess)
-    except:
-        return redirect("/guessform")
-    # 每執行 doCheck 一次,次數增量一次
-    session["count"] += 1
-    count = session.get("count")
-    # 答案與所猜數字進行比對
-    if theanswer &lt; theguess:
-        return render_template("toobig.html", guess=guess, answer=theanswer, count=count)
-    elif theanswer &gt; theguess:
-        return render_template("toosmall.html", guess=guess, answer=theanswer, count=count)
-    else:
-        # 已經猜對, 從 session 取出累計猜測次數
-        thecount = session.get('count')
-        return "猜了 "+str(thecount)+" 次, 終於猜對了, 正確答案為 "+str(theanswer)+": &lt;a href='/'&gt;再猜&lt;/a&gt;"
-    return render_template("docheck.html", guess=guess)
- 
 </t>
 <t tx="amd.20160719105410.7">@app.route('/option', methods=["GET", "POST"])
 def option():
@@ -2157,767 +877,51 @@ def fileaxupload():
     
 </t>
 <t tx="amd.20160719110153.1"></t>
-<t tx="amd.20160719125653.1"># 在此建立資料表欄位
-    
-class Task(Model):
-    # peewee 內定 id 為 PrimaryKey
-    #id = PrimaryKey()
-    follow = IntegerField()
-    owner = CharField()
-    name = CharField()
-    type = CharField()
-    time = CharField()
-    content = TextField()
-    ip = CharField()
+<t tx="amd.20160719131148.1">https://www.digitalocean.com/community/tutorials/how-to-structure-large-flask-applications
 
-    class Meta:
-        database = db # This model uses the data_dir+"task.db" database.
-</t>
-<t tx="amd.20160719125734.1">########################### 3. 建立主物件
-class Pygroup(object):
-    _cp_config = {
-    # if there is no utf-8 encoding, no Chinese input available
-    'tools.encode.encoding': 'utf-8',
-    'tools.sessions.on' : True,
-    'tools.sessions.storage_type' : 'file',
-    #'tools.sessions.locking' : 'explicit',
-    'tools.sessions.locking' : 'early',
-    'tools.sessions.storage_path' : data_dir+'/tmp',
-    # session timeout is 60 minutes
-    'tools.sessions.timeout' : 60,
-    'tools.caching.on' : False
-    }
-    
-    @others
-</t>
-<t tx="amd.20160719125734.10">def client_ip(self):
-    try:
-        return cherrypy.request.headers["X-Forwarded-For"]
-    except:
-        return cherrypy.request.headers["Remote-Addr"]
-</t>
-<t tx="amd.20160719125734.11"># default method, if there is no corresponding method, cherrypy will redirect to default method
-# need *args and **kwargs as input variables for all possible URL links
-@cherrypy.expose
-# default can not live with calc method?
-def default(self, attr='default', *args, **kwargs):
-    raise cherrypy.HTTPRedirect("/")
-</t>
-<t tx="amd.20160719125734.12">@cherrypy.expose
-def save_program(self, filename=None, sheet_content=None):
-    with open(data_dir+"/calc_programs/"+filename, "wt", encoding="utf-8") as out_file:
-        data = sheet_content.replace("\r\n", "\n")
-        out_file.write(data)
-
-    return str(filename)+" saved!&lt;br /&gt;"
-@cherrypy.expose
-</t>
-<t tx="amd.20160719125734.13">@cherrypy.expose
-# 登入表單, 使用 gmail 帳號與密碼登入
-def login(self, id=0, *args, **kwargs):
-    # 當使用者要求登入時, 將 user session 清除
-    #cherrypy.session["user"] = ""
-    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    mytemplate = template_lookup.get_template("login.html")
-    return mytemplate.render(site_closed=site_closed, read_only=read_only, id=id)</t>
-<t tx="amd.20160719125734.14">@cherrypy.expose
-# 登入表單, 使用 gmail 帳號與密碼登入
-def login2(self, id=0, *args, **kwargs):
-    # 當使用者要求登入時, 將 user session 清除
-    #cherrypy.session["user"] = ""
-    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    mytemplate = template_lookup.get_template("login.html")
-    return mytemplate.render(site_closed=site_closed, read_only=read_only, id=id)</t>
-<t tx="amd.20160719125734.15">@cherrypy.expose
-def logincheck(self, id=0, account=None, password=None):
-    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    if account != None and password != None:
-        # 這裡要加入用戶名稱為 admin 的管理者登入模式
-        if account == "admin":
-            # 進入 admin 密碼查驗流程
-            hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
-            if hashed_password == saved_password:
-                cherrypy.session['user'] = "admin"
-                raise cherrypy.HTTPRedirect("/?id="+str(id))
-            else:
-                return "login failed.&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-        else:
-            # 一般帳號查驗
-            if site_closed == "yes":
-                return "抱歉!網站關閉中"
-            elif not mail_suffix in account or mail_suffix != "":
-                return "抱歉!此類帳號不允許登入"
-            else:
-                server = smtplib.SMTP('smtp.gmail.com:587')
-                server.ehlo()
-                server.starttls()
-                try:
-                    server.login(account, password)
-                    server.quit()
-                    if "@" in account:
-                        account = account.replace('@', '_at_')
-                    cherrypy.session["user"] = account
-                    #return account+" login successfully."
-                    #若登入成功, 則離開前跳到根目錄
-                except:
-                    server.quit()
-                    return "login failed.&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
+意思是說, 應該要將 PyGroup 與 CMSimfly 寫成 blueprint 格式套用</t>
+<t tx="amd.20160719215515.1">@app.route("/", methods=['GET'])
+def index(page=1, item_per_page=5, id=0, flat=0, desc=0, keyword=None):
+    if not request.args.get('page'):
+        page = 1
     else:
-        raise cherrypy.HTTPRedirect("login?id="+str(id))
-    raise cherrypy.HTTPRedirect("/?id="+str(id))
-</t>
-<t tx="amd.20160719125734.16">@cherrypy.expose
-def logincheck2(self, id=0, account=None, password=None):
-    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    if account != None and password != None:
-        # 這裡要加入用戶名稱為 admin 的管理者登入模式
-        if account == "admin":
-            # 進入 admin 密碼查驗流程
-            hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
-            if hashed_password == saved_password:
-                cherrypy.session['user'] = "admin"
-                raise cherrypy.HTTPRedirect("/?id="+str(id))
-            else:
-                return "login failed.&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-        else:
-            # 一般帳號查驗
-            if site_closed == "yes":
-                return "抱歉!網站關閉中"
-            elif not mail_suffix in account or mail_suffix != "":
-                return "抱歉!此類帳號不允許登入"
-            else:
-                server = smtplib.SMTP('smtp.gmail.com:587')
-                server.ehlo()
-                server.starttls()
-                try:
-                    server.login(account, password)
-                    server.quit()
-                    if "@" in account:
-                        account = account.replace('@', '_at_')
-                    cherrypy.session["user"] = account
-                    #return account+" login successfully."
-                    #若登入成功, 則離開前跳到根目錄
-                except:
-                    server.quit()
-                    return "login failed.&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
+        page = request.args.get('page')
+    if not request.args.get('item_per_page'):
+        item_per_page = 5
     else:
-        raise cherrypy.HTTPRedirect("login?id="+str(id))
-    raise cherrypy.HTTPRedirect("/?id="+str(id))
-</t>
-<t tx="amd.20160719125734.17">@cherrypy.expose
-def editconfig(self, password=None, password2=None, adsense=None, anonymous=None, \
-                mail_suffix=None, site_closed=None, read_only=None):
-    filename = "pygroup_config"
-    user = self.printuser()
-    # 只有系統管理者可以編輯 config 設定檔案
-    if user != "admin":
-        raise cherrypy.HTTPRedirect("login")
-    if password == None or adsense == None or anonymous == None:
-        return self.error_log("no content to save!")
-    # 取出目前的設定值
-    old_password, old_adsense, old_anonymous, old_mail_suffix, old_site_closed, old_read_only = self.parse_config(filename=filename)
-    if adsense == None or password == None or password2 != old_password or password == '':
-        # 傳回錯誤畫面
-        return "error&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
+        item_per_page = request.args.get('item_per_page')
+    if not request.args.get('id'):
+        id = 0
     else:
-        if password == password2 and password == old_password:
-            hashed_password = old_password
-        else:
-            hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
-        # 將新的設定值寫入檔案
-        file = open(data_dir+filename, "w", encoding="utf-8")
-        #  將新的設定值逐一寫入設定檔案中
-        file.write("password:"+hashed_password+"\n \
-            adsense:"+adsense+"\n \
-            anonymous:"+anonymous+"\n \
-            mail_suffix:"+mail_suffix+"\n \
-            site_closed:"+site_closed+"\n \
-            read_only:"+read_only+"\n")
-        file.close()
-        # 傳回設定檔案已經儲存
-        return "config file saved&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-</t>
-<t tx="amd.20160719125734.18">@cherrypy.expose
-def editconfigform(self, *args, **kwargs):
-    user = self.printuser()
-    # 只有系統管理者可以編輯 config 設定檔案
-    if user != "admin":
-        raise cherrypy.HTTPRedirect("login")
-    # 以下設法列出 config 編輯表單
-    # 取出目前的設定值
-    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    mytemplate = template_lookup.get_template("editconfigform.html")
-    return mytemplate.render(user=user, saved_password=saved_password, adsense=adsense, anonymous=anonymous, mail_suffix=mail_suffix, site_closed=site_closed, read_only=read_only)
-</t>
-<t tx="amd.20160719125734.19">@cherrypy.expose
-def editadsense(self, adsense_content=None):
-    filename = "adsense_content"
-    user = self.printuser()
-    # 只有系統管理者可以編輯 config 設定檔案
-    if user != "admin":
-        raise cherrypy.HTTPRedirect("login")
-    # 將新的設定值寫入檔案
-    file = open(data_dir+filename, "w", encoding="utf-8")
-    #  將新的設定值逐一寫入設定檔案中
-    file.write(adsense_content+"\n")
-    file.close()
-    # 傳回設定檔案已經儲存
-    return "adsense_content file saved"
-</t>
-<t tx="amd.20160719125734.2">def __init__(self):
-    # hope to create downloads and images directories　
-    if not os.path.isdir(download_root_dir+"downloads"):
-        try:
-            os.makedirs(download_root_dir+"downloads")
-        except:
-            print("mkdir error")
-    if not os.path.isdir(download_root_dir+"images"):
-        try:
-            os.makedirs(download_root_dir+"images")
-        except:
-            print("mkdir error")
-    if not os.path.isdir(download_root_dir+"tmp"):
-        try:
-            os.makedirs(download_root_dir+"tmp")
-        except:
-            print("mkdir error")
-    if not os.path.isdir(data_dir+"calc_programs"):
-        try:
-            os.makedirs(data_dir+"calc_programs")
-        except:
-            print("mkdir error")
-    # 若無字典檔案, 則從 local_目錄中複製
-    #if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
-        #if not os.path.isfile(data_dir+"webster_vocabulary.sqlite"):
-            # 尚未完成
-    # 假如沒有 adsense_content 則建立一個空白檔案
-    if not os.path.isfile(data_dir+"adsense_content"):
-        try:
-            file = open(data_dir+"adsense_content", "w", encoding="utf-8")
-            #  寫入內建的 adsense_content 內容
-            adsense_content = '''
-&lt;script type="text/javascript"&gt;&lt;!--
-		google_ad_client = "pub-2140091590744860";
-		google_ad_width = 300;
-		google_ad_height = 250;
-		google_ad_format = "300x250_as";
-		google_ad_type = "image";
-		google_ad_channel ="";
-		google_color_border = "000000";
-		google_color_link = "0000FF";
-		google_color_bg = "FFFFFF";
-		google_color_text = "000000";
-		google_color_url = "008000";
-		google_ui_features = "rc:0";
-		//--&gt;&lt;/script&gt;
-		&lt;script type="text/javascript"
-		src="http://pagead2.googlesyndication.com/pagead/show_ads.js"&gt;
-		&lt;/script&gt;
-
-&lt;script type="text/javascript"&gt;&lt;!--
-		google_ad_client = "pub-2140091590744860";
-		google_ad_width = 300;
-		google_ad_height = 250;
-		google_ad_format = "300x250_as";
-		google_ad_type = "image";
-		google_ad_channel ="";
-		google_color_border = "000000";
-		google_color_link = "0000FF";
-		google_color_bg = "FFFFFF";
-		google_color_text = "000000";
-		google_color_url = "008000";
-		google_ui_features = "rc:0";
-		//--&gt;&lt;/script&gt;
-		&lt;script type="text/javascript"
-		src="http://pagead2.googlesyndication.com/pagead/show_ads.js"&gt;
-		&lt;/script&gt;&lt;br /&gt;
-'''
-            file.write(adsense_content+"\n")
-            file.close()
-        except:
-            print("mkdir error")
-    if ormdb == "sqlite":
-        # 資料庫使用 SQLite
-        # 這裡應該要使用 peewee 建立資料庫與表格
-        try:
-            conn = sqlite3.connect(data_dir+"task.db")
-            cur = conn.cursor()
-            # 建立資料表
-            cur.execute("CREATE TABLE IF NOT EXISTS task( \
-                    id INTEGER PRIMARY KEY AUTOINCREMENT, \
-                    name TEXT, \
-                    owner TEXT, \
-                    type TEXT, \
-                    time TEXT, \
-                    content TEXT, \
-                    ip TEXT, \
-                    follow INTEGER);")
-            cur.close()
-            conn.close()
-        except:
-            print("can not create db and table")
-    elif ormdb == "mysql":
-        # 嘗試建立資料庫與資料表
-        # 這裡應該要使用 peewee 建立資料庫與表格
-        if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
-            host=str(os.environ[str('OPENSHIFT_MYSQL_DB_HOST')])
-            port=int(os.environ[str('OPENSHIFT_MYSQL_DB_PORT')])
-            db='cadp'
-            user=str(os.environ[str('OPENSHIFT_MYSQL_DB_USERNAME')])
-            passwd=str(os.environ[str('OPENSHIFT_MYSQL_DB_PASSWORD')])
-        else:
-            host="yourhost"
-            port=3306
-            db='yourdb'
-            user='youruser'
-            passwd='yourpassword'
-        charset='utf8'
-        # 案例建立時, 就嘗試建立資料庫與資料表
-        try:
-            conn = pymysql.connect(host=host, port=port, user=user, passwd=passwd, charset=charset)
-            # 建立資料庫
-            cur = conn.cursor()
-            cur.execute("CREATE DATABASE IF NOT EXISTS "+db+" CHARACTER SET UTF8;")
-            # 建立資料表
-            cur.execute("USE "+db+";")
-            cur.execute("CREATE TABLE IF NOT EXISTS `task` ( \
-                `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT, \
-                `name` VARCHAR(255) NOT NULL COLLATE 'utf8_unicode_ci', \
-                `owner` VARCHAR(255) NOT NULL COLLATE 'utf8_unicode_ci', \
-                `type` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8_unicode_ci', \
-                `time` DATETIME NOT NULL COLLATE 'utf8_unicode_ci', \
-                `content` LONGTEXT COLLATE 'utf8_unicode_ci', \
-                `ip` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8_unicode_ci', \
-                `follow` BIGINT(20) UNSIGNED NOT NULL DEFAULT '0', \
-                PRIMARY KEY (`id`)) \
-                COLLATE='utf8_general_ci' default charset=utf8 ENGINE=InnoDB;")
-            cur.close()
-            conn.close()
-        except:
-            print("can not create db and table")
+        id = request.args.get('id')
+    if not request.args.get('flat'):
+        flat = 0
     else:
-        # 使用 PostgreSQL
-        # 嘗試建立資料庫與資料表
-        # 這裡應該要使用 peewee 建立資料庫與表格
-        if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
-            host=str(os.environ[str('OPENSHIFT_POSTGRESQL_DB_HOST')])
-            port=int(os.environ[str('OPENSHIFT_POSTGRESQL_DB_PORT')])
-            db='cadp'
-            user=str(os.environ[str('OPENSHIFT_POSTGRESQL_DB_USERNAME')])
-            passwd=str(os.environ[str('OPENSHIFT_POSTGRESQL_DB_PASSWORD')])
-        else:
-            host="localhost"
-            port=3306
-            db='cadp'
-            user='root'
-            passwd='root'
-        charset='utf8'
-        # 案例建立時, 就嘗試建立資料庫與資料表
-        try:
-            conn = pymysql.connect(host=host, port=port, user=user, passwd=passwd, charset=charset)
-            # 建立資料庫
-            cur = conn.cursor()
-            cur.execute("CREATE DATABASE IF NOT EXISTS "+db+";")
-            # 建立資料表
-            cur.execute("USE "+db+";")
-            cur.execute("CREATE TABLE IF NOT EXISTS `task` ( \
-                `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT, \
-                `name` VARCHAR(255) NOT NULL COLLATE 'utf8_unicode_ci', \
-                `owner` VARCHAR(255) NOT NULL COLLATE 'utf8_unicode_ci', \
-                `type` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8_unicode_ci', \
-                `time` DATETIME NOT NULL COLLATE 'utf8_unicode_ci', \
-                `content` LONGTEXT COLLATE 'utf8_unicode_ci', \
-                `ip` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8_unicode_ci', \
-                `follow` BIGINT(20) UNSIGNED NOT NULL DEFAULT '0', \
-                PRIMARY KEY (`id`)) \
-                COLLATE='utf8_general_ci' default charset=utf8 ENGINE=InnoDB;")
-            cur.close()
-            conn.close()
-        except:
-            print("can not create db and table")
-</t>
-<t tx="amd.20160719125734.20">@cherrypy.expose
-def editadsenseform(self, *args, **kwargs):
-    user = self.printuser()
-    # 只有系統管理者可以編輯 adsense_content 檔案
-    if user != "admin":
-        raise cherrypy.HTTPRedirect("login")
-    # 以下設法列出 adsense_content 編輯表單
-    # 取出目前的設定值
-    filename="adsense_content"
-    # 取出 adsense_content 後, 傳回
-    with open(data_dir+filename, encoding="utf-8") as file:
-        saved_adsense = file.read()
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    mytemplate = template_lookup.get_template("editadsenseform.html")
-    return mytemplate.render(user=user, saved_adsense=saved_adsense)
-</t>
-<t tx="amd.20160719125734.21">def parse_config(self, filename):
-    #filename = "pygroup_config"
-    if not os.path.isfile(data_dir+filename):
-        # create config file if there is no config file
-        file = open(data_dir+filename, "w", encoding="utf-8")
-        # 若無設定檔案, 則逐一寫入 default 值
-        # default password is admin
-        password="admin"
-        hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
-        # adsense 為 yes 表示要放廣告, 內建 adsense 為 no
-        # anonymouse 為 yes 表示允許無登入者可以檢視內容, 內建 anonymous 為 no
-        file.write("password:"+hashed_password+"\n \
-            adsense:no\n \
-            anonymous:no\n \
-            user_mail_suffix:\n \
-            site_closed:no\n \
-            read_only:no\n")
-        file.close()
-    # 取出設定值後, 傳回
-    with open(data_dir+filename, encoding="utf-8") as file:
-        config = file.read()
-    config_data = config.split("\n")
-    password = config_data[0].split(":")[1]
-    adsense = config_data[1].split(":")[1]
-    anonymous = config_data[2].split(":")[1]
-    mail_suffix = config_data[3].split(":")[1]
-    site_closed = config_data[4].split(":")[1]
-    read_only = config_data[5].split(":")[1]
-    return password, adsense, anonymous, mail_suffix, site_closed, read_only
-</t>
-<t tx="amd.20160719125734.22">@cherrypy.expose
-def logout(self, *args, **kwargs):
-    cherrypy.session.delete()
-    return "已經登出!&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-    #raise cherrypy.HTTPRedirect("")
-</t>
-<t tx="amd.20160719125734.23">@cherrypy.expose
-def taskeditform(self, id=None, *args, **kwargs):
-    user = self.printuser()
-    password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    if read_only == "yes" and user != "admin":
-        return "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;error, site is read only!"
-    if user == "anonymous" and anonymous != "yes":
-        raise cherrypy.HTTPRedirect("login")
+        flat = request.args.get('flat')
+    if not request.args.get('desc'):
+        desc= 0
     else:
-        try:
-            db.connect()
-            # 用 get() 取單筆資料
-            data = Task.select().where(Task.id==int(id)).get()
-            output = "user:"+user+", owner:"+data.owner+"&lt;br /&gt;&lt;br /&gt;"
-            if user != data.owner:
-                if user != "admin":
-                    db.close()
-                    return output + "error! Not authorized!"
-                else:
-                    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-                    mytemplate = template_lookup.get_template("taskeditform.html")
-                    db.close()
-                    return mytemplate.render(user=user, id=id, data=data)
-            else:
-                template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-                mytemplate = template_lookup.get_template("taskeditform.html")
-                db.close()
-                return mytemplate.render(user=user, id=id, data=data)
-        except:
-            db.close()
-            return "error! Not authorized!"
-</t>
-<t tx="amd.20160719125734.24">@cherrypy.expose
-def taskedit(self, id=None, type=None, name=None, content=None, *args, **kwargs):
-    # check user and data owner
-    if id == None:
-        return "error&lt;br /&gt;&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-    user = self.printuser()
-    password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    if read_only == "yes" and user != "admin":
-        return "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;error, site is read only!"
-    if user == "anonymous" and anonymous != "yes":
-        raise cherrypy.HTTPRedirect("login")
-    try:
-        db.connect()
-    except:
-        time.sleep(0.300)
-        db.connect()
-    data = Task.select().where(Task.id==int(id)).get()
-    now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
-    # 過濾資料
-    content = content.replace('\n', '')
-    valid_tags = ['a', 'br', 'h1', 'h2', 'h3', 'p', 'div', 'hr', 'img', 'iframe', 'li', 'ul', 'b', 'ol', 'pre']
-    tags = ''
-    for tag in valid_tags:
-        tags += tag
-    content = self.strip_tags(content, tags)
-    # 這裡要除掉 &lt;/br&gt; 關閉 break 的標註, 否則在部分瀏覽器會產生額外的跳行
-    content = str(content).replace('&lt;/br&gt;', '')
-    output = "user:"+user+", owner:"+data.owner+"&lt;br /&gt;&lt;br /&gt;"
-    if user != data.owner:
-        if  user != "admin":
-            db.close()
-            return "error! Not authorized!"
-        else:
-            # 請注意這裡曾經犯了 where(id==int(id) 的重大錯誤, 讓所有資料在 update 時只留下一筆資料
-            query = Task.update(type=type, name=name, content=str(content), time=str(now)).where(Task.id==int(id))
-            query.execute()
-            output += "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-            output +="&lt;a href='/taskeditform?id="+str(id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
-            output += '''以下資料已經更新:&lt;br /&gt;&lt;br /&gt;
-            owner:'''+data.owner+'''&lt;br /&gt;
-            name:'''+name+'''&lt;br /&gt;
-            type:'''+type+'''&lt;br /&gt;
-            time:'''+str(now)+'''&lt;br /&gt;
-            content:'''+str(content)+'''&lt;br /&gt;&lt;br /&gt;
-            &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
-'''
-            output +="&lt;a href='/taskeditform?id="+str(id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;"
+        desc= request.args.get('desc')
+    if not request.args.get('keyword'):
+        keyword = None
     else:
-        query = Task.update(type=type, name=name, content=str(content), time=str(now)).where(Task.id==int(id))
-        query.execute()
-        output += "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-        output +="&lt;a href='/taskeditform?id="+str(id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
-        output += '''以下資料已經更新:&lt;br /&gt;&lt;br /&gt;
-        owner:'''+data.owner+'''&lt;br /&gt;
-        name:'''+name+'''&lt;br /&gt;
-        type:'''+type+'''&lt;br /&gt;
-        time:'''+str(now)+'''&lt;br /&gt;
-        content:'''+str(content)+'''&lt;br /&gt;&lt;br /&gt;
-        &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
-'''
-        output +="&lt;a href='/taskeditform?id="+str(id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;"
-    db.close()
-    return output
-</t>
-<t tx="amd.20160719125734.25">@cherrypy.expose
-def taskdeleteform(self, id=None, *args, **kwargs):
-    user = self.printuser()
-    password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    if read_only == "yes" and user != "admin":
-        return "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;error, site is read only!"
-    if user == "anonymous" and anonymous != "yes":
-        raise cherrypy.HTTPRedirect("login")
-    else:
-        try:
-            # 這裡要區分刪除子緒或主緒資料
-            # 若刪除子緒, 則 data 只包含子緒資料, 若為主緒, 則 data 必須包含所有資料
-            # 先找出資料, 判定是否為主緒
-            # 用 get() 取單筆資料
-            db.connect()
-            data= Task.select().where(Task.id==int(id)).get()
-            owner = data.owner
-            if user != data.owner:
-                if user != "admin":
-                    db.close()
-                    return output + "error! 非資料擁有者, Not authorized!"
-                else:
-                    if data.follow == 0:
-                        # 表示該資料為主緒資料
-                        # 資料要重新搜尋, 納入子資料
-                        data = Task.select().where((Task.id == id) | (Task.follow == id))
-                        output = "資料為主緒資料&lt;br /&gt;"
-                        # 增加一個資料類型判斷, main 表資料為主緒
-                        type = "main"
-                    else:
-                        # 表示該資料為子緒資料
-                        # 直接採用 data 資料送到 taskdeleteform.html
-                        output = "資料為子緒資料&lt;br /&gt;"
-                        # 增加一個資料類型判斷, alone 表資料為子緒
-                        type = "alone"
-                    output += "user:"+user+", owner:"+owner+"&lt;br /&gt;&lt;br /&gt;"
-                    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-                    mytemplate = template_lookup.get_template("taskdeleteform.html")
-                    # 這裡的 type 為所要刪除資料的類型, 為 main 或為 alone
-                    db.close()
-                    return mytemplate.render(user=user, id=id, data=data, type=type)
-            else:
-                if data.follow == 0:
-                    # 表示該資料為主緒資料
-                    # 資料要重新搜尋, 納入子資料
-                    data = Task.select().where((Task.id == id) | (Task.follow == id))
-                    output = "資料為主緒資料&lt;br /&gt;"
-                    # 增加一個資料類型判斷, main 表資料為主緒
-                    type = "main"
-                else:
-                    # 表示該資料為子緒資料
-                    # 直接採用 data 資料送到 taskdeleteform.html
-                    output = "資料為子緒資料&lt;br /&gt;"
-                    # 增加一個資料類型判斷, alone 表資料為子緒
-                    type = "alone"
-                output += "user:"+user+", owner:"+owner+"&lt;br /&gt;&lt;br /&gt;"
-                template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-                mytemplate = template_lookup.get_template("taskdeleteform.html")
-                # 這裡的 type 為所要刪除資料的類型, 為 main 或為 alone
-                db.close()
-                return mytemplate.render(user=user, id=id, data=data, type=type)
-        except:
-            db.close()
-            return "error! 無法正確查詢資料, Not authorized!"
-</t>
-<t tx="amd.20160719125734.26">@cherrypy.expose
-def taskdelete(self, id=None, type=None, name=None, content=None, *args, **kwargs):
-    # check user and data owner
-    user = self.printuser()
-    password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
-    if read_only == "yes" and user != "admin":
-        return "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;error, site is read only!"
-    if user == "anonymous" and anonymous != "yes":
-        raise cherrypy.HTTPRedirect("login")
-    # 用 get() 取單筆資料
-    db.connect()
-    data = Task.select().where(Task.id==int(id)).get()
-    now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
-    output = "user:"+user+", owner:"+data.owner+"&lt;br /&gt;&lt;br /&gt;"
-    if user != data.owner:
-        if user != "admin":
-            db.close()
-            return "error! Not authorized!"
-        else:
-            # 若資料為主緒則一併刪除子緒, 若為子緒, 則只刪除該子緒
-            if data.follow == 0:
-                # 表示資料為主緒
-                # 先刪除主緒
-                query = Task.at(int(id)).delete()
-                query.execute()
-                # 再刪除所有對應子緒
-                query = Task.delete().where(follow=int(id))
-                query.execute()
-                output += "所有序列資料已經刪除!&lt;br /&gt;"
-            else:
-                # 表示資料為子緒
-                query = Task.delete().where(Task.id==int(id))
-                query.execute()
-                output += "資料已經刪除!&lt;br /&gt;"
-    else:
-        # 若資料為主緒則一併刪除子緒, 若為子緒, 則只刪除該子緒
-        if data.follow == 0:
-            # 表示資料為主緒
-            # 先刪除主緒
-            query = Task.delete().where(Task.id==int(id))
-            query.execute()
-            # 再刪除所有對應子緒
-            query = Task.delete().where(Task.follow==int(id))
-            query.execute()
-            output += '''所有序列資料已經刪除!&lt;br /&gt;&lt;br /&gt;
-            &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
-'''
-        else:
-            # 表示資料為子緒
-            query = Task.delete().where(Task.id==int(id))
-            query.execute()
-            output += '''資料已經刪除!&lt;br /&gt;&lt;br /&gt;
-            &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
-'''
-    db.close()
-    return output
-</t>
-<t tx="amd.20160719125734.27"># 不允許使用者直接呼叫 tasksearchform
-def tasksearchform(self, *args, **kwargs):
-    user = self.printuser()
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    # 必須要從 templates 目錄取出 tasksearchform.html
-    mytemplate = template_lookup.get_template("tasksearchform.html")
-    return mytemplate.render(user=user)
-</t>
-<t tx="amd.20160719125734.3">@cherrypy.expose
-def usermenu(self):
-    # 這裡包括列出用戶以及列印表單
-    user = self.printuser()
-    menu = ["login", "logout", "usermenu", "cmsimply", \
-                 "tasklist"]
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    # 必須要從 templates 目錄取出 usermenu.html
-    mytemplate = template_lookup.get_template("usermenu.html")
-    return mytemplate.render(user=user, menu=menu)
-</t>
-<t tx="amd.20160719125734.4">def printuser(self):
-    # 取得 user 資料
-    try:
-        user = cherrypy.session["user"]
-    except:
-        user = "anonymous"
-    if user == "":
-        user = "anonymous"
-    return user
-</t>
-<t tx="amd.20160719125734.5"># 不允許使用者直接呼叫 taskform
-def taskform(self, id=0, *args, **kwargs):
-    user = self.printuser()
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    # 必須要從 templates 目錄取出 tasklist.html
-    # 針對 id != 0 時, 表示要回應主資料緒, 希望取出與 id 對應的資料標頭, 然後加上 Re:
-    mytemplate = template_lookup.get_template("taskform.html")
-    return mytemplate.render(user=user, id=id)
-</t>
-<t tx="amd.20160719125734.6">@cherrypy.expose
-def taskaction(self, type=None, name=None, follow=0, content=None, ip=None, *args, **kwargs):
-    if content == None or name == "":
-        return "標題與內容都不可空白!&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-    else:
-        start_time = time.time()
-        owner = self.printuser()
-        if self.allow_pass(owner) == "no":
-            raise cherrypy.HTTPRedirect("login")
-        ip = self.client_ip()
-        now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
-        '''
-        # 因為登入後就將 @ 代換為 _at_, 所以此地不用再換
-        # user 若帶有 @ 則用 at 代替
-        if "@" in owner:
-            owner = owner.replace('@', '_at_')
-        '''
-        content = content.replace('\n', '')
-        valid_tags = ['a', 'br', 'h1', 'h2', 'h3', 'p', 'div', 'hr', 'img', 'iframe', 'li', 'ul', 'b', 'ol', 'pre']
-        tags = ''
-        for tag in valid_tags:
-            tags += tag
-        content = self.strip_tags(content, tags)
-        # 這裡要除掉 &lt;/br&gt; 關閉 break 的標註, 否則在部分瀏覽器會產生額外的跳行
-        content = str(content).replace('&lt;/br&gt;', '')
-        time_elapsed = round(time.time() - start_time, 5)
-        # last insert id 為 data.id
-        db.connect()
-        # peewee 版本
-        data = Task.create(owner=owner, name=str(name), type=type, time=str(now), follow=follow, content=content, ip=str(ip))
-        data.save()
-        # 這裡要與 taskedit 相同, 提供回到首頁或繼續編輯按鈕
-        output = "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
-        output +="&lt;a href='/taskeditform?id="+str(data.id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
-        output += '''以下資料已經更新:&lt;br /&gt;&lt;br /&gt;
-        owner:'''+owner+'''&lt;br /&gt;
-        name:'''+name+'''&lt;br /&gt;
-        type:'''+type+'''&lt;br /&gt;
-        time:'''+str(now)+'''&lt;br /&gt;
-        content:'''+str(content)+'''&lt;br /&gt;&lt;br /&gt;
-        &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
-    '''
-        output +="&lt;a href='/taskeditform?id="+str(data.id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
-        db.close()
-        return output
-    # 原先直接轉到 tasklist 方法 (index)
-    #raise cherrypy.HTTPRedirect("tasklist")
-</t>
-<t tx="amd.20160719125734.7">@cherrypy.expose
-# 從 tasklist 改為 index
-def index(self, page=1, item_per_page=5, id=0, flat=0, desc=0, keyword=None, *args, **kwargs):
-    user = self.printuser()
-    # 這裡不用 self.allow_pass 原因在於需要 adsense 變數
-    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
+        keyword = request.args.get('keyword')
+    user = printuser()
+    # 這裡不用 allow_pass 原因在於需要 adsense 變數
+    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
     if user == "anonymous" and anonymous != "yes":
         if id != 0:
-            raise cherrypy.HTTPRedirect("login?id="+id)
+            return redirect("/login?id="+id)
         else:
-            raise cherrypy.HTTPRedirect("login")
+            return redirect("/login")
     if adsense == "yes":
         filename = data_dir+"adsense_content"
         with open(filename, encoding="utf-8") as file:
             adsense_content = file.read()
     else:
         adsense_content = ""
-    #ip = cherrypy.request.remote.ip
-    ip = self.client_ip()
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
-    # 必須要從 templates 目錄取出 tasklist2.html
+    template_lookup = TemplateLookup(directories=[template_root_dir])
+    # 必須要從 templates 目錄取出 tasklist.html
     mytemplate = template_lookup.get_template("tasklist.html")
     # 這裡要加入單獨根據 id 號, 列出某一特定資料緒的分支
     # 若 id 為 0 表示非指定列出各別主緒資料, 而是列出全部資料
@@ -2971,23 +975,152 @@ def index(self, page=1, item_per_page=5, id=0, flat=0, desc=0, keyword=None, *ar
     # 增加傳送 read_only, 若 read_only = yes 則不列出 taskform, 而且所有新增編輯刪除功能均失效
     #
     return mytemplate.render(user=user, id=id, flat=flat, method=method, data=data,  \
-        page=page, item_per_page=item_per_page, ip=ip, follow=follow, keyword=keyword, \
+        page=page, item_per_page=item_per_page, follow=follow, keyword=keyword, \
         adsense_content=adsense_content, adsense=adsense, anonymous=anonymous, \
         site_closed=site_closed, read_only=read_only)
     # 其餘分頁 logic 在 mako template tasklist.html 中完成
 </t>
-<t tx="amd.20160719125734.8">def allow_pass(self, user="anonymous"):
-    password, adsense, anonymous, mail_suffix, site_closed, read_only = self.parse_config(filename="pygroup_config")
+<t tx="amd.20160719215604.1">def printuser():
+    session["user"] = "anonymous"
+    if not session.get("user"):
+        user = "anonymous"
+    else:
+        user = session.get("user")
+    return user
+</t>
+<t tx="amd.20160719220333.1">def parse_config(filename):
+    #filename = "pygroup_config"
+    if not os.path.isfile(data_dir+filename):
+        # create config file if there is no config file
+        file = open(data_dir+filename, "w", encoding="utf-8")
+        # 若無設定檔案, 則逐一寫入 default 值
+        # default password is admin
+        password="admin"
+        hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
+        # adsense 為 yes 表示要放廣告, 內建 adsense 為 no
+        # anonymouse 為 yes 表示允許無登入者可以檢視內容, 內建 anonymous 為 no
+        file.write("password:"+hashed_password+"\n \
+            adsense:no\n \
+            anonymous:no\n \
+            user_mail_suffix:\n \
+            site_closed:no\n \
+            read_only:no\n")
+        file.close()
+    # 取出設定值後, 傳回
+    with open(data_dir+filename, encoding="utf-8") as file:
+        config = file.read()
+    config_data = config.split("\n")
+    password = config_data[0].split(":")[1]
+    adsense = config_data[1].split(":")[1]
+    anonymous = config_data[2].split(":")[1]
+    mail_suffix = config_data[3].split(":")[1]
+    site_closed = config_data[4].split(":")[1]
+    read_only = config_data[5].split(":")[1]
+    return password, adsense, anonymous, mail_suffix, site_closed, read_only
+</t>
+<t tx="amd.20160719220510.1"></t>
+<t tx="amd.20160719220537.1"></t>
+<t tx="amd.20160719222018.1"># 在此建立資料表欄位
+    
+class Task(Model):
+    # peewee 內定 id 為 PrimaryKey
+    #id = PrimaryKey()
+    follow = IntegerField()
+    owner = CharField()
+    name = CharField()
+    type = CharField()
+    time = CharField()
+    content = TextField()
+    ip = CharField()
+
+    class Meta:
+        database = db # This model uses the data_dir+"task.db" database.
+</t>
+<t tx="amd.20160719222956.1"></t>
+<t tx="amd.20160720000420.1">@app.route("/usermenu")
+def usermenu():
+    # 這裡包括列出用戶以及列印表單
+    user = printuser()
+    menu = ["login", "logout", "usermenu", "cmsimply", \
+                 "tasklist"]
+    template_lookup = TemplateLookup(directories=[template_root_dir])
+    # 必須要從 templates 目錄取出 usermenu.html
+    mytemplate = template_lookup.get_template("usermenu.html")
+    return mytemplate.render(user=user, menu=menu)
+</t>
+<t tx="amd.20160720000517.1"># 不允許使用者直接呼叫 taskform
+def taskform(id=0):
+    user = printuser()
+    template_lookup = TemplateLookup(directories=[template_root_dir])
+    # 必須要從 templates 目錄取出 tasklist.html
+    # 針對 id != 0 時, 表示要回應主資料緒, 希望取出與 id 對應的資料標頭, 然後加上 Re:
+    mytemplate = template_lookup.get_template("taskform.html")
+    return mytemplate.render(user=user, id=id)
+</t>
+<t tx="amd.20160720000552.1">@app.route("/taskaction", methods=["POST"])
+def taskaction():
+    content = request.form["content"]
+    type = request.form["type"]
+    name = request.form["name"]
+    follow = request.form["follow"]
+    if content == None or name == "":
+        return "標題與內容都不可空白!&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
+    else:
+        start_time = time.time()
+        owner = printuser()
+        if allow_pass(owner) == "no":
+            return redirect("/login")
+        now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
+        '''
+        # 因為登入後就將 @ 代換為 _at_, 所以此地不用再換
+        # user 若帶有 @ 則用 at 代替
+        if "@" in owner:
+            owner = owner.replace('@', '_at_')
+        '''
+        content = content.replace('\n', '')
+        valid_tags = ['a', 'br', 'h1', 'h2', 'h3', 'p', 'div', 'hr', 'img', 'iframe', 'li', 'ul', 'b', 'ol', 'pre']
+        tags = ''
+        for tag in valid_tags:
+            tags += tag
+        content = strip_tags(content, tags)
+        # 這裡要除掉 &lt;/br&gt; 關閉 break 的標註, 否則在部分瀏覽器會產生額外的跳行
+        content = str(content).replace('&lt;/br&gt;', '')
+        time_elapsed = round(time.time() - start_time, 5)
+        # last insert id 為 data.id
+        db.connect()
+        # peewee 版本
+        ip = ""
+        data = Task.create(owner=owner, name=str(name), type=type, time=str(now), follow=follow, content=content, ip=str(ip))
+        data.save()
+        # 這裡要與 taskedit 相同, 提供回到首頁或繼續編輯按鈕
+        output = "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
+        output +="&lt;a href='/taskeditform?id="+str(data.id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
+        output += '''以下資料已經更新:&lt;br /&gt;&lt;br /&gt;
+        owner:'''+owner+'''&lt;br /&gt;
+        name:'''+name+'''&lt;br /&gt;
+        type:'''+type+'''&lt;br /&gt;
+        time:'''+str(now)+'''&lt;br /&gt;
+        content:'''+str(content)+'''&lt;br /&gt;&lt;br /&gt;
+        &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
+    '''
+        output +="&lt;a href='/taskeditform?id="+str(data.id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
+        db.close()
+        return output
+    # 原先直接轉到 tasklist 方法 (index)
+    #raise cherrypy.HTTPRedirect("tasklist")
+</t>
+<t tx="amd.20160720000752.1">def allow_pass(user="anonymous"):
+    password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
     if user == "anonymous" and anonymous != "yes":
         return "no"
     else:
         return "yes"
 </t>
-<t tx="amd.20160719125734.9">## Remove xml style tags from an input string.
+<t tx="amd.20160720000817.1">## Remove xml style tags from an input string.
 #
 #  @param string The input string.
 #  @param allowed_tags A string to specify tags which should not be removed.
-def strip_tags(self, string, allowed_tags=''):
+def strip_tags(string, allowed_tags=''):
   if allowed_tags != '':
     # Get a list of all allowed tag names.
     allowed_tags_list = re.sub(r'[\\/&lt;&gt; ]+', '', allowed_tags).split(',')
@@ -3011,354 +1144,309 @@ def strip_tags(self, string, allowed_tags=''):
  
   return string
 </t>
-<t tx="amd.20160719130552.1">@app.route("/index2")
-def index2(self):
-    return "this is index2"</t>
-<t tx="amd.20160719131148.1">https://www.digitalocean.com/community/tutorials/how-to-structure-large-flask-applications
-
-意思是說, 應該要將 PyGroup 與 CMSimfly 寫成 blueprint 格式套用</t>
-<t tx="amd.20160719132540.1">@language python
-@tabwidth -4
-&lt;&lt;declarations&gt;&gt;
-@others
+<t tx="amd.20160720000912.1">@app.route("/editconfig")
+def editconfig(password=None, password2=None, adsense=None, anonymous=None, \
+                mail_suffix=None, site_closed=None, read_only=None):
+    filename = "pygroup_config"
+    user = printuser()
+    # 只有系統管理者可以編輯 config 設定檔案
+    if user != "admin":
+        return redirect("/login")
+    if password == None or adsense == None or anonymous == None:
+        return error_log("no content to save!")
+    # 取出目前的設定值
+    old_password, old_adsense, old_anonymous, old_mail_suffix, old_site_closed, old_read_only = parse_config(filename=filename)
+    if adsense == None or password == None or password2 != old_password or password == '':
+        # 傳回錯誤畫面
+        return "error&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
+    else:
+        if password == password2 and password == old_password:
+            hashed_password = old_password
+        else:
+            hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
+        # 將新的設定值寫入檔案
+        file = open(data_dir+filename, "w", encoding="utf-8")
+        #  將新的設定值逐一寫入設定檔案中
+        file.write("password:"+hashed_password+"\n \
+            adsense:"+adsense+"\n \
+            anonymous:"+anonymous+"\n \
+            mail_suffix:"+mail_suffix+"\n \
+            site_closed:"+site_closed+"\n \
+            read_only:"+read_only+"\n")
+        file.close()
+        # 傳回設定檔案已經儲存
+        return "config file saved&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
 </t>
-<t tx="amd.20160719132540.2">from flask import Blueprint, render_template, current_app, \
-    send_from_directory, session, redirect, url_for
-import os
-
-# 這裡設定的 template_folder 為 template 搜尋目錄, 表示位於 user/g1/templates 目錄中
-# 但是若 wcmw14/templates 目錄中有相同名稱的 template file, 則優先取外部的檔案
-# 這樣的設計希望可以在統整各藍圖時, 可以隨時根據需要改寫 template 配置
-pygroup_app = Blueprint('pygroup', __name__, url_prefix='/pg', template_folder='templates')
-
-
-
-
+<t tx="amd.20160720001027.1">@app.route("/editconfigform")
+def editconfigform():
+    user = printuser()
+    # 只有系統管理者可以編輯 config 設定檔案
+    if user != "admin":
+        return redirect("/login")
+    # 以下設法列出 config 編輯表單
+    # 取出目前的設定值
+    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
+    template_lookup = TemplateLookup(directories=[template_root_dir])
+    mytemplate = template_lookup.get_template("editconfigform.html")
+    return mytemplate.render(user=user, saved_password=saved_password, adsense=adsense, anonymous=anonymous, mail_suffix=mail_suffix, site_closed=site_closed, read_only=read_only)
 </t>
-<t tx="amd.20160719132540.3">@pygroup_app.route('/')
-def helloworld():
-    user = "Yen"
-    # 若 template 檔案名稱與位於外部 templates 目錄中的檔案同名, 則取外部的 template
-    return render_template('g1index.html', user=user)</t>
-<t tx="amd.20160719132540.4">@pygroup_app.route('/threegear', defaults={'n1':15,'n2':20,'n3':18})
-@pygroup_app.route('/threegear/&lt;n1&gt;/&lt;n2&gt;/&lt;n3&gt;')
-def threegear(n1, n2, n3):
-    # 真正最後的架構應該要在函式中準備繪圖所需的資料, 然後用 template 呈現內容
-    title = "網際 2D 繪圖"
-    head = '''
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;'''+ title +'''&lt;/title&gt;
-    &lt;!-- IE 9: display inline SVG --&gt;
-    &lt;meta http-equiv="X-UA-Compatible" content="IE=9"&gt;
+<t tx="amd.20160720001124.1">@app.route("/editadsense")
+def editadsense(adsense_content=None):
+    filename = "adsense_content"
+    user = printuser()
+    # 只有系統管理者可以編輯 config 設定檔案
+    if user != "admin":
+        return redirect("/login")
+    # 將新的設定值寫入檔案
+    file = open(data_dir+filename, "w", encoding="utf-8")
+    #  將新的設定值逐一寫入設定檔案中
+    file.write(adsense_content+"\n")
+    file.close()
+    # 傳回設定檔案已經儲存
+    return "adsense_content file saved"
+</t>
+<t tx="amd.20160720001211.1">@app.route("/editadsenseform")
+def editadsenseform():
+    user = printuser()
+    # 只有系統管理者可以編輯 adsense_content 檔案
+    if user != "admin":
+        return redirect("/login")
+    # 以下設法列出 adsense_content 編輯表單
+    # 取出目前的設定值
+    filename="adsense_content"
+    # 取出 adsense_content 後, 傳回
+    with open(data_dir+filename, encoding="utf-8") as file:
+        saved_adsense = file.read()
+    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
+    mytemplate = template_lookup.get_template("editadsenseform.html")
+    return mytemplate.render(user=user, saved_adsense=saved_adsense)
+</t>
+<t tx="amd.20160720001311.1">@app.route("/taskeditform")
+def taskeditform(id=None):
+    user = printuser()
+    password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
+    if read_only == "yes" and user != "admin":
+        return "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;error, site is read only!"
+    if user == "anonymous" and anonymous != "yes":
+        return redirect("/login")
+    else:
+        try:
+            db.connect()
+            # 用 get() 取單筆資料
+            data = Task.select().where(Task.id==int(id)).get()
+            output = "user:"+user+", owner:"+data.owner+"&lt;br /&gt;&lt;br /&gt;"
+            if user != data.owner:
+                if user != "admin":
+                    db.close()
+                    return output + "error! Not authorized!"
+                else:
+                    template_lookup = TemplateLookup(directories=[template_root_dir])
+                    mytemplate = template_lookup.get_template("taskeditform.html")
+                    db.close()
+                    return mytemplate.render(user=user, id=id, data=data)
+            else:
+                template_lookup = TemplateLookup(directories=[template_root_dir])
+                mytemplate = template_lookup.get_template("taskeditform.html")
+                db.close()
+                return mytemplate.render(user=user, id=id, data=data)
+        except:
+            db.close()
+            return "error! Not authorized!"
+</t>
+<t tx="amd.20160720001423.1">@app.route("/taskedit")
+def taskedit(id=None, type=None, name=None, content=None):
+    # check user and data owner
+    if id == None:
+        return "error&lt;br /&gt;&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
+    user = printuser()
+    password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
+    if read_only == "yes" and user != "admin":
+        return "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;error, site is read only!"
+    if user == "anonymous" and anonymous != "yes":
+        return redirect("/login")
+    try:
+        db.connect()
+    except:
+        time.sleep(0.300)
+        db.connect()
+    data = Task.select().where(Task.id==int(id)).get()
+    now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
+    # 過濾資料
+    content = content.replace('\n', '')
+    valid_tags = ['a', 'br', 'h1', 'h2', 'h3', 'p', 'div', 'hr', 'img', 'iframe', 'li', 'ul', 'b', 'ol', 'pre']
+    tags = ''
+    for tag in valid_tags:
+        tags += tag
+    content = strip_tags(content, tags)
+    # 這裡要除掉 &lt;/br&gt; 關閉 break 的標註, 否則在部分瀏覽器會產生額外的跳行
+    content = str(content).replace('&lt;/br&gt;', '')
+    output = "user:"+user+", owner:"+data.owner+"&lt;br /&gt;&lt;br /&gt;"
+    if user != data.owner:
+        if  user != "admin":
+            db.close()
+            return "error! Not authorized!"
+        else:
+            # 請注意這裡曾經犯了 where(id==int(id) 的重大錯誤, 讓所有資料在 update 時只留下一筆資料
+            query = Task.update(type=type, name=name, content=str(content), time=str(now)).where(Task.id==int(id))
+            query.execute()
+            output += "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
+            output +="&lt;a href='/taskeditform?id="+str(id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
+            output += '''以下資料已經更新:&lt;br /&gt;&lt;br /&gt;
+            owner:'''+data.owner+'''&lt;br /&gt;
+            name:'''+name+'''&lt;br /&gt;
+            type:'''+type+'''&lt;br /&gt;
+            time:'''+str(now)+'''&lt;br /&gt;
+            content:'''+str(content)+'''&lt;br /&gt;&lt;br /&gt;
+            &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
 '''
-    script = '''
-&lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="http://2015fallhw.github.io/cptocadp/static/Cango-8v03.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="http://2015fallhw.github.io/cptocadp/static/Cango2D-7v01-min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="http://2015fallhw.github.io/cptocadp/static/gearUtils-05.js"&gt;&lt;/script&gt;
- 
-&lt;script&gt;
-window.onload=function(){
-brython(1);
-}
-&lt;/script&gt;
+            output +="&lt;a href='/taskeditform?id="+str(id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;"
+    else:
+        query = Task.update(type=type, name=name, content=str(content), time=str(now)).where(Task.id==int(id))
+        query.execute()
+        output += "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
+        output +="&lt;a href='/taskeditform?id="+str(id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
+        output += '''以下資料已經更新:&lt;br /&gt;&lt;br /&gt;
+        owner:'''+data.owner+'''&lt;br /&gt;
+        name:'''+name+'''&lt;br /&gt;
+        type:'''+type+'''&lt;br /&gt;
+        time:'''+str(now)+'''&lt;br /&gt;
+        content:'''+str(content)+'''&lt;br /&gt;&lt;br /&gt;
+        &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
 '''
-    headstring = head + script + "&lt;/head&gt;"
-    # 能否根據 n1, n2, n3 與 width, 算出合理的 height
-    # 模數計算 m = canvas.width*0.8/(n1+n2+n3)
-    # max([int(n1), int(n2), int(n3)])
-    # 所以 height = 1.2*800*0.8/(int(n1)+int(n2)+int(n3))*max([int(n1), int(n2), int(n3)])
-    height = 1.2*800*0.8/(int(n1)+int(n2)+int(n3))*max([int(n1), int(n2), int(n3)])
-    body = '''
-    
-延伸應用:&lt;br /&gt;
-
-軸孔加入 keyway &lt;br /&gt;
-與 3D 零件設計繪圖對應 &lt;br/&gt;
-與 2D/3D 軸的設計與繪圖對應&lt;br /&gt;&lt;br /&gt;
-&lt;canvas id='gear1' width='800' height="'''+str(int(height))+'''"&gt;&lt;/canvas&gt;
- 
-&lt;script type="text/python"&gt;
-# 將 導入的 document 設為 doc 主要原因在於與舊程式碼相容
-from browser import document as doc
-# 由於 Python3 與 Javascript 程式碼已經不再混用, 因此來自 Javascript 的變數, 必須居中透過 window 物件轉換
-from browser import window
-# 針對 Javascript 既有的物件, 則必須透過 JSConstructor 轉換
-from javascript import JSConstructor
-import math
- 
-# 主要用來取得畫布大小
-canvas = doc["gear1"]
-# 此程式採用 Cango Javascript 程式庫繪圖, 因此無需 ctx
-#ctx = canvas.getContext("2d")
-# 針對類別的轉換, 將 Cango.js 中的 Cango 物件轉為 Python cango 物件
-cango = JSConstructor(window.Cango)
-# 針對變數的轉換, shapeDefs 在 Cango 中資料型別為變數, 可以透過 window 轉換
-shapedefs = window.shapeDefs
-# 目前 Cango 結合 Animation 在 Brython 尚無法運作, 此刻只能繪製靜態圖形
-# in CangoAnimation.js
-#interpolate1 = window.interpolate
-# Cobi 與 createGearTooth 都是 Cango Javascript 程式庫中的物件
-cobj = JSConstructor(window.Cobj)
-creategeartooth = JSConstructor(window.createGearTooth)
- 
-# 經由 Cango 轉換成 Brython 的 cango, 指定將圖畫在 id="plotarea" 的 canvas 上
-cgo = cango("gear1")
- 
-######################################
-# 畫正齒輪輪廓
-#####################################
-def spur(cx, cy, m, n, pa, theta):
-    # n 為齒數
-    #n = 17
-    # pa 為壓力角
-    #pa = 25
-    # m 為模數, 根據畫布的寬度, 計算適合的模數大小
-    # Module = mm of pitch diameter per tooth
-    #m = 0.8*canvas.width/n
-    # pr 為節圓半徑
-    pr = n*m/2 # gear Pitch radius
-    # generate gear
-    data = creategeartooth(m, n, pa)
-    # Brython 程式中的 print 會將資料印在 Browser 的 console 區
-    #print(data)
- 
-    gearTooth = cobj(data, "SHAPE", {
-            "fillColor":"#ddd0dd",
-            "border": True,
-            "strokeColor": "#606060" })
-    #gearTooth.rotate(180/n) # rotate gear 1/2 tooth to mesh, 請注意 rotate 角度為 degree
-    # theta 為角度
-    gearTooth.rotate(theta) 
-    # 單齒的齒形資料經過旋轉後, 將資料複製到 gear 物件中
-    gear = gearTooth.dup()
-    # gear 為單一齒的輪廓資料
-    #cgo.render(gearTooth)
- 
-    # 利用單齒輪廓旋轉, 產生整個正齒輪外形
-    for i in range(1, n):
-        # 將 gearTooth 中的資料複製到 newTooth
-        newTooth = gearTooth.dup()
-        # 配合迴圈, newTooth 的齒形資料進行旋轉, 然後利用 appendPath 方法, 將資料併入 gear
-        newTooth.rotate(360*i/n)
-        # appendPath 為 Cango 程式庫中的方法, 第二個變數為 True, 表示要刪除最前頭的 Move to SVG Path 標註符號
-        gear.appendPath(newTooth, True) # trim move command = True
- 
-    # 建立軸孔
-    # add axle hole, hr 為 hole radius
-    hr = 0.6*pr # diameter of gear shaft
-    shaft = cobj(shapedefs.circle(hr), "PATH")
-    shaft.revWinding()
-    gear.appendPath(shaft) # retain the 'moveTo' command for shaft sub path
-    gear.translate(cx, cy)
-    # render 繪出靜態正齒輪輪廓
-    cgo.render(gear)
-    # 接著繪製齒輪的基準線
-    deg = math.pi/180
-    Line = cobj(['M', cx, cy, 'L', cx+pr*math.cos(theta*deg), cy+pr*math.sin(theta*deg)], "PATH", {
-          'strokeColor':'blue', 'lineWidth': 1})
-    cgo.render(Line)
- 
-# 3個齒輪的齒數
-n1 = '''+str(n1)+'''
-n2 = '''+str(n2)+'''
-n3 = '''+str(n3)+'''
- 
-# m 為模數, 根據畫布的寬度, 計算適合的模數大小
-# Module = mm of pitch diameter per tooth
-# 利用 80% 的畫布寬度進行繪圖
-# 計算模數的對應尺寸
-m = canvas.width*0.8/(n1+n2+n3)
- 
-# 根據齒數與模組計算各齒輪的節圓半徑
-pr1 = n1*m/2
-pr2 = n2*m/2
-pr3 = n3*m/2
- 
-# 畫布左右兩側都保留畫布寬度的 10%
-# 依此計算對應的最左邊齒輪的軸心座標
-cx = canvas.width*0.1+pr1
-cy = canvas.height/2
- 
-# pa 為壓力角
-pa = 25
- 
-# 畫最左邊齒輪, 定位線旋轉角為 0, 軸心座標 (cx, cy)
-spur(cx, cy, m, n1, pa, 0)
-# 第2個齒輪將原始的定位線逆時鐘轉 180 度後, 與第1個齒輪正好齒頂與齒頂對齊
-# 只要第2個齒輪再逆時鐘或順時鐘轉動半齒的角度, 即可完成囓合
-# 每一個齒分別包括從齒根到齒頂的範圍, 涵蓋角度為 360/n, 因此所謂的半齒角度為 180/n
-spur(cx+pr1+pr2, cy, m, n2, pa, 180-180/n2)
-# 第2齒與第3齒的囓合, 首先假定第2齒的定位線在 theta 角為 0 的原始位置
-# 如此, 第3齒只要逆時鐘旋轉 180 度後, 再逆時鐘或順時鐘轉動半齒的角度, 即可與第2齒囓合
-# 但是第2齒為了與第一齒囓合時, 已經從原始定位線轉了 180-180/n2 度
-# 而當第2齒從與第3齒囓合的定位線, 逆時鐘旋轉 180-180/n2 角度後, 原先囓合的第3齒必須要再配合旋轉 (180-180/n2 )*n2/n3
-spur(cx+pr1+pr2+pr2+pr3, cy, m, n3, pa, 180-180/n3+(180-180/n2)*n2/n3)
-&lt;/script&gt;
+        output +="&lt;a href='/taskeditform?id="+str(id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;"
+    db.close()
+    return output
+</t>
+<t tx="amd.20160720001523.1">@app.route("/taskdeleteform")
+def taskdeleteform(id=None):
+    user = printuser()
+    password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
+    if read_only == "yes" and user != "admin":
+        return "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;error, site is read only!"
+    if user == "anonymous" and anonymous != "yes":
+        return redirect("/login")
+    else:
+        try:
+            # 這裡要區分刪除子緒或主緒資料
+            # 若刪除子緒, 則 data 只包含子緒資料, 若為主緒, 則 data 必須包含所有資料
+            # 先找出資料, 判定是否為主緒
+            # 用 get() 取單筆資料
+            db.connect()
+            data= Task.select().where(Task.id==int(id)).get()
+            owner = data.owner
+            if user != data.owner:
+                if user != "admin":
+                    db.close()
+                    return output + "error! 非資料擁有者, Not authorized!"
+                else:
+                    if data.follow == 0:
+                        # 表示該資料為主緒資料
+                        # 資料要重新搜尋, 納入子資料
+                        data = Task.select().where((Task.id == id) | (Task.follow == id))
+                        output = "資料為主緒資料&lt;br /&gt;"
+                        # 增加一個資料類型判斷, main 表資料為主緒
+                        type = "main"
+                    else:
+                        # 表示該資料為子緒資料
+                        # 直接採用 data 資料送到 taskdeleteform.html
+                        output = "資料為子緒資料&lt;br /&gt;"
+                        # 增加一個資料類型判斷, alone 表資料為子緒
+                        type = "alone"
+                    output += "user:"+user+", owner:"+owner+"&lt;br /&gt;&lt;br /&gt;"
+                    template_lookup = TemplateLookup(directories=[template_root_dir])
+                    mytemplate = template_lookup.get_template("taskdeleteform.html")
+                    # 這裡的 type 為所要刪除資料的類型, 為 main 或為 alone
+                    db.close()
+                    return mytemplate.render(user=user, id=id, data=data, type=type)
+            else:
+                if data.follow == 0:
+                    # 表示該資料為主緒資料
+                    # 資料要重新搜尋, 納入子資料
+                    data = Task.select().where((Task.id == id) | (Task.follow == id))
+                    output = "資料為主緒資料&lt;br /&gt;"
+                    # 增加一個資料類型判斷, main 表資料為主緒
+                    type = "main"
+                else:
+                    # 表示該資料為子緒資料
+                    # 直接採用 data 資料送到 taskdeleteform.html
+                    output = "資料為子緒資料&lt;br /&gt;"
+                    # 增加一個資料類型判斷, alone 表資料為子緒
+                    type = "alone"
+                output += "user:"+user+", owner:"+owner+"&lt;br /&gt;&lt;br /&gt;"
+                template_lookup = TemplateLookup(directories=[template_root_dir])
+                mytemplate = template_lookup.get_template("taskdeleteform.html")
+                # 這裡的 type 為所要刪除資料的類型, 為 main 或為 alone
+                db.close()
+                return mytemplate.render(user=user, id=id, data=data, type=type)
+        except:
+            db.close()
+            return "error! 無法正確查詢資料, Not authorized!"
+</t>
+<t tx="amd.20160720001631.1">@app.route("/taskdelete")
+def taskdelete(id=None, type=None, name=None, content=None):
+    # check user and data owner
+    user = printuser()
+    password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
+    if read_only == "yes" and user != "admin":
+        return "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;error, site is read only!"
+    if user == "anonymous" and anonymous != "yes":
+        raise cherrypy.HTTPRedirect("login")
+    # 用 get() 取單筆資料
+    db.connect()
+    data = Task.select().where(Task.id==int(id)).get()
+    now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
+    output = "user:"+user+", owner:"+data.owner+"&lt;br /&gt;&lt;br /&gt;"
+    if user != data.owner:
+        if user != "admin":
+            db.close()
+            return "error! Not authorized!"
+        else:
+            # 若資料為主緒則一併刪除子緒, 若為子緒, 則只刪除該子緒
+            if data.follow == 0:
+                # 表示資料為主緒
+                # 先刪除主緒
+                query = Task.at(int(id)).delete()
+                query.execute()
+                # 再刪除所有對應子緒
+                query = Task.delete().where(follow=int(id))
+                query.execute()
+                output += "所有序列資料已經刪除!&lt;br /&gt;"
+            else:
+                # 表示資料為子緒
+                query = Task.delete().where(Task.id==int(id))
+                query.execute()
+                output += "資料已經刪除!&lt;br /&gt;"
+    else:
+        # 若資料為主緒則一併刪除子緒, 若為子緒, 則只刪除該子緒
+        if data.follow == 0:
+            # 表示資料為主緒
+            # 先刪除主緒
+            query = Task.delete().where(Task.id==int(id))
+            query.execute()
+            # 再刪除所有對應子緒
+            query = Task.delete().where(Task.follow==int(id))
+            query.execute()
+            output += '''所有序列資料已經刪除!&lt;br /&gt;&lt;br /&gt;
+            &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
 '''
-    bodystring = "&lt;body&gt;" + body+"&lt;/body&gt;"
-    endstring = "&lt;/html&gt;"
-    outstring = headstring + bodystring + endstring
-    return outstring
-    # 若 template 檔案名稱與位於外部 templates 目錄中的檔案同名, 則取外部的 template
-   # return render_template('g1index.html', user=user)</t>
-<t tx="amd.20160719132540.5">@pygroup_app.route('/canvas', defaults={'id': 'plotarea', 'height': 800, 'm': 10})
-@pygroup_app.route('/canvas/&lt;id&gt;', defaults={'height': 800, 'm': 10})
-@pygroup_app.route('/canvas/&lt;id&gt;/&lt;height&gt;', defaults={ 'm': 10})
-@pygroup_app.route('/canvas/&lt;id&gt;/&lt;height&gt;/&lt;m&gt;')
-def canvas(id, height, m):
-    # width 為 800
-    # 當協同繪圖時, 提供 canvas 的組員必須算出合用的 height 值與模數 m 值
-    # 真正最後的架構應該要在函式中準備繪圖所需的資料, 然後用 template 呈現內容
-    title = "網際 2D 繪圖"
-    head = '''
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;'''+ title +'''&lt;/title&gt;
-    &lt;!-- IE 9: display inline SVG --&gt;
-    &lt;meta http-equiv="X-UA-Compatible" content="IE=9"&gt;
+        else:
+            # 表示資料為子緒
+            query = Task.delete().where(Task.id==int(id))
+            query.execute()
+            output += '''資料已經刪除!&lt;br /&gt;&lt;br /&gt;
+            &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
 '''
-    script = '''
-&lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="http://2015fallhw.github.io/cptocadp/static/Cango-8v03.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="http://2015fallhw.github.io/cptocadp/static/Cango2D-7v01-min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="http://2015fallhw.github.io/cptocadp/static/gearUtils-05.js"&gt;&lt;/script&gt;
- 
-&lt;script&gt;
-window.onload=function(){
-brython(1);
-}
-&lt;/script&gt;
-'''
-    headstring = head + script + "&lt;/head&gt;"
-    # 能否根據 n1, n2, n3 與 width, 算出合理的 height
-    # 模數計算 m = canvas.width*0.8/(n1+n2+n3)
-    # max([int(n1), int(n2), int(n3)])
-    # 所以 height = 1.2*800*0.8/(int(n1)+int(n2)+int(n3))*max([int(n1), int(n2), int(n3)])
-    #height = 1.2*800*0.8/(int(n1)+int(n2)+int(n3))*max([int(n1), int(n2), int(n3)])
-    body = '''
-    
-延伸應用:&lt;br /&gt;
-
-軸孔加入 keyway &lt;br /&gt;
-與 3D 零件設計繪圖對應 &lt;br/&gt;
-與 2D/3D 軸的設計與繪圖對應&lt;br /&gt;&lt;br /&gt;
-&lt;canvas id="'''+str(id)+'''" width='800' height="'''+str(int(height))+'''"&gt;&lt;/canvas&gt;
-&lt;script type="text/python" id="main"&gt;
-# 將 導入的 document 設為 doc 主要原因在於與舊程式碼相容
-from browser import document as doc
-# 由於 Python3 與 Javascript 程式碼已經不再混用, 因此來自 Javascript 的變數, 必須居中透過 window 物件轉換
-from browser import window
-# 針對 Javascript 既有的物件, 則必須透過 JSConstructor 轉換
-from javascript import JSConstructor
-import math
-
-# 針對類別的轉換, 將 Cango.js 中的 Cango 物件轉為 Python cango 物件
-cango = JSConstructor(window.Cango)
-# 針對變數的轉換, shapeDefs 在 Cango 中資料型別為變數, 可以透過 window 轉換
-shapedefs = window.shapeDefs
-# 目前 Cango 結合 Animation 在 Brython 尚無法運作, 此刻只能繪製靜態圖形
-# in CangoAnimation.js
-#interpolate1 = window.interpolate
-# Cobi 與 createGearTooth 都是 Cango Javascript 程式庫中的物件
-cobj = JSConstructor(window.Cobj)
-creategeartooth = JSConstructor(window.createGearTooth)
- 
-# 經由 Cango 轉換成 Brython 的 cango, 指定將圖畫在 id="plotarea" 的 canvas 上
-cgo = cango("'''+str(id)+'''")
- 
-######################################
-# 畫正齒輪輪廓
-#####################################
-def spur(cx, cy, m, n, pa, theta):
-    # n 為齒數
-    #n = 17
-    # pa 為壓力角
-    #pa = 25
-    # m 為模數, 根據畫布的寬度, 計算適合的模數大小
-    # Module = mm of pitch diameter per tooth
-    #m = 0.8*canvas.width/n
-    # pr 為節圓半徑
-    pr = n*m/2 # gear Pitch radius
-    # generate gear
-    data = creategeartooth(m, n, pa)
-    # Brython 程式中的 print 會將資料印在 Browser 的 console 區
-    #print(data)
- 
-    gearTooth = cobj(data, "SHAPE", {
-            "fillColor":"#ddd0dd",
-            "border": True,
-            "strokeColor": "#606060" })
-    #gearTooth.rotate(180/n) # rotate gear 1/2 tooth to mesh, 請注意 rotate 角度為 degree
-    # theta 為角度
-    gearTooth.rotate(theta) 
-    # 單齒的齒形資料經過旋轉後, 將資料複製到 gear 物件中
-    gear = gearTooth.dup()
-    # gear 為單一齒的輪廓資料
-    #cgo.render(gearTooth)
- 
-    # 利用單齒輪廓旋轉, 產生整個正齒輪外形
-    for i in range(1, n):
-        # 將 gearTooth 中的資料複製到 newTooth
-        newTooth = gearTooth.dup()
-        # 配合迴圈, newTooth 的齒形資料進行旋轉, 然後利用 appendPath 方法, 將資料併入 gear
-        newTooth.rotate(360*i/n)
-        # appendPath 為 Cango 程式庫中的方法, 第二個變數為 True, 表示要刪除最前頭的 Move to SVG Path 標註符號
-        gear.appendPath(newTooth, True) # trim move command = True
- 
-    # 建立軸孔
-    # add axle hole, hr 為 hole radius
-    hr = 0.6*pr # diameter of gear shaft
-    shaft = cobj(shapedefs.circle(hr), "PATH")
-    shaft.revWinding()
-    gear.appendPath(shaft) # retain the 'moveTo' command for shaft sub path
-    gear.translate(cx, cy)
-    # render 繪出靜態正齒輪輪廓
-    cgo.render(gear)
-    # 接著繪製齒輪的基準線
-    deg = math.pi/180
-    Line = cobj(['M', cx, cy, 'L', cx+pr*math.cos(theta*deg), cy+pr*math.sin(theta*deg)], "PATH", {
-          'strokeColor':'blue', 'lineWidth': 1})
-    cgo.render(Line)
-&lt;/script&gt;
-&lt;script type="text/python" src="/static/gear1.py"&gt;&lt;/script&gt;
-&lt;script type="text/python" src="/static/gear2.py"&gt;&lt;/script&gt;
-'''
-    bodystring = "&lt;body&gt;" + body+"&lt;/body&gt;"
-    endstring = "&lt;/html&gt;"
-    outstring = headstring + bodystring + endstring
-    return outstring
-    # 若 template 檔案名稱與位於外部 templates 目錄中的檔案同名, 則取外部的 template
-   # return render_template('g1index.html', user=user)</t>
-<t tx="amd.20160719132540.6">@pygroup_app.route('/listfiles')
-def listfiles():
-    # 先檢查使用者是否處於登入狀態, 若尚未登入則跳轉到登入畫面
-    if not session.get('login_email'):
-        #abort(401)
-        return redirect(url_for('login'))
-    # 利用導入 flask 的 current_app 取得在主應用程式中所設置的 config 變數
-    download_dir = current_app.config.get('download_dir')
-    files = os.listdir(download_dir)
-    file_string = "&lt;a href='/index'&gt;Home&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
-    if len(files) == 0:
-        return file_string + "no file!"
-    for filename in files:
-        file_string += "&lt;a href='/g1/get/"+filename+"'&gt;"+filename+" &lt;br /&gt;"
-    return file_string</t>
-<t tx="amd.20160719132540.7">@pygroup_app.route('/get/&lt;filename&gt;')
-def get(filename):
-    # 先檢查使用者是否處於登入狀態, 若尚未登入則跳轉到登入畫面
-    if not session.get('login_email'):
-        #abort(401)
-        return redirect(url_for('login'))
-    # 利用導入 flask 的 current_app 取得在主應用程式中所設置的 config 變數
-    download_dir = current_app.config.get('download_dir')
-    return send_from_directory(download_dir, filename)</t>
+    db.close()
+    return output
+</t>
+<t tx="amd.20160720001715.1"># 不允許使用者直接呼叫 tasksearchform
+def tasksearchform():
+    user = printuser()
+    template_lookup = TemplateLookup(directories=[template_root_dir])
+    # 必須要從 templates 目錄取出 tasksearchform.html
+    mytemplate = template_lookup.get_template("tasksearchform.html")
+    return mytemplate.render(user=user)
+</t>
 <t tx="course-mde-tw.20140417093332.1998"></t>
 <t tx="course-mde-tw.20140417093332.1999">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */
@@ -3454,7 +1542,6 @@ QLineEdit#editorLabel {
 <t tx="course-mde-tw.20140417093332.2000">horizontal: body pane to the left
 vertical: body pane on the botton</t>
 <t tx="course-mde-tw.20140417093332.2001"></t>
-<t tx="course-mde-tw.20140417093332.2027"></t>
 <t tx="course-mde-tw.20140417093332.2047">各組的報告統一放在 doc 目錄下, 並且按照分組編號作為目錄名稱
 
 最後希望能夠利用程式整合各分組報告內容, 統一處理成為 pdf 與 html 檔案
