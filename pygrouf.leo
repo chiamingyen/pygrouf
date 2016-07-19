@@ -16,7 +16,7 @@
 <v t="course-mde-tw.20140417093332.2001"><vh>@string rst3_write_intermediate_extension = .rst</vh></v>
 </v>
 <v t="amd.20160719104503.1"><vh>2016Fall PyGrouf 專案</vh></v>
-<v t="amd.20160719110153.1"><vh>old remarks</vh>
+<v t="amd.20160719110153.1" a="E"><vh>old remarks</vh>
 <v t="2014spring.20140723175454.2635"><vh>2014Fall CP 雲端課程專案</vh>
 <v t="2014fall.20140821113240.3140"><vh>帳號驗證</vh></v>
 <v t="2014fall.20140821113240.3145"><vh>近端 MySQL 工具</vh></v>
@@ -33,7 +33,7 @@
 <v t="2014pythonE.20140422152422.1671"><vh>Github 帳號管理</vh></v>
 <v t="2014pythonE.20140422152422.1670"><vh>OpenShift 權限管理</vh></v>
 <v t="course-mde-tw.20140422171455.1745"><vh>Github 倉儲與 OpenShift 同步</vh></v>
-<v t="amd.20160719104851.1"><vh>old</vh>
+<v t="amd.20160719104851.1" a="E"><vh>old</vh>
 <v t="2014fall.20140821113240.3147"><vh>Google Adsense 問題</vh></v>
 <v t="2014fall.20140826101705.4467"><vh>CMSimply 已知問題</vh></v>
 <v t="2015.20140824143250.2077"><vh>20140824 程式更動</vh></v>
@@ -360,7 +360,9 @@ cherrypy.quickstart(root, config = application_conf)
 
 2. Flask 的程式啟動以 wsgi.py 程式為主, 導入 flaskapp.py, 隨後則可以將附屬功能以 blueprint 的方式置入
 
-首先要採用 wcmw14 的 Google 帳號登入架構, 取得使用者的 Gmail 帳號資料後, 利用  Javascript 登入 Gmail, 然後進入 PyGrouf</t>
+首先要採用 wcmw14 的 Google 帳號登入架構, 取得使用者的 Gmail 帳號資料後, 利用  Javascript 登入 Gmail, 然後進入 PyGrouf
+
+後記: 已經完全移除 CherryPy</t>
 <t tx="amd.20160719105219.1"></t>
 <t tx="amd.20160719105348.1">@language python
 @tabwidth -4
@@ -390,14 +392,11 @@ from config import CONFIG
 # 利用 nocache.py 建立 @nocache decorator, 讓頁面不會留下 cache
 from nocache import nocache
 ### from PyGroup start
-import cherrypy
 import os
 ### for logincheck
 import smtplib
 from email.mime.text import MIMEText  
 from email.header import Header
-### for cmsimfly
-import cmsimfly
 ### 取得目前時區時間
 from time import strftime, localtime
 import datetime, pytz
@@ -1106,8 +1105,7 @@ def taskaction():
         output +="&lt;a href='/taskeditform?id="+str(data.id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
         db.close()
         return output
-    # 原先直接轉到 tasklist 方法 (index)
-    #raise cherrypy.HTTPRedirect("tasklist")
+
 </t>
 <t tx="amd.20160720000752.1">def allow_pass(user="anonymous"):
     password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
@@ -1390,7 +1388,7 @@ def taskdelete(id=None, type=None, name=None, content=None):
     if read_only == "yes" and user != "admin":
         return "&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;error, site is read only!"
     if user == "anonymous" and anonymous != "yes":
-        raise cherrypy.HTTPRedirect("login")
+        return redirect("/login")
     # 用 get() 取單筆資料
     db.connect()
     data = Task.select().where(Task.id==int(id)).get()

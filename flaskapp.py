@@ -14,14 +14,11 @@ from config import CONFIG
 # 利用 nocache.py 建立 @nocache decorator, 讓頁面不會留下 cache
 from nocache import nocache
 ### from PyGroup start
-import cherrypy
 import os
 ### for logincheck
 import smtplib
 from email.mime.text import MIMEText  
 from email.header import Header
-### for cmsimfly
-import cmsimfly
 ### 取得目前時區時間
 from time import strftime, localtime
 import datetime, pytz
@@ -351,8 +348,7 @@ def taskaction():
         output +="<a href='/taskeditform?id="+str(data.id)+"'>繼續編輯</a><br /><br />"
         db.close()
         return output
-    # 原先直接轉到 tasklist 方法 (index)
-    #raise cherrypy.HTTPRedirect("tasklist")
+
 def allow_pass(user="anonymous"):
     password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
     if user == "anonymous" and anonymous != "yes":
@@ -625,7 +621,7 @@ def taskdelete(id=None, type=None, name=None, content=None):
     if read_only == "yes" and user != "admin":
         return "<a href='/'>Go to main page</a><br /><br />error, site is read only!"
     if user == "anonymous" and anonymous != "yes":
-        raise cherrypy.HTTPRedirect("login")
+        return redirect("/login")
     # 用 get() 取單筆資料
     db.connect()
     data = Task.select().where(Task.id==int(id)).get()
