@@ -16,7 +16,7 @@
 <v t="course-mde-tw.20140417093332.2001"><vh>@string rst3_write_intermediate_extension = .rst</vh></v>
 </v>
 <v t="amd.20160719104503.1"><vh>2016Fall PyGrouf 專案</vh></v>
-<v t="amd.20160719110153.1" a="E"><vh>old remarks</vh>
+<v t="amd.20160719110153.1"><vh>old remarks</vh>
 <v t="2014spring.20140723175454.2635"><vh>2014Fall CP 雲端課程專案</vh>
 <v t="2014fall.20140821113240.3140"><vh>帳號驗證</vh></v>
 <v t="2014fall.20140821113240.3145"><vh>近端 MySQL 工具</vh></v>
@@ -50,9 +50,10 @@
 </v>
 </v>
 <v t="2014fall.20140821113240.3146" a="E"><vh>開發日誌</vh>
-<v t="amd.20160719104919.1" a="E"><vh>20160719</vh>
+<v t="amd.20160719104919.1"><vh>20160719</vh>
 <v t="amd.20160719131148.1"><vh>程式架構討論</vh></v>
 </v>
+<v t="amd.20160720215431.1"><vh>20160720</vh></v>
 </v>
 <v t="amd.20160719105219.1" a="E"><vh>PyGrouf 程式區</vh>
 <v t="amd.20160719105234.1"><vh>@edit setup.py</vh></v>
@@ -80,6 +81,9 @@
 <v t="amd.20160720001523.1"><vh>taskdeleteform</vh></v>
 <v t="amd.20160720001631.1"><vh>taskdelete</vh></v>
 <v t="amd.20160720001715.1"><vh>tasksearchform</vh></v>
+<v t="amd.20160720143957.1"><vh>file_selector_script (#4)</vh></v>
+<v t="amd.20160720144602.1"><vh>file_lister</vh></v>
+<v t="amd.20160720144009.1"><vh>file_selector (#4)</vh></v>
 <v t="amd.20160719220537.1"><vh>### transfer from pygroup end</vh></v>
 <v t="amd.20160719105410.7"><vh>option</vh></v>
 <v t="amd.20160719105410.8"><vh>optionaction</vh></v>
@@ -93,6 +97,7 @@
 <v t="amd.20160719105410.16"><vh>send_blog</vh></v>
 <v t="amd.20160719105410.17"><vh>send_file</vh></v>
 <v t="amd.20160719105410.18"><vh>login</vh></v>
+<v t="amd.20160720215132.1"><vh>logincheck (for ref)</vh></v>
 <v t="amd.20160719105410.19"><vh>logout</vh></v>
 <v t="amd.20160719105410.20"><vh>menu</vh></v>
 <v t="amd.20160719105410.21"><vh>alogin</vh></v>
@@ -101,8 +106,13 @@
 </v>
 <v t="2014spring.20140726005348.1759"><vh>@edit setup.py</vh></v>
 <v t="amd.20160719222956.1" a="E"><vh>@path templates</vh>
+<v t="amd.20160720143707.1"><vh>(改用 tinymce4 #1)</vh></v>
 <v t="amd.20160719223002.1"><vh>@edit tasklist.html</vh></v>
 <v t="amd.20160720002945.1"><vh>@edit taskform.html</vh></v>
+<v t="amd.20160720223224.1"><vh>@edit taskeditform.html</vh></v>
+<v t="amd.20160720230237.1"><vh>@edit tasksearchform.html</vh></v>
+<v t="amd.20160720171133.1"><vh>@edit login.html</vh></v>
+<v t="amd.20160720221430.1"><vh>@edit base.html</vh></v>
 </v>
 <v t="course-mde-tw.20140417093332.2058"><vh>利用 pandoc 進行格式轉換</vh>
 <v t="course-mde-tw.20140422221207.1747"><vh>注意事項</vh></v>
@@ -435,11 +445,15 @@ if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     # 表示程式在雲端執行
     download_root_dir = os.environ['OPENSHIFT_DATA_DIR']
     data_dir = os.environ['OPENSHIFT_DATA_DIR']
+    download_dir = download_root_dir +"/downloads"
+    image_dir = download_root_dir +"/images"
     template_root_dir = os.environ['OPENSHIFT_REPO_DIR']+"/templates"
 else:
     # 表示程式在近端執行
     download_root_dir = _curdir + "/local_data/"
     data_dir = _curdir + "/local_data/"
+    download_dir = download_root_dir +"/downloads"
+    image_dir = download_root_dir +"/images"
     template_root_dir = _curdir + "/templates"
 # 資料庫選用
 # 內建使用 sqlite3
@@ -483,13 +497,13 @@ if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     data_dir = os.environ['OPENSHIFT_DATA_DIR']
     static_dir = os.environ['OPENSHIFT_REPO_DIR']+"/static"
     download_dir = os.environ['OPENSHIFT_DATA_DIR']+"/downloads"
-    CALLBACK_URL = "http://cdw2-ladisai.rhcloud.com/menu"
+    CALLBACK_URL = "https://pygrouf-topuniversity.rhcloud.com/"
 else:
     # 表示程式在近端執行
     data_dir = _curdir + "/local_data/"
     static_dir = _curdir + "/static"
     download_dir = _curdir + "/local_data/downloads/"
-    CALLBACK_URL = "http://localhost:5000/menu"
+    CALLBACK_URL = "http://localhost:5000/"
 
 # 利用 init.py 啟動, 建立所需的相關檔案
 initobj = init.Init()
@@ -650,7 +664,34 @@ def login(provider_name):
             # 表示在近端執行
             local = True
         # The rest happens inside the template.
-        return render_template('login.html', result=result, local=local, callbackurl=callbackurl)
+        #return render_template('login.html', result=result, local=local, callbackurl=callbackurl)
+        # 目前先不要用 template
+        output = '''&lt;html&gt;
+&lt;head&gt;
+&lt;style type="text/css" media="all"&gt;
+@import "/templates/style/base.css";
+&lt;/style&gt;
+'''
+        if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
+            output += '''
+&lt;script type="text/javascript"&gt;
+        if ((location.href.search(/http:/) != -1) &amp;&amp; (location.href.search(/login/) != -1))     window.location= 'https://' + location.host + location.pathname + location.search;
+&lt;/script&gt;
+&lt;!-- 完成 GMail 登入程序後, 將會自動登出 GMail 帳號, 然後跳轉到 callbackurl  --&gt;
+&lt;script type="text/javascript"&gt;
+window.location="https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue='''+CALLBACK_URL+'''";
+&lt;/script&gt;
+'''
+        else:
+            output += '''&lt;!-- 完成 GMail 登入程序後, 將會自動登出 GMail 帳號, 然後跳轉到 callbackurl  --&gt;
+&lt;script type="text/javascript"&gt;
+window.location="https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue='''+CALLBACK_URL+'''";
+&lt;/script&gt;
+'''
+        output += '''
+&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;html&gt;
+'''
+        return output
     
     # Don't forget to return the response.
     return response
@@ -658,9 +699,10 @@ def login(provider_name):
 <t tx="amd.20160719105410.19">@app.route('/logout')
 def logout():
     session.pop('login_email' , None)
+    # 設法讓所有 session 失效?
+    #app.secret_key = os.urandom(32)
     flash('已經登出!')
-    #return redirect(url_for('menu'))
-    return redirect(url_for('login'))
+    return redirect('/')
 </t>
 <t tx="amd.20160719105410.20">@app.route('/menu')
 @app.route('/index')
@@ -856,9 +898,9 @@ def optionaction():
 # ajax jquery chunked file upload for flask
 def fileaxupload():
     '''
-    if not session.get('logged_in'):
+    if not session.get('login_email'):
         #abort(401)
-        return redirect(url_for('login'))
+        return redirect(url_for('/login'))
     '''
     # need to consider if the uploaded filename already existed.
     # right now all existed files will be replaced with the new files
@@ -879,32 +921,45 @@ def fileaxupload():
 <t tx="amd.20160719131148.1">https://www.digitalocean.com/community/tutorials/how-to-structure-large-flask-applications
 
 意思是說, 應該要將 PyGroup 與 CMSimfly 寫成 blueprint 格式套用</t>
-<t tx="amd.20160719215515.1">@app.route("/", methods=['GET'])
-def index(page=1, item_per_page=5, id=0, flat=0, desc=0, keyword=None):
-    if not request.args.get('page'):
+<t tx="amd.20160719215515.1">@app.route("/", methods=['GET', 'POST'])
+# 因為 / 同時負責 index 資料列印與關鍵字搜尋, 因此必須確認 request.method 之後, 再分為兩部份處理
+def index():
+    if request.method == 'POST':
         page = 1
-    else:
-        page = request.args.get('page')
-    if not request.args.get('item_per_page'):
         item_per_page = 5
-    else:
-        item_per_page = request.args.get('item_per_page')
-    if not request.args.get('id'):
         id = 0
-    else:
-        id = request.args.get('id')
-    if not request.args.get('flat'):
         flat = 0
-    else:
-        flat = request.args.get('flat')
-    if not request.args.get('desc'):
         desc= 0
+        if not request.form['keyword']:
+            keyword = None
+        else:
+            keyword = request.form['keyword']
     else:
-        desc= request.args.get('desc')
-    if not request.args.get('keyword'):
-        keyword = None
-    else:
-        keyword = request.args.get('keyword')
+        if not request.args.get('page'):
+            page = 1
+        else:
+            page = request.args.get('page')
+        if not request.args.get('item_per_page'):
+            item_per_page = 5
+        else:
+            item_per_page = request.args.get('item_per_page')
+        if not request.args.get('id'):
+            id = 0
+        else:
+            id = request.args.get('id')
+        if not request.args.get('flat'):
+            flat = 0
+        else:
+            flat = request.args.get('flat')
+        if not request.args.get('desc'):
+            desc= 0
+        else:
+            desc= request.args.get('desc')
+        if not request.args.get('keyword'):
+            keyword = None
+        else:
+            keyword = request.args.get('keyword')
+    # 已經取得所需變數, 以下進行內容回傳處理
     user = printuser()
     # 這裡不用 allow_pass 原因在於需要 adsense 變數
     saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
@@ -980,11 +1035,11 @@ def index(page=1, item_per_page=5, id=0, flat=0, desc=0, keyword=None):
     # 其餘分頁 logic 在 mako template tasklist.html 中完成
 </t>
 <t tx="amd.20160719215604.1">def printuser():
-    session["user"] = "anonymous"
-    if not session.get("user"):
+    #session["login_email"] = "anonymous"
+    if not session.get("login_email"):
         user = "anonymous"
     else:
-        user = session.get("user")
+        user = session.get("login_email")
     return user
 </t>
 <t tx="amd.20160719220333.1">def parse_config(filename):
@@ -1219,8 +1274,12 @@ def editadsenseform():
     mytemplate = template_lookup.get_template("editadsenseform.html")
     return mytemplate.render(user=user, saved_adsense=saved_adsense)
 </t>
-<t tx="amd.20160720001311.1">@app.route("/taskeditform")
-def taskeditform(id=None):
+<t tx="amd.20160720001311.1">@app.route("/taskeditform", methods=['GET'])
+def taskeditform():
+    if not request.args.get('id'):
+        id = None
+    else:
+        id = request.args.get('id')
     user = printuser()
     password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
     if read_only == "yes" and user != "admin":
@@ -1251,8 +1310,24 @@ def taskeditform(id=None):
             db.close()
             return "error! Not authorized!"
 </t>
-<t tx="amd.20160720001423.1">@app.route("/taskedit")
+<t tx="amd.20160720001423.1">@app.route("/taskedit", methods=['POST'])
 def taskedit(id=None, type=None, name=None, content=None):
+    if not request.form["id"]:
+        id = None
+    else:
+        id = request.form["id"]
+    if not request.form["type"]:
+        type = None
+    else:
+        type = request.form["type"]
+    if not request.form["name"]:
+        name = None
+    else:
+        name = request.form["name"]
+    if not request.form["content"]:
+        content = None
+    else:
+        content = request.form["content"]
     # check user and data owner
     if id == None:
         return "error&lt;br /&gt;&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
@@ -1315,8 +1390,12 @@ def taskedit(id=None, type=None, name=None, content=None):
     db.close()
     return output
 </t>
-<t tx="amd.20160720001523.1">@app.route("/taskdeleteform")
-def taskdeleteform(id=None):
+<t tx="amd.20160720001523.1">@app.route("/taskdeleteform", methods=['GET'])
+def taskdeleteform():
+    if not request.args.get('id'):
+        id = None
+    else:
+        id = request.args.get('id')
     user = printuser()
     password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
     if read_only == "yes" and user != "admin":
@@ -1380,8 +1459,12 @@ def taskdeleteform(id=None):
             db.close()
             return "error! 無法正確查詢資料, Not authorized!"
 </t>
-<t tx="amd.20160720001631.1">@app.route("/taskdelete")
-def taskdelete(id=None, type=None, name=None, content=None):
+<t tx="amd.20160720001631.1">@app.route("/taskdelete", methods=['POST'])
+def taskdelete():
+    if not request.form["id"]:
+        id = None
+    else:
+        id = request.form["id"]
     # check user and data owner
     user = printuser()
     password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
@@ -1445,6 +1528,185 @@ def tasksearchform():
     mytemplate = template_lookup.get_template("tasksearchform.html")
     return mytemplate.render(user=user)
 </t>
+<t tx="amd.20160720143707.1"></t>
+<t tx="amd.20160720143957.1">def file_selector_script():
+    return '''
+&lt;script language="javascript" type="text/javascript"&gt;
+$(function(){
+    $('.a').on('click', function(event){
+        setLink();
+    });
+});
+
+function setLink (url, objVals) {
+    top.tinymce.activeEditor.windowManager.getParams().oninsert(url, objVals);
+    top.tinymce.activeEditor.windowManager.close();
+    return false;
+}
+&lt;/script&gt;
+'''
+</t>
+<t tx="amd.20160720144009.1"># 配合 Tinymce4 讓使用者透過 html editor 引用所上傳的 files 與 images
+@app.route('/file_selector', methods=['GET'])
+#def file_selector(type=None, page=1, item_per_page=10, keyword=None):
+def file_selector():
+    user = printuser()
+    if user != "admin":
+        return redirect("/login")
+    else:
+        if not request.args.get('type'):
+            type = "file"
+        else:
+            type = request.args.get('type')
+        if not request.args.get('page'):
+            page = 1
+        else:
+            page = request.args.get('page')
+        if not request.args.get('item_per_page'):
+            item_per_page = 10
+        else:
+            item_per_page = request.args.get('item_per_page')
+        
+        if not request.args.get('keyword'):
+            keyword = ""
+        else:
+            keyword = request.args.get('keyword')
+        #if type == "downloads":
+        if type == "file":
+            #return downloads_file_selector()
+            # 請注意因為在 editorhead 以 meta 判斷 filetyp, 所以前段 type 為 file, 但是後段必須與 file_lister 中的 type = downloads 配合, 所以目前前後的 type 字串不同, 之後整合修改時將修正, 設法讓  type 前後一致
+            type = 'downloads'
+            return file_lister(download_dir, type, page, item_per_page)
+        elif type == "image":
+            #return images_file_selector()
+            return file_lister(image_dir, type, page, item_per_page)
+</t>
+<t tx="amd.20160720144602.1"># 與 file_selector 配合, 用於 Tinymce4 編輯器的檔案選擇
+def file_lister(directory, type=None, page=1, item_per_page=10):
+    files = os.listdir(directory)
+    total_rows = len(files)
+    totalpage = math.ceil(total_rows/int(item_per_page))
+    starti = int(item_per_page) * (int(page) - 1) + 1
+    endi = starti + int(item_per_page) - 1
+    outstring = file_selector_script()
+    notlast = False
+    if total_rows &gt; 0:
+        outstring += "&lt;br /&gt;"
+        if (int(page) * int(item_per_page)) &lt; total_rows:
+            notlast = True
+        if int(page) &gt; 1:
+            outstring += "&lt;a href='"
+            outstring += "file_selector?type="+type+"&amp;amp;page=1&amp;amp;item_per_page="+str(item_per_page)+"&amp;amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'&gt;&lt;&lt;&lt;/a&gt; "
+            page_num = int(page) - 1
+            outstring += "&lt;a href='"
+            outstring += "file_selector?type="+type+"&amp;amp;page="+str(page_num)+"&amp;amp;item_per_page="+str(item_per_page)+"&amp;amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'&gt;Previous&lt;/a&gt; "
+        span = 10
+        for index in range(int(page)-span, int(page)+span):
+        #for ($j=$page-$range;$j&lt;$page+$range;$j++)
+            if index&gt;= 0 and index&lt; totalpage:
+                page_now = index + 1 
+                if page_now == int(page):
+                    outstring += "&lt;font size='+1' color='red'&gt;"+str(page)+" &lt;/font&gt;"
+                else:
+                    outstring += "&lt;a href='"
+                    outstring += "file_selector?type="+type+"&amp;amp;page="+str(page_now)+"&amp;amp;item_per_page="+str(item_per_page)+"&amp;amp;keyword="+str(session.get('download_keyword'))
+                    outstring += "'&gt;"+str(page_now)+"&lt;/a&gt; "
+
+        if notlast == True:
+            nextpage = int(page) + 1
+            outstring += " &lt;a href='"
+            outstring += "file_selector?type="+type+"&amp;amp;page="+str(nextpage)+"&amp;amp;item_per_page="+str(item_per_page)+"&amp;amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'&gt;Next&lt;/a&gt;"
+            outstring += " &lt;a href='"
+            outstring += "file_selector?type="+type+"&amp;amp;page="+str(totalpage)+"&amp;amp;item_per_page="+str(item_per_page)+"&amp;amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'&gt;&gt;&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
+        if (int(page) * int(item_per_page)) &lt; total_rows:
+            notlast = True
+            if type == "downloads":
+                outstring += downloadselect_access_list(files, starti, endi)+"&lt;br /&gt;"
+            else:
+                outstring += imageselect_access_list(files, starti, endi)+"&lt;br /&gt;"
+        else:
+            outstring += "&lt;br /&gt;&lt;br /&gt;"
+            if type == "downloads":
+                outstring += downloadselect_access_list(files, starti, total_rows)+"&lt;br /&gt;"
+            else:
+                outstring += imageselect_access_list(files, starti, total_rows)+"&lt;br /&gt;"
+        if int(page) &gt; 1:
+            outstring += "&lt;a href='"
+            outstring += "file_selector?type="+type+"&amp;amp;page=1&amp;amp;item_per_page="+str(item_per_page)+"&amp;amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'&gt;&lt;&lt;&lt;/a&gt; "
+            page_num = int(page) - 1
+            outstring += "&lt;a href='"
+            outstring += "file_selector?type="+type+"&amp;amp;page="+str(page_num)+"&amp;amp;item_per_page="+str(item_per_page)+"&amp;amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'&gt;Previous&lt;/a&gt; "
+        span = 10
+        for index in range(int(page)-span, int(page)+span):
+        #for ($j=$page-$range;$j&lt;$page+$range;$j++)
+            if index &gt;=0 and index &lt; totalpage:
+                page_now = index + 1
+                if page_now == int(page):
+                    outstring += "&lt;font size='+1' color='red'&gt;"+str(page)+" &lt;/font&gt;"
+                else:
+                    outstring += "&lt;a href='"
+                    outstring += "file_selector?type="+type+"&amp;amp;page="+str(page_now)+"&amp;amp;item_per_page="+str(item_per_page)+"&amp;amp;keyword="+str(session.get('download_keyword'))
+                    outstring += "'&gt;"+str(page_now)+"&lt;/a&gt; "
+        if notlast == True:
+            nextpage = int(page) + 1
+            outstring += " &lt;a href='"
+            outstring += "file_selector?type="+type+"&amp;amp;page="+str(nextpage)+"&amp;amp;item_per_page="+str(item_per_page)+"&amp;amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'&gt;Next&lt;/a&gt;"
+            outstring += " &lt;a href='"
+            outstring += "file_selector?type="+type+"&amp;amp;page="+str(totalpage)+"&amp;amp;item_per_page="+str(item_per_page)+"&amp;amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'&gt;&gt;&gt;&lt;/a&gt;"
+    else:
+        outstring += "no data!"
+
+    if type == "downloads":
+        return outstring+"&lt;br /&gt;&lt;br /&gt;&lt;a href='fileuploadform'&gt;file upload&lt;/a&gt;"
+    else:
+        return outstring+"&lt;br /&gt;&lt;br /&gt;&lt;a href='imageuploadform'&gt;image upload&lt;/a&gt;"</t>
+<t tx="amd.20160720215132.1">@app.route("/need")
+def logincheck(id=0, account=None, password=None):
+    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
+    if account != None and password != None:
+        # 這裡要加入用戶名稱為 admin 的管理者登入模式
+        if account == "admin":
+            # 進入 admin 密碼查驗流程
+            hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
+            if hashed_password == saved_password:
+                cherrypy.session['user'] = "admin"
+                raise cherrypy.HTTPRedirect("/?id="+str(id))
+            else:
+                return "login failed.&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
+        else:
+            # 一般帳號查驗
+            if site_closed == "yes":
+                return "抱歉!網站關閉中"
+            elif not mail_suffix in account or mail_suffix != "":
+                return "抱歉!此類帳號不允許登入"
+            else:
+                server = smtplib.SMTP('smtp.gmail.com:587')
+                server.ehlo()
+                server.starttls()
+                try:
+                    server.login(account, password)
+                    server.quit()
+                    if "@" in account:
+                        account = account.replace('@', '_at_')
+                    cherrypy.session["user"] = account
+                    #return account+" login successfully."
+                    #若登入成功, 則離開前跳到根目錄
+                except:
+                    server.quit()
+                    return "login failed.&lt;br /&gt;&lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;"
+    else:
+        return redirect("/login?id="+str(id))
+    return redirect("/?id="+str(id))
+</t>
+<t tx="amd.20160720215431.1">login.htm 套稿中的 Google 帳號登出跳轉</t>
 <t tx="course-mde-tw.20140417093332.1998"></t>
 <t tx="course-mde-tw.20140417093332.1999">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */

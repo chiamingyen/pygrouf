@@ -57,11 +57,15 @@ if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     # 表示程式在雲端執行
     download_root_dir = os.environ['OPENSHIFT_DATA_DIR']
     data_dir = os.environ['OPENSHIFT_DATA_DIR']
+    download_dir = download_root_dir +"/downloads"
+    image_dir = download_root_dir +"/images"
     template_root_dir = os.environ['OPENSHIFT_REPO_DIR']+"/templates"
 else:
     # 表示程式在近端執行
     download_root_dir = _curdir + "/local_data/"
     data_dir = _curdir + "/local_data/"
+    download_dir = download_root_dir +"/downloads"
+    image_dir = download_root_dir +"/images"
     template_root_dir = _curdir + "/templates"
 # 資料庫選用
 # 內建使用 sqlite3
@@ -105,13 +109,13 @@ if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     data_dir = os.environ['OPENSHIFT_DATA_DIR']
     static_dir = os.environ['OPENSHIFT_REPO_DIR']+"/static"
     download_dir = os.environ['OPENSHIFT_DATA_DIR']+"/downloads"
-    CALLBACK_URL = "http://cdw2-ladisai.rhcloud.com/menu"
+    CALLBACK_URL = "https://pygrouf-topuniversity.rhcloud.com/"
 else:
     # 表示程式在近端執行
     data_dir = _curdir + "/local_data/"
     static_dir = _curdir + "/static"
     download_dir = _curdir + "/local_data/downloads/"
-    CALLBACK_URL = "http://localhost:5000/menu"
+    CALLBACK_URL = "http://localhost:5000/"
 
 # 利用 init.py 啟動, 建立所需的相關檔案
 initobj = init.Init()
@@ -147,11 +151,11 @@ class Task(Model):
     class Meta:
         database = db # This model uses the data_dir+"task.db" database.
 def printuser():
-    session["user"] = "anonymous"
-    if not session.get("user"):
+    #session["login_email"] = "anonymous"
+    if not session.get("login_email"):
         user = "anonymous"
     else:
-        user = session.get("user")
+        user = session.get("login_email")
     return user
 def parse_config(filename):
     #filename = "pygroup_config"
@@ -182,32 +186,45 @@ def parse_config(filename):
     site_closed = config_data[4].split(":")[1]
     read_only = config_data[5].split(":")[1]
     return password, adsense, anonymous, mail_suffix, site_closed, read_only
-@app.route("/", methods=['GET'])
-def index(page=1, item_per_page=5, id=0, flat=0, desc=0, keyword=None):
-    if not request.args.get('page'):
+@app.route("/", methods=['GET', 'POST'])
+# 因為 / 同時負責 index 資料列印與關鍵字搜尋, 因此必須確認 request.method 之後, 再分為兩部份處理
+def index():
+    if request.method == 'POST':
         page = 1
-    else:
-        page = request.args.get('page')
-    if not request.args.get('item_per_page'):
         item_per_page = 5
-    else:
-        item_per_page = request.args.get('item_per_page')
-    if not request.args.get('id'):
         id = 0
-    else:
-        id = request.args.get('id')
-    if not request.args.get('flat'):
         flat = 0
-    else:
-        flat = request.args.get('flat')
-    if not request.args.get('desc'):
         desc= 0
+        if not request.form['keyword']:
+            keyword = None
+        else:
+            keyword = request.form['keyword']
     else:
-        desc= request.args.get('desc')
-    if not request.args.get('keyword'):
-        keyword = None
-    else:
-        keyword = request.args.get('keyword')
+        if not request.args.get('page'):
+            page = 1
+        else:
+            page = request.args.get('page')
+        if not request.args.get('item_per_page'):
+            item_per_page = 5
+        else:
+            item_per_page = request.args.get('item_per_page')
+        if not request.args.get('id'):
+            id = 0
+        else:
+            id = request.args.get('id')
+        if not request.args.get('flat'):
+            flat = 0
+        else:
+            flat = request.args.get('flat')
+        if not request.args.get('desc'):
+            desc= 0
+        else:
+            desc= request.args.get('desc')
+        if not request.args.get('keyword'):
+            keyword = None
+        else:
+            keyword = request.args.get('keyword')
+    # 已經取得所需變數, 以下進行內容回傳處理
     user = printuser()
     # 這裡不用 allow_pass 原因在於需要 adsense 變數
     saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
@@ -455,8 +472,12 @@ def editadsenseform():
     template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
     mytemplate = template_lookup.get_template("editadsenseform.html")
     return mytemplate.render(user=user, saved_adsense=saved_adsense)
-@app.route("/taskeditform")
-def taskeditform(id=None):
+@app.route("/taskeditform", methods=['GET'])
+def taskeditform():
+    if not request.args.get('id'):
+        id = None
+    else:
+        id = request.args.get('id')
     user = printuser()
     password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
     if read_only == "yes" and user != "admin":
@@ -486,8 +507,24 @@ def taskeditform(id=None):
         except:
             db.close()
             return "error! Not authorized!"
-@app.route("/taskedit")
+@app.route("/taskedit", methods=['POST'])
 def taskedit(id=None, type=None, name=None, content=None):
+    if not request.form["id"]:
+        id = None
+    else:
+        id = request.form["id"]
+    if not request.form["type"]:
+        type = None
+    else:
+        type = request.form["type"]
+    if not request.form["name"]:
+        name = None
+    else:
+        name = request.form["name"]
+    if not request.form["content"]:
+        content = None
+    else:
+        content = request.form["content"]
     # check user and data owner
     if id == None:
         return "error<br /><br /><a href='/'>Go to main page</a><br />"
@@ -549,8 +586,12 @@ def taskedit(id=None, type=None, name=None, content=None):
         output +="<a href='/taskeditform?id="+str(id)+"'>繼續編輯</a><br />"
     db.close()
     return output
-@app.route("/taskdeleteform")
-def taskdeleteform(id=None):
+@app.route("/taskdeleteform", methods=['GET'])
+def taskdeleteform():
+    if not request.args.get('id'):
+        id = None
+    else:
+        id = request.args.get('id')
     user = printuser()
     password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
     if read_only == "yes" and user != "admin":
@@ -613,8 +654,12 @@ def taskdeleteform(id=None):
         except:
             db.close()
             return "error! 無法正確查詢資料, Not authorized!"
-@app.route("/taskdelete")
-def taskdelete(id=None, type=None, name=None, content=None):
+@app.route("/taskdelete", methods=['POST'])
+def taskdelete():
+    if not request.form["id"]:
+        id = None
+    else:
+        id = request.form["id"]
     # check user and data owner
     user = printuser()
     password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
@@ -676,6 +721,143 @@ def tasksearchform():
     # 必須要從 templates 目錄取出 tasksearchform.html
     mytemplate = template_lookup.get_template("tasksearchform.html")
     return mytemplate.render(user=user)
+def file_selector_script():
+    return '''
+<script language="javascript" type="text/javascript">
+$(function(){
+    $('.a').on('click', function(event){
+        setLink();
+    });
+});
+
+function setLink (url, objVals) {
+    top.tinymce.activeEditor.windowManager.getParams().oninsert(url, objVals);
+    top.tinymce.activeEditor.windowManager.close();
+    return false;
+}
+</script>
+'''
+# 與 file_selector 配合, 用於 Tinymce4 編輯器的檔案選擇
+def file_lister(directory, type=None, page=1, item_per_page=10):
+    files = os.listdir(directory)
+    total_rows = len(files)
+    totalpage = math.ceil(total_rows/int(item_per_page))
+    starti = int(item_per_page) * (int(page) - 1) + 1
+    endi = starti + int(item_per_page) - 1
+    outstring = file_selector_script()
+    notlast = False
+    if total_rows > 0:
+        outstring += "<br />"
+        if (int(page) * int(item_per_page)) < total_rows:
+            notlast = True
+        if int(page) > 1:
+            outstring += "<a href='"
+            outstring += "file_selector?type="+type+"&amp;page=1&amp;item_per_page="+str(item_per_page)+"&amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'><<</a> "
+            page_num = int(page) - 1
+            outstring += "<a href='"
+            outstring += "file_selector?type="+type+"&amp;page="+str(page_num)+"&amp;item_per_page="+str(item_per_page)+"&amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'>Previous</a> "
+        span = 10
+        for index in range(int(page)-span, int(page)+span):
+        #for ($j=$page-$range;$j<$page+$range;$j++)
+            if index>= 0 and index< totalpage:
+                page_now = index + 1 
+                if page_now == int(page):
+                    outstring += "<font size='+1' color='red'>"+str(page)+" </font>"
+                else:
+                    outstring += "<a href='"
+                    outstring += "file_selector?type="+type+"&amp;page="+str(page_now)+"&amp;item_per_page="+str(item_per_page)+"&amp;keyword="+str(session.get('download_keyword'))
+                    outstring += "'>"+str(page_now)+"</a> "
+
+        if notlast == True:
+            nextpage = int(page) + 1
+            outstring += " <a href='"
+            outstring += "file_selector?type="+type+"&amp;page="+str(nextpage)+"&amp;item_per_page="+str(item_per_page)+"&amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'>Next</a>"
+            outstring += " <a href='"
+            outstring += "file_selector?type="+type+"&amp;page="+str(totalpage)+"&amp;item_per_page="+str(item_per_page)+"&amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'>>></a><br /><br />"
+        if (int(page) * int(item_per_page)) < total_rows:
+            notlast = True
+            if type == "downloads":
+                outstring += downloadselect_access_list(files, starti, endi)+"<br />"
+            else:
+                outstring += imageselect_access_list(files, starti, endi)+"<br />"
+        else:
+            outstring += "<br /><br />"
+            if type == "downloads":
+                outstring += downloadselect_access_list(files, starti, total_rows)+"<br />"
+            else:
+                outstring += imageselect_access_list(files, starti, total_rows)+"<br />"
+        if int(page) > 1:
+            outstring += "<a href='"
+            outstring += "file_selector?type="+type+"&amp;page=1&amp;item_per_page="+str(item_per_page)+"&amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'><<</a> "
+            page_num = int(page) - 1
+            outstring += "<a href='"
+            outstring += "file_selector?type="+type+"&amp;page="+str(page_num)+"&amp;item_per_page="+str(item_per_page)+"&amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'>Previous</a> "
+        span = 10
+        for index in range(int(page)-span, int(page)+span):
+        #for ($j=$page-$range;$j<$page+$range;$j++)
+            if index >=0 and index < totalpage:
+                page_now = index + 1
+                if page_now == int(page):
+                    outstring += "<font size='+1' color='red'>"+str(page)+" </font>"
+                else:
+                    outstring += "<a href='"
+                    outstring += "file_selector?type="+type+"&amp;page="+str(page_now)+"&amp;item_per_page="+str(item_per_page)+"&amp;keyword="+str(session.get('download_keyword'))
+                    outstring += "'>"+str(page_now)+"</a> "
+        if notlast == True:
+            nextpage = int(page) + 1
+            outstring += " <a href='"
+            outstring += "file_selector?type="+type+"&amp;page="+str(nextpage)+"&amp;item_per_page="+str(item_per_page)+"&amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'>Next</a>"
+            outstring += " <a href='"
+            outstring += "file_selector?type="+type+"&amp;page="+str(totalpage)+"&amp;item_per_page="+str(item_per_page)+"&amp;keyword="+str(session.get('download_keyword'))
+            outstring += "'>>></a>"
+    else:
+        outstring += "no data!"
+
+    if type == "downloads":
+        return outstring+"<br /><br /><a href='fileuploadform'>file upload</a>"
+    else:
+        return outstring+"<br /><br /><a href='imageuploadform'>image upload</a>"
+# 配合 Tinymce4 讓使用者透過 html editor 引用所上傳的 files 與 images
+@app.route('/file_selector', methods=['GET'])
+#def file_selector(type=None, page=1, item_per_page=10, keyword=None):
+def file_selector():
+    user = printuser()
+    if user != "admin":
+        return redirect("/login")
+    else:
+        if not request.args.get('type'):
+            type = "file"
+        else:
+            type = request.args.get('type')
+        if not request.args.get('page'):
+            page = 1
+        else:
+            page = request.args.get('page')
+        if not request.args.get('item_per_page'):
+            item_per_page = 10
+        else:
+            item_per_page = request.args.get('item_per_page')
+        
+        if not request.args.get('keyword'):
+            keyword = ""
+        else:
+            keyword = request.args.get('keyword')
+        #if type == "downloads":
+        if type == "file":
+            #return downloads_file_selector()
+            # 請注意因為在 editorhead 以 meta 判斷 filetyp, 所以前段 type 為 file, 但是後段必須與 file_lister 中的 type = downloads 配合, 所以目前前後的 type 字串不同, 之後整合修改時將修正, 設法讓  type 前後一致
+            type = 'downloads'
+            return file_lister(download_dir, type, page, item_per_page)
+        elif type == "image":
+            #return images_file_selector()
+            return file_lister(image_dir, type, page, item_per_page)
 @app.route('/option', methods=["GET", "POST"])
 def option():
     # 各組選出組長的方式, 若採遞增, 則各組內學號最小者為組長
@@ -828,9 +1010,9 @@ def optionaction():
 # ajax jquery chunked file upload for flask
 def fileaxupload():
     '''
-    if not session.get('logged_in'):
+    if not session.get('login_email'):
         #abort(401)
-        return redirect(url_for('login'))
+        return redirect(url_for('/login'))
     '''
     # need to consider if the uploaded filename already existed.
     # right now all existed files will be replaced with the new files
@@ -978,16 +1160,81 @@ def login(provider_name):
             # 表示在近端執行
             local = True
         # The rest happens inside the template.
-        return render_template('login.html', result=result, local=local, callbackurl=callbackurl)
+        #return render_template('login.html', result=result, local=local, callbackurl=callbackurl)
+        # 目前先不要用 template
+        output = '''<html>
+<head>
+<style type="text/css" media="all">
+@import "/templates/style/base.css";
+</style>
+'''
+        if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
+            output += '''
+<script type="text/javascript">
+        if ((location.href.search(/http:/) != -1) && (location.href.search(/login/) != -1))     window.location= 'https://' + location.host + location.pathname + location.search;
+</script>
+<!-- 完成 GMail 登入程序後, 將會自動登出 GMail 帳號, 然後跳轉到 callbackurl  -->
+<script type="text/javascript">
+window.location="https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue='''+CALLBACK_URL+'''";
+</script>
+'''
+        else:
+            output += '''<!-- 完成 GMail 登入程序後, 將會自動登出 GMail 帳號, 然後跳轉到 callbackurl  -->
+<script type="text/javascript">
+window.location="https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue='''+CALLBACK_URL+'''";
+</script>
+'''
+        output += '''
+</head><body></body><html>
+'''
+        return output
     
     # Don't forget to return the response.
     return response
+@app.route("/need")
+def logincheck(id=0, account=None, password=None):
+    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
+    if account != None and password != None:
+        # 這裡要加入用戶名稱為 admin 的管理者登入模式
+        if account == "admin":
+            # 進入 admin 密碼查驗流程
+            hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
+            if hashed_password == saved_password:
+                cherrypy.session['user'] = "admin"
+                raise cherrypy.HTTPRedirect("/?id="+str(id))
+            else:
+                return "login failed.<br /><a href='/'>Go to main page</a><br />"
+        else:
+            # 一般帳號查驗
+            if site_closed == "yes":
+                return "抱歉!網站關閉中"
+            elif not mail_suffix in account or mail_suffix != "":
+                return "抱歉!此類帳號不允許登入"
+            else:
+                server = smtplib.SMTP('smtp.gmail.com:587')
+                server.ehlo()
+                server.starttls()
+                try:
+                    server.login(account, password)
+                    server.quit()
+                    if "@" in account:
+                        account = account.replace('@', '_at_')
+                    cherrypy.session["user"] = account
+                    #return account+" login successfully."
+                    #若登入成功, 則離開前跳到根目錄
+                except:
+                    server.quit()
+                    return "login failed.<br /><a href='/'>Go to main page</a><br />"
+    else:
+        return redirect("/login?id="+str(id))
+    return redirect("/?id="+str(id))
 @app.route('/logout')
 def logout():
     session.pop('login_email' , None)
+    # 設法讓所有 session 失效?
+    #app.secret_key = os.urandom(32)
     flash('已經登出!')
-    #return redirect(url_for('menu'))
-    return redirect(url_for('login'))
+    return redirect('/')
 @app.route('/menu')
 @app.route('/index')
 @nocache
