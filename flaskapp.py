@@ -24,7 +24,7 @@ from time import strftime, localtime
 import datetime, pytz
 ### for pagination
 import math
-# for mako
+# for mako template 系統
 from mako.template import Template
 from mako.lookup import TemplateLookup
 # for bs4
@@ -33,8 +33,6 @@ from bs4 import BeautifulSoup, Comment
 import time
 # for mysql
 import pymysql
-# for skylark
-#from skylark import Database, Model, Field, PrimaryKey, ForeignKey
 # use cgi.escape() to resemble php htmlspecialchars()
 # use cgi.escape() or html.escape to generate data for textarea tag, otherwise Editor can not deal with some Javascript code.
 import cgi
@@ -48,7 +46,7 @@ import logging
 import re
 # for sqlite
 import sqlite3
-# 再 try peewee
+# 使用 peewee ORM
 from peewee import SqliteDatabase, Model, CharField, TextField, IntegerField, MySQLDatabase
 # 確定程式檔案所在目錄, 在 Windows 有最後的反斜線
 _curdir = os.path.join(os.getcwd(), os.path.dirname(__file__))
@@ -151,7 +149,6 @@ class Task(Model):
     class Meta:
         database = db # This model uses the data_dir+"task.db" database.
 def printuser():
-    #session["login_email"] = "anonymous"
     if not session.get("login_email"):
         user = "anonymous"
     else:
@@ -190,6 +187,7 @@ def parse_config(filename):
 # 因為 / 同時負責 index 資料列印與關鍵字搜尋, 因此必須確認 request.method 之後, 再分為兩部份處理
 def index():
     if request.method == 'POST':
+        # 主要用於關鍵字查詢
         page = 1
         item_per_page = 5
         id = 0
@@ -331,11 +329,14 @@ def taskaction():
             return redirect("/login")
         now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
         '''
-        # 因為登入後就將 @ 代換為 _at_, 所以此地不用再換
+        # 若登入後就將 @ 代換為 _at_, 此地就不用再換
         # user 若帶有 @ 則用 at 代替
         if "@" in owner:
             owner = owner.replace('@', '_at_')
         '''
+        if "@" in owner:
+           owner = owner.replace('@', '_at_')
+           
         content = content.replace('\n', '')
         valid_tags = ['a', 'br', 'h1', 'h2', 'h3', 'p', 'div', 'hr', 'img', 'iframe', 'li', 'ul', 'b', 'ol', 'pre']
         tags = ''
@@ -399,9 +400,45 @@ def strip_tags(string, allowed_tags=''):
     string = re.sub(r'<[^>]*?>', '', string)
  
   return string
-@app.route("/editconfig")
-def editconfig(password=None, password2=None, adsense=None, anonymous=None, \
-                mail_suffix=None, site_closed=None, read_only=None):
+@app.route("/editconfig", methods=['POST'])
+def editconfig():
+    # 因為 default 會採用 GET 傳值, 因此若希望取表單 ,要使用 request.method 檢查
+    if request.method == "POST":
+        if not request.form['password']:
+            password = None
+        else:
+            password = request.form['password']
+    
+        if not request.form['password2']:
+            password2 = None
+        else:
+            password2 = request.form['password2']
+    
+        if not request.form['adsense']:
+            adsense = None
+        else:
+            adsense = request.form['adsense']
+    
+        if not request.form['anonymous']:
+            anonymous = None
+        else:
+            anonymous = request.form['anonymous']
+    
+        if not request.form['mail_suffix']:
+            mail_suffix = None
+        else:
+            mail_suffix = request.form['mail_suffix']
+    
+        if not request.form['site_closed']:
+            site_closed = None
+        else:
+            site_closed = request.form['site_closed']
+    
+        if not request.form['read_only']:
+            read_only = None
+        else:
+            read_only = request.form['read_only']
+
     filename = "pygroup_config"
     user = printuser()
     # 只有系統管理者可以編輯 config 設定檔案
@@ -420,14 +457,14 @@ def editconfig(password=None, password2=None, adsense=None, anonymous=None, \
         else:
             hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
         # 將新的設定值寫入檔案
-        file = open(data_dir+filename, "w", encoding="utf-8")
+        file = open(data_dir+"/"+filename, "w", encoding="utf-8")
         #  將新的設定值逐一寫入設定檔案中
-        file.write("password:"+hashed_password+"\n \
-            adsense:"+adsense+"\n \
-            anonymous:"+anonymous+"\n \
-            mail_suffix:"+mail_suffix+"\n \
-            site_closed:"+site_closed+"\n \
-            read_only:"+read_only+"\n")
+        file.write("password:"+str(hashed_password)+"\n \
+            adsense:"+str(adsense)+"\n \
+            anonymous:"+str(anonymous)+"\n \
+            mail_suffix:"+str(mail_suffix)+"\n \
+            site_closed:"+str(site_closed)+"\n \
+            read_only:"+str(read_only)+"\n")
         file.close()
         # 傳回設定檔案已經儲存
         return "config file saved<br /><a href='/'>Go to main page</a><br />"
@@ -443,8 +480,13 @@ def editconfigform():
     template_lookup = TemplateLookup(directories=[template_root_dir])
     mytemplate = template_lookup.get_template("editconfigform.html")
     return mytemplate.render(user=user, saved_password=saved_password, adsense=adsense, anonymous=anonymous, mail_suffix=mail_suffix, site_closed=site_closed, read_only=read_only)
-@app.route("/editadsense")
-def editadsense(adsense_content=None):
+@app.route("/editadsense", methods=['POST'])
+def editadsense():
+    if request.method == 'POST':
+        if not request.form['adsense_content']:
+            adsense_content = None
+        else:
+            adsense_content = request.form["adsense_content"]
     filename = "adsense_content"
     user = printuser()
     # 只有系統管理者可以編輯 config 設定檔案
@@ -469,7 +511,7 @@ def editadsenseform():
     # 取出 adsense_content 後, 傳回
     with open(data_dir+filename, encoding="utf-8") as file:
         saved_adsense = file.read()
-    template_lookup = TemplateLookup(directories=[template_root_dir+"/templates"])
+    template_lookup = TemplateLookup(directories=[template_root_dir])
     mytemplate = template_lookup.get_template("editadsenseform.html")
     return mytemplate.render(user=user, saved_adsense=saved_adsense)
 @app.route("/taskeditform", methods=['GET'])
@@ -509,22 +551,23 @@ def taskeditform():
             return "error! Not authorized!"
 @app.route("/taskedit", methods=['POST'])
 def taskedit(id=None, type=None, name=None, content=None):
-    if not request.form["id"]:
-        id = None
-    else:
-        id = request.form["id"]
-    if not request.form["type"]:
-        type = None
-    else:
-        type = request.form["type"]
-    if not request.form["name"]:
-        name = None
-    else:
-        name = request.form["name"]
-    if not request.form["content"]:
-        content = None
-    else:
-        content = request.form["content"]
+    if request.method == 'POST':
+        if not request.form["id"]:
+            id = None
+        else:
+            id = request.form["id"]
+        if not request.form["type"]:
+            type = None
+        else:
+            type = request.form["type"]
+        if not request.form["name"]:
+            name = None
+        else:
+            name = request.form["name"]
+        if not request.form["content"]:
+            content = None
+        else:
+            content = request.form["content"]
     # check user and data owner
     if id == None:
         return "error<br /><br /><a href='/'>Go to main page</a><br />"
@@ -681,10 +724,10 @@ def taskdelete():
             if data.follow == 0:
                 # 表示資料為主緒
                 # 先刪除主緒
-                query = Task.at(int(id)).delete()
+                query = Task.delete().where(Task.id==int(id))
                 query.execute()
                 # 再刪除所有對應子緒
-                query = Task.delete().where(follow=int(id))
+                query = Task.delete().where(Task.follow==int(id))
                 query.execute()
                 output += "所有序列資料已經刪除!<br />"
             else:
@@ -858,154 +901,6 @@ def file_selector():
         elif type == "image":
             #return images_file_selector()
             return file_lister(image_dir, type, page, item_per_page)
-@app.route('/option', methods=["GET", "POST"])
-def option():
-    # 各組選出組長的方式, 若採遞增, 則各組內學號最小者為組長
-    option_list1 = ["遞增", "遞減"]
-    # 各組組長間的排序定組序, 若採遞增, 則學號最小的組長為第1組
-    option_list2 = ["遞增", "遞減"]
-    # 電腦教室共有 9 排電腦
-    column = 9
-    # 加上班級選擇
-    option_list3 = ["2a", "2b"]
-    # 根據班級的總人數, 以 9 去除, 算出需要排幾列才能夠容納的下, 而且若列數超過 7
-    # 表示這些學員必須與其他同組學員共用電腦
-
-    return render_template('option.html', option_list1=option_list1, option_list2=option_list2, option_list3=option_list3, column=column)
-@app.route('/optionaction', methods=['POST'])
-def optionaction():
-    # 最後傳回的字串為 out_string
-    out_string = ""
-    # 程式內需要暫時使用的 tmp_string
-    tmp_string = ""
-    # 傳回字串中, 用來說明排序原則的 desc_string
-    desc_string = ""
-    result = []
-    group_sorted = []
-    num_of_stud = 0
-    # 每組至多 7 人
-    max_num_in_one_group = 7
-    # 電腦教室配置, 共有 9 排
-    total_column = 9
-    # 上面為相關變數的初始值設定, 以下開始取出 data_a 或 data_b 進行處理, 由 option3 傳回值決定
-    if request.form["option3"]  == "2a":
-        content = request.form["data_a"]
-    else:
-        content = request.form["data_b"]
-    #result = content.splitlines()
-    for line in content.splitlines():
-        result.append(list(line.split(",")))
-    # i 為行序
-    for i in range(len(result)):
-        # j 為組員序
-        for j in range(len(result[i])):
-            tmp_string += result[i][j] + ", "
-        out_string += "第" + str(i+1) + "排資料:"+ tmp_string + "<br />"
-        tmp_string = ""
-    for i in range(len(result)):
-        # 開始進入組內排序, 根據 request.form["option1"]  的值決定遞增或遞減
-        if request.form["option1"]  == "遞增":
-            group_list = sorted(list(filter(None, result[i])))
-        else:
-            group_list = sorted(list(filter(None, result[i])), reverse=True)
-        group_sorted.append(group_list)
-    if request.form["option1"]  == "遞增":
-        desc_string += "組內學號最小者為組長."
-    else:
-         desc_string += "組內學號最大者為組長."
-    # 開始進入組間組長學號排序, 根據 request.form["option2"] 的值決定遞增或遞減
-    if request.form["option2"]  == "遞增":
-        desc_string += "各組長中學號最小者為第1組."
-        final_result = sorted(group_sorted)
-    else:
-        desc_string += "各組長中學號最大者為第1組."
-        final_result = sorted(group_sorted, reverse=True)
-    out_string += "<br />" + desc_string + "<br />"
-    # i 為行序
-    for i in range(len(final_result)):
-        # j 為組員序
-        for j in range(len(final_result[i])):
-            num_of_stud += 1
-            tmp_string += final_result[i][j] + ","
-        out_string += "第" + str(i+1) + "組:"+ tmp_string + "<br />"
-        tmp_string = ""
-    #return "總共有" + str(i+) + "組"
-    # group_num 為總組數
-    group_num = i + 1
-    # 截至這裡, 已經完成選組長, 以及定組序的工作 ,接下來要排座位, 並且印出座位表
-    # 先算每班的總人數
-    #return "總共有"+ str(num_of_stud) + "人"
-    seat_by_column = []
-    for row in range(max_num_in_one_group):
-    # 每組最多 7 人
-    #for row in range(7):
-        # 這裡的 11 為總組數
-        #for column in range(11):
-        for column in range(group_num):
-            # 因為各分組數列的長度並不相同, 但是最長的有 7 位組員, 因此若無法取得的資料 (因為索引超值), 就補上空字串
-            try:
-                seat_by_column.append(final_result[column][row])
-            except:
-                seat_by_column.append("")
-    # seat_by_column 為去除空白字串前的座位數列
-    # 然後利用 filter(None, seat_by_column) 去除空白字串, 就可以得到以 column 為主的座位排序
-    seat_by_column = list(filter(None, seat_by_column))
-    # 然後每 N 個取為 1 排, 即可得到以排為主的座位序列, 而 N 則視全班人數除以 9, 也就是 total_column 進位決定, 因為共有 9 排
-    N = math.ceil(num_of_stud/total_column)
-    # for debug
-    #return str(num_of_stud) + ":" + str(total_column) + ":" + str(N)
-    column_list = [seat_by_column[n:n+N] for n in range(0, len(seat_by_column), N)]
-    # 列出每 N 個組員一排的數列 column_list
-    # 接下來要納入以排為主的座位
-    # 根據 column_list, 建立一個 dictionary, 其中學號為 index, 座位號為對應值
-    seat_dict = {}
-    for column in range(len(column_list)):
-        for i in range(N):
-            try:
-                seat_dict.update({column_list[column][i]: (column, i)})
-            except:
-                seat_dict.update({"": ""})
-                
-    # 開始準備用順序列出學員座號
-    # 根據學號, 排序 dictionary 的方法
-    import operator
-    seat_dict_sort = sorted(seat_dict.items(), key = operator.itemgetter(0), reverse = False)
-    # 依照學號順序, 列出座位表
-    out_string += "<br />按照學號次序列出座位表:<br /><br />"
-    for i in range(1, len(seat_dict_sort)):
-        out_string +=  str(i) + ":"+ str(seat_dict_sort[i]) + "<br />"
-    # 結束準備用順序列出學員座號
-    # dont know why .reverse() did not work, 只有 [::-1] 可以 reverse list elements
-    #g.es(column_list[::-1])
-
-    # 因為經由 zip 逐一重新 transpose 的列資料, 必須配合最大 (也就是總共有 7 列, 也就是 N 的值) 列數補上空白字串 (也就是空位)
-    # 所以不能使用 zip, 而必須導入 zip_longest 模組方法
-    from itertools import zip_longest
-    final_seat = list(zip_longest(*column_list[::-1], fillvalue=""))
-    # 列出最後的座位表
-    #g.es(final_seat)
-    # 最後轉成 html table 標註格式
-    out_string += "<br /> <br />"
-    out_string += "<table border='1' width='100%'>"
-    out_string += "<tr><td colspan='9' style='text-align:center'>講台</td></tr>"
-    for row in range(len(final_seat)):
-        out_string += "<tr>"
-        # 因為每一 row 有 9, 也就是 total_column 個位子
-        for i in range(total_column):
-            try:
-                if i%2 != 0:
-                    out_string += "<td style='text-align:center'  bgcolor='#FFD78C' height='30'>" + str(final_seat[row][i]) + "</td>"
-                else:
-                    out_string += "<td style='text-align:center' height='30'>" + str(final_seat[row][i]) + "</td>"
-            except:
-                out_string += "<td>&nbsp;</td>"
-        out_string += "</tr>"
-    out_string += "</table><br /><br /><br />"
-    return out_string
-    # 等運算或資料處理結束後, 再將相關值送到對應的 template 進行資料的展示
-    #return render_template('optionaction.html', option_list1=option_list1, option_list2=option_list2)
-    
-
 @app.route('/fileaxupload', methods=['POST'])
 # ajax jquery chunked file upload for flask
 def fileaxupload():
@@ -1134,7 +1029,18 @@ def send_file(path):
 @app.route('/login/<provider_name>/', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'], defaults={'provider_name':'google'})
 def login(provider_name):
-    
+    if not request.args.get('id'):
+        id = 0
+    else:
+        id = request.args.get('id')
+    if not request.args.get('admin'):
+        admin = None
+    else:
+        saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
+        template_lookup = TemplateLookup(directories=[template_root_dir])
+        mytemplate = template_lookup.get_template("alogin.html")
+        return mytemplate.render(site_closed=site_closed, read_only=read_only, id=id)
+        
     callbackurl = CALLBACK_URL
     
     # We need response object for the WerkzeugAdapter.
@@ -1149,8 +1055,8 @@ def login(provider_name):
             # We need to update the user to get more info.
             result.user.update()
             
-        # 利用 session 登記登入者的 email
-        session['login_email'] = result.user.email
+        # 利用 session 登記登入者的 email (試著將 @ 換為 _at_)
+        session['login_email'] = result.user.email.replace('@', '_at_')
         
         # 這裡必須分近端與雲端, 因為 google logout redirect 的 url 不同
         if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
@@ -1191,43 +1097,6 @@ window.location="https://www.google.com/accounts/Logout?continue=https://appengi
     
     # Don't forget to return the response.
     return response
-@app.route("/need")
-def logincheck(id=0, account=None, password=None):
-    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
-    if account != None and password != None:
-        # 這裡要加入用戶名稱為 admin 的管理者登入模式
-        if account == "admin":
-            # 進入 admin 密碼查驗流程
-            hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
-            if hashed_password == saved_password:
-                cherrypy.session['user'] = "admin"
-                raise cherrypy.HTTPRedirect("/?id="+str(id))
-            else:
-                return "login failed.<br /><a href='/'>Go to main page</a><br />"
-        else:
-            # 一般帳號查驗
-            if site_closed == "yes":
-                return "抱歉!網站關閉中"
-            elif not mail_suffix in account or mail_suffix != "":
-                return "抱歉!此類帳號不允許登入"
-            else:
-                server = smtplib.SMTP('smtp.gmail.com:587')
-                server.ehlo()
-                server.starttls()
-                try:
-                    server.login(account, password)
-                    server.quit()
-                    if "@" in account:
-                        account = account.replace('@', '_at_')
-                    cherrypy.session["user"] = account
-                    #return account+" login successfully."
-                    #若登入成功, 則離開前跳到根目錄
-                except:
-                    server.quit()
-                    return "login failed.<br /><a href='/'>Go to main page</a><br />"
-    else:
-        return redirect("/login?id="+str(id))
-    return redirect("/?id="+str(id))
 @app.route('/logout')
 def logout():
     session.pop('login_email' , None)
@@ -1235,17 +1104,6 @@ def logout():
     #app.secret_key = os.urandom(32)
     flash('已經登出!')
     return redirect('/')
-@app.route('/menu')
-@app.route('/index')
-@nocache
-def menu():
-    # 先檢查使用者是否處於登入狀態, 若尚未登入則跳轉到登入畫面
-    if not session.get('login_email'):
-        #abort(401)
-        return redirect(url_for('login'))
-    # 進入使用者已經登入的流程設計
-    user = session.get('login_email')
-    return render_template('menu.html', user=user)
 @app.route('/alogin' , methods=['GET' , 'POST'])
 def alogin():
     # 在 OpenShift 執行要啟動 SSL 跳轉
@@ -1256,22 +1114,46 @@ def alogin():
         openshift = False
     
     return render_template('alogin.html', openshift=openshift)
-@app.route('/alogin_check' , methods=['GET' , 'POST'])
-def alogin_check():
-    spassword = "secret"
-    username = request.form["username"]
-    password = request.form["password"]
-    if username != None and password != None:
+@app.route("/alogincheck", methods=['POST'])
+def alogincheck():
+    if request.method == 'POST':
+        if not request.form['id']:
+            id = 0
+        else:
+            id = request.form['id']
+    
+        if not request.form['account']:
+            account = None
+        else:
+            account = request.form['account']
+    
+        if not request.form["password"]:
+            password = None
+        else:
+            password = request.form['password']
+    
+    saved_password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
+    if account != None and password != None:
         # 這裡要加入用戶名稱為 admin 的管理者登入模式
-        if username == "admin":
+        if account == "admin":
             # 進入 admin 密碼查驗流程
-            if password == spassword:
-                # 利用 session 登記登入者的 email
+            hashed_password = hashlib.sha512(password.encode('utf-8')).hexdigest()
+            if hashed_password == saved_password:
                 session['login_email'] = "admin"
-                return redirect(url_for('menu'))
+                return redirect("/")
             else:
-                return redirect(url_for('login'))
-    return redirect(url_for('login'))
+                return "login failed.<br /><a href='/'>Go to main page</a><br />"
+        else:
+            # 一般帳號查驗
+            if site_closed == "yes":
+                return "抱歉!網站關閉中"
+            elif not mail_suffix in account or mail_suffix != "":
+                return "抱歉!此類帳號不允許登入"
+            else:
+                return redirect("/login")
+    else:
+        return redirect("/login?id="+str(id))
+    return redirect("/?id="+str(id))
 if __name__ == "__main__":
     app.run()
 
