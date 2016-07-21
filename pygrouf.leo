@@ -62,7 +62,6 @@
 <v t="amd.20160719223506.1"><vh>@edit init.py</vh></v>
 <v t="amd.20160719105348.1" a="E"><vh>@clean flaskapp.py</vh>
 <v t="amd.20160719105410.1"><vh>flaskapp declarations</vh></v>
-<v t="amd.20160719220510.1"><vh>### transfer from pygroup start</vh></v>
 <v t="amd.20160719222018.1"><vh>class Task</vh></v>
 <v t="amd.20160719215604.1"><vh>printuser</vh></v>
 <v t="amd.20160719220333.1"><vh>parse_config</vh></v>
@@ -81,10 +80,9 @@
 <v t="amd.20160720001523.1"><vh>taskdeleteform</vh></v>
 <v t="amd.20160720001631.1"><vh>taskdelete</vh></v>
 <v t="amd.20160720001715.1"><vh>tasksearchform</vh></v>
-<v t="amd.20160720143957.1"><vh>file_selector_script (#4)</vh></v>
+<v t="amd.20160720143957.1"><vh>file_selector_script</vh></v>
 <v t="amd.20160720144602.1"><vh>file_lister</vh></v>
-<v t="amd.20160720144009.1"><vh>file_selector (#4)</vh></v>
-<v t="amd.20160719220537.1"><vh>### transfer from pygroup end</vh></v>
+<v t="amd.20160720144009.1"><vh>file_selector</vh></v>
 <v t="amd.20160719105410.9"><vh>fileaxupload</vh></v>
 <v t="amd.20160719105410.10"><vh>fileuploadform</vh></v>
 <v t="amd.20160719105410.11"><vh>imageaxupload</vh></v>
@@ -102,7 +100,6 @@
 </v>
 <v t="2014spring.20140726005348.1759"><vh>@edit setup.py</vh></v>
 <v t="amd.20160719222956.1" a="E"><vh>@path templates</vh>
-<v t="amd.20160720143707.1"><vh>(改用 tinymce4 #1)</vh></v>
 <v t="amd.20160719223002.1"><vh>@edit tasklist.html</vh></v>
 <v t="amd.20160720002945.1"><vh>@edit taskform.html</vh></v>
 <v t="amd.20160720223224.1"><vh>@edit taskeditform.html</vh></v>
@@ -919,8 +916,6 @@ def index():
     read_only = config_data[5].split(":")[1]
     return password, adsense, anonymous, mail_suffix, site_closed, read_only
 </t>
-<t tx="amd.20160719220510.1"></t>
-<t tx="amd.20160719220537.1"></t>
 <t tx="amd.20160719222018.1"># 在此建立資料表欄位
     
 class Task(Model):
@@ -1420,7 +1415,6 @@ def tasksearchform():
     mytemplate = template_lookup.get_template("tasksearchform.html")
     return mytemplate.render(user=user)
 </t>
-<t tx="amd.20160720143707.1"></t>
 <t tx="amd.20160720143957.1">def file_selector_script():
     return '''
 &lt;script language="javascript" type="text/javascript"&gt;
@@ -1572,15 +1566,19 @@ http://localhost:5000
 
 http://pygrouf-topuniversity.rhcloud.com
 
-以及
+https://pygrouf-topuniversity.rhcloud.com
 
-http://localhost:5000/login (用於 login?admin=1 登入)
+以及, 登入 Google 後會導向:
 
-https://pygrouf-topuniversity.rhcloud.com/login (用於 login?admin=1 登入)
+http://localhost:5000
 
-http://localhost:5000/login/google (用於一般 Gmail 登入)
+http://pygrouf-topuniversity.rhcloud.com
 
-https://pygrouf-topuniversity.rhcloud.com/login/google (用於一般 Gmail 登入)
+https://pygrouf-topuniversity.rhcloud.com
+
+http://pygrouf-topuniversity.rhcloud.com/login
+
+https://pygrouf-topuniversity.rhcloud.com/login
 
 目前 template 仍然沿用 Mako</t>
 <t tx="course-mde-tw.20140417093332.1998"></t>
