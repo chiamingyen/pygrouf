@@ -107,13 +107,13 @@ if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     data_dir = os.environ['OPENSHIFT_DATA_DIR']
     static_dir = os.environ['OPENSHIFT_REPO_DIR']+"/static"
     download_dir = os.environ['OPENSHIFT_DATA_DIR']+"/downloads"
-    CALLBACK_URL = "https://pygrouf-topuniversity.rhcloud.com/"
+    CALLBACK_URL = "https://pygrouf-topuniversity.rhcloud.com"
 else:
     # 表示程式在近端執行
     data_dir = _curdir + "/local_data/"
     static_dir = _curdir + "/static"
     download_dir = _curdir + "/local_data/downloads/"
-    CALLBACK_URL = "http://localhost:5000/"
+    CALLBACK_URL = "http://localhost:5000"
 
 # 利用 init.py 啟動, 建立所需的相關檔案
 initobj = init.Init()
@@ -148,6 +148,13 @@ class Task(Model):
 
     class Meta:
         database = db # This model uses the data_dir+"task.db" database.
+# 強制使用 ssl 進行連線
+@app.before_request
+def before_request():
+    if request.url.startswith('http://'):
+        url = request.url.replace('http://', 'https://', 1)
+        code = 301
+        return redirect(url, code=code)
 def printuser():
     if not session.get("login_email"):
         user = "anonymous"

@@ -16,7 +16,7 @@
 <v t="course-mde-tw.20140417093332.2001"><vh>@string rst3_write_intermediate_extension = .rst</vh></v>
 </v>
 <v t="amd.20160719104503.1"><vh>2016Fall PyGrouf 專案</vh></v>
-<v t="amd.20160719110153.1"><vh>old remarks</vh>
+<v t="amd.20160719110153.1" a="E"><vh>old remarks</vh>
 <v t="2014spring.20140723175454.2635"><vh>2014Fall CP 雲端課程專案</vh>
 <v t="2014fall.20140821113240.3140"><vh>帳號驗證</vh></v>
 <v t="2014fall.20140821113240.3145"><vh>近端 MySQL 工具</vh></v>
@@ -33,7 +33,7 @@
 <v t="2014pythonE.20140422152422.1671"><vh>Github 帳號管理</vh></v>
 <v t="2014pythonE.20140422152422.1670"><vh>OpenShift 權限管理</vh></v>
 <v t="course-mde-tw.20140422171455.1745"><vh>Github 倉儲與 OpenShift 同步</vh></v>
-<v t="amd.20160719104851.1" a="E"><vh>old</vh>
+<v t="amd.20160719104851.1"><vh>old</vh>
 <v t="2014fall.20140821113240.3147"><vh>Google Adsense 問題</vh></v>
 <v t="2014fall.20140826101705.4467"><vh>CMSimply 已知問題</vh></v>
 <v t="2015.20140824143250.2077"><vh>20140824 程式更動</vh></v>
@@ -63,6 +63,7 @@
 <v t="amd.20160719105348.1" a="E"><vh>@clean flaskapp.py</vh>
 <v t="amd.20160719105410.1"><vh>flaskapp declarations</vh></v>
 <v t="amd.20160719222018.1"><vh>class Task</vh></v>
+<v t="amd.20160724223527.1"><vh>before_request</vh></v>
 <v t="amd.20160719215604.1"><vh>printuser</vh></v>
 <v t="amd.20160719220333.1"><vh>parse_config</vh></v>
 <v t="amd.20160719215515.1"><vh>index</vh></v>
@@ -468,13 +469,13 @@ if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     data_dir = os.environ['OPENSHIFT_DATA_DIR']
     static_dir = os.environ['OPENSHIFT_REPO_DIR']+"/static"
     download_dir = os.environ['OPENSHIFT_DATA_DIR']+"/downloads"
-    CALLBACK_URL = "https://pygrouf-topuniversity.rhcloud.com/"
+    CALLBACK_URL = "https://pygrouf-topuniversity.rhcloud.com"
 else:
     # 表示程式在近端執行
     data_dir = _curdir + "/local_data/"
     static_dir = _curdir + "/static"
     download_dir = _curdir + "/local_data/downloads/"
-    CALLBACK_URL = "http://localhost:5000/"
+    CALLBACK_URL = "http://localhost:5000"
 
 # 利用 init.py 啟動, 建立所需的相關檔案
 initobj = init.Init()
@@ -1581,6 +1582,13 @@ http://pygrouf-topuniversity.rhcloud.com/login
 https://pygrouf-topuniversity.rhcloud.com/login
 
 目前 template 仍然沿用 Mako</t>
+<t tx="amd.20160724223527.1"># 強制使用 ssl 進行連線
+@app.before_request
+def before_request():
+    if request.url.startswith('http://'):
+        url = request.url.replace('http://', 'https://', 1)
+        code = 301
+        return redirect(url, code=code)</t>
 <t tx="course-mde-tw.20140417093332.1998"></t>
 <t tx="course-mde-tw.20140417093332.1999">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */
