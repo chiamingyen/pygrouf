@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created by Leo: http://leoeditor.com/leo_toc.html -->
-<?xml-stylesheet ekr_test ?>
 <leo_file xmlns:leo="http://leoeditor.com/namespaces/leo-python-editor/1.1" >
 <leo_header file_format="2" tnodes="0" max_tnode_index="0" clone_windows="0"/>
 <globals body_outline_ratio="0.5" body_secondary_ratio="0.5">
@@ -695,8 +694,12 @@ def alogin():
         openshift = True
     else:
         openshift = False
-    
-    return render_template('alogin.html', openshift=openshift)
+    password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
+    template_lookup = TemplateLookup(directories=[template_root_dir])
+    # 必須要從 templates 目錄取出 alogin.html
+    mytemplate = template_lookup.get_template("alogin.html")
+    #return render_template('alogin.html', openshift=openshift, site_closed=site_closed)
+    return mytemplate.render(openshift=openshift, site_closed=site_closed)
 </t>
 <t tx="amd.20160719105410.22">@app.route("/alogincheck", methods=['POST'])
 def alogincheck():
