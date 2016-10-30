@@ -468,7 +468,7 @@ if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     data_dir = os.environ['OPENSHIFT_DATA_DIR']
     static_dir = os.environ['OPENSHIFT_REPO_DIR']+"/static"
     download_dir = os.environ['OPENSHIFT_DATA_DIR']+"/downloads"
-    CALLBACK_URL = "https://pygrouf-topuniversity.rhcloud.com"
+    CALLBACK_URL = "https://your-site.rhcloud.com"
 else:
     # 表示程式在近端執行
     data_dir = _curdir + "/local_data/"
@@ -1568,21 +1568,21 @@ def file_lister(directory, type=None, page=1, item_per_page=10):
 
 http://localhost:5000
 
-http://pygrouf-topuniversity.rhcloud.com
+http://your-site.rhcloud.com
 
-https://pygrouf-topuniversity.rhcloud.com
+https://your-site.rhcloud.com
 
 以及, 登入 Google 後會導向:
 
 http://localhost:5000
 
-http://pygrouf-topuniversity.rhcloud.com
+http://your-site.rhcloud.com
 
-https://pygrouf-topuniversity.rhcloud.com
+https://your-site.rhcloud.com
 
-http://pygrouf-topuniversity.rhcloud.com/login
+http://your-site.rhcloud.com/login
 
-https://pygrouf-topuniversity.rhcloud.com/login
+https://your-site.rhcloud.com/login
 
 目前 template 仍然沿用 Mako</t>
 <t tx="amd.20160724223527.1"># 強制使用 ssl 進行連線

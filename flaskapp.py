@@ -107,7 +107,7 @@ if 'OPENSHIFT_REPO_DIR' in os.environ.keys():
     data_dir = os.environ['OPENSHIFT_DATA_DIR']
     static_dir = os.environ['OPENSHIFT_REPO_DIR']+"/static"
     download_dir = os.environ['OPENSHIFT_DATA_DIR']+"/downloads"
-    CALLBACK_URL = "https://pygrouf-topuniversity.rhcloud.com"
+    CALLBACK_URL = "https://your-site.rhcloud.com"
 else:
     # 表示程式在近端執行
     data_dir = _curdir + "/local_data/"
