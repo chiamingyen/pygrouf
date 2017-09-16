@@ -832,7 +832,7 @@ def index():
     # 加入 flat = 1 時, 列出所有資料
     # 請注意這裡直接從 tasksearchform.html 中的關鍵字查詢, 指定以 tasklist 執行, 但是無法單獨列出具有關鍵字的 task 資料, 而是子緒有關鍵字時, 也是列出主緒資料
     # 單獨 db 連結與結束
-    db.connect()
+    db.get_conn()
     if keyword == None:
         if id == 0:
             if flat == 0:
@@ -881,8 +881,7 @@ def index():
         page=page, item_per_page=item_per_page, follow=follow, keyword=keyword, \
         adsense_content=adsense_content, adsense=adsense, anonymous=anonymous, \
         site_closed=site_closed, read_only=read_only)
-    # 其餘分頁 logic 在 mako template tasklist.html 中完成
-</t>
+    # 其餘分頁 logic 在 mako template tasklist.html 中完成</t>
 <t tx="amd.20160719215604.1">def printuser():
     if not session.get("login_email"):
         user = "anonymous"
@@ -990,7 +989,7 @@ def taskaction():
         content = str(content).replace('&lt;/br&gt;', '')
         time_elapsed = round(time.time() - start_time, 5)
         # last insert id 為 data.id
-        db.connect()
+        db.get_conn()
         # peewee 版本
         ip = ""
         data = Task.create(owner=owner, name=str(name), type=type, time=str(now), follow=follow, content=content, ip=str(ip))
@@ -1009,7 +1008,6 @@ def taskaction():
         output +="&lt;a href='/taskeditform?id="+str(data.id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;"
         db.close()
         return output
-
 </t>
 <t tx="amd.20160720000752.1">def allow_pass(user="anonymous"):
     password, adsense, anonymous, mail_suffix, site_closed, read_only = parse_config(filename="pygroup_config")
@@ -1178,7 +1176,7 @@ def taskeditform():
         return redirect("/login")
     else:
         try:
-            db.connect()
+            db.get_conn()
             # 用 get() 取單筆資料
             data = Task.select().where(Task.id==int(id)).get()
             output = "user:"+user+", owner:"+data.owner+"&lt;br /&gt;&lt;br /&gt;"
@@ -1198,8 +1196,7 @@ def taskeditform():
                 return mytemplate.render(user=user, id=id, data=data)
         except:
             db.close()
-            return "error! Not authorized!"
-</t>
+            return "error! Not authorized!"</t>
 <t tx="amd.20160720001423.1">@app.route("/taskedit", methods=['POST'])
 def taskedit(id=None, type=None, name=None, content=None):
     if request.method == 'POST':
@@ -1229,10 +1226,10 @@ def taskedit(id=None, type=None, name=None, content=None):
     if user == "anonymous" and anonymous != "yes":
         return redirect("/login")
     try:
-        db.connect()
+        db.get_conn()
     except:
         time.sleep(0.300)
-        db.connect()
+        db.get_conn()
     data = Task.select().where(Task.id==int(id)).get()
     now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
     # 過濾資料
@@ -1279,8 +1276,7 @@ def taskedit(id=None, type=None, name=None, content=None):
 '''
         output +="&lt;a href='/taskeditform?id="+str(id)+"'&gt;繼續編輯&lt;/a&gt;&lt;br /&gt;"
     db.close()
-    return output
-</t>
+    return output</t>
 <t tx="amd.20160720001523.1">@app.route("/taskdeleteform", methods=['GET'])
 def taskdeleteform():
     if not request.args.get('id'):
@@ -1299,7 +1295,7 @@ def taskdeleteform():
             # 若刪除子緒, 則 data 只包含子緒資料, 若為主緒, 則 data 必須包含所有資料
             # 先找出資料, 判定是否為主緒
             # 用 get() 取單筆資料
-            db.connect()
+            db.get_conn()
             data= Task.select().where(Task.id==int(id)).get()
             owner = data.owner
             if user != data.owner:
@@ -1348,8 +1344,7 @@ def taskdeleteform():
                 return mytemplate.render(user=user, id=id, data=data, type=type)
         except:
             db.close()
-            return "error! 無法正確查詢資料, Not authorized!"
-</t>
+            return "error! 無法正確查詢資料, Not authorized!"</t>
 <t tx="amd.20160720001631.1">@app.route("/taskdelete", methods=['POST'])
 def taskdelete():
     if not request.form["id"]:
@@ -1364,7 +1359,7 @@ def taskdelete():
     if user == "anonymous" and anonymous != "yes":
         return redirect("/login")
     # 用 get() 取單筆資料
-    db.connect()
+    db.get_conn()
     data = Task.select().where(Task.id==int(id)).get()
     now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
     output = "user:"+user+", owner:"+data.owner+"&lt;br /&gt;&lt;br /&gt;"
@@ -1409,8 +1404,7 @@ def taskdelete():
             &lt;a href='/'&gt;Go to main page&lt;/a&gt;&lt;br /&gt;
 '''
     db.close()
-    return output
-</t>
+    return output</t>
 <t tx="amd.20160720001715.1"># 不允許使用者直接呼叫 tasksearchform
 def tasksearchform():
     user = printuser()
