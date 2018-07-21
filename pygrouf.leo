@@ -15,7 +15,7 @@
 <v t="course-mde-tw.20140417093332.2001"><vh>@string rst3_write_intermediate_extension = .rst</vh></v>
 </v>
 <v t="amd.20160719104503.1"><vh>2016Fall PyGrouf 專案</vh></v>
-<v t="amd.20160719110153.1" a="E"><vh>old remarks</vh>
+<v t="amd.20160719110153.1"><vh>old remarks</vh>
 <v t="2014spring.20140723175454.2635"><vh>2014Fall CP 雲端課程專案</vh>
 <v t="2014fall.20140821113240.3140"><vh>帳號驗證</vh></v>
 <v t="2014fall.20140821113240.3145"><vh>近端 MySQL 工具</vh></v>
@@ -49,10 +49,11 @@
 </v>
 </v>
 <v t="2014fall.20140821113240.3146" a="E"><vh>開發日誌</vh>
-<v t="amd.20160719104919.1" a="E"><vh>20160719</vh>
+<v t="amd.20160719104919.1"><vh>20160719</vh>
 <v t="amd.20160719131148.1"><vh>程式架構討論</vh></v>
 </v>
 <v t="amd.20160720215431.1"><vh>20160720</vh></v>
+<v t="leo.20180721220705.1"><vh>20180721</vh></v>
 </v>
 <v t="amd.20160719105219.1" a="E"><vh>PyGrouf 程式區</vh>
 <v t="amd.20160719105234.1"><vh>@edit setup.py</vh></v>
@@ -474,7 +475,7 @@ else:
     data_dir = _curdir + "/local_data/"
     static_dir = _curdir + "/static"
     download_dir = _curdir + "/local_data/downloads/"
-    CALLBACK_URL = "http://localhost:5000"
+    CALLBACK_URL = "https://localhost:6443"
 
 # 利用 init.py 啟動, 建立所需的相關檔案
 initobj = init.Init()
@@ -832,7 +833,7 @@ def index():
     # 加入 flat = 1 時, 列出所有資料
     # 請注意這裡直接從 tasksearchform.html 中的關鍵字查詢, 指定以 tasklist 執行, 但是無法單獨列出具有關鍵字的 task 資料, 而是子緒有關鍵字時, 也是列出主緒資料
     # 單獨 db 連結與結束
-    db.get_conn()
+    db.connection()
     if keyword == None:
         if id == 0:
             if flat == 0:
@@ -989,7 +990,7 @@ def taskaction():
         content = str(content).replace('&lt;/br&gt;', '')
         time_elapsed = round(time.time() - start_time, 5)
         # last insert id 為 data.id
-        db.get_conn()
+        db.connection()
         # peewee 版本
         ip = ""
         data = Task.create(owner=owner, name=str(name), type=type, time=str(now), follow=follow, content=content, ip=str(ip))
@@ -1176,7 +1177,7 @@ def taskeditform():
         return redirect("/login")
     else:
         try:
-            db.get_conn()
+            db.connection()
             # 用 get() 取單筆資料
             data = Task.select().where(Task.id==int(id)).get()
             output = "user:"+user+", owner:"+data.owner+"&lt;br /&gt;&lt;br /&gt;"
@@ -1226,10 +1227,10 @@ def taskedit(id=None, type=None, name=None, content=None):
     if user == "anonymous" and anonymous != "yes":
         return redirect("/login")
     try:
-        db.get_conn()
+        db.connection()
     except:
         time.sleep(0.300)
-        db.get_conn()
+        db.connection()
     data = Task.select().where(Task.id==int(id)).get()
     now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
     # 過濾資料
@@ -1295,7 +1296,7 @@ def taskdeleteform():
             # 若刪除子緒, 則 data 只包含子緒資料, 若為主緒, 則 data 必須包含所有資料
             # 先找出資料, 判定是否為主緒
             # 用 get() 取單筆資料
-            db.get_conn()
+            db.connection()
             data= Task.select().where(Task.id==int(id)).get()
             owner = data.owner
             if user != data.owner:
@@ -1359,7 +1360,7 @@ def taskdelete():
     if user == "anonymous" and anonymous != "yes":
         return redirect("/login")
     # 用 get() 取單筆資料
-    db.get_conn()
+    db.connection()
     data = Task.select().where(Task.id==int(id)).get()
     now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
     output = "user:"+user+", owner:"+data.owner+"&lt;br /&gt;&lt;br /&gt;"
@@ -1551,7 +1552,8 @@ def file_lister(directory, type=None, page=1, item_per_page=10):
     if type == "downloads":
         return outstring+"&lt;br /&gt;&lt;br /&gt;&lt;a href='fileuploadform'&gt;file upload&lt;/a&gt;"
     else:
-        return outstring+"&lt;br /&gt;&lt;br /&gt;&lt;a href='imageuploadform'&gt;image upload&lt;/a&gt;"</t>
+        return outstring+"&lt;br /&gt;&lt;br /&gt;&lt;a href='imageuploadform'&gt;image upload&lt;/a&gt;"
+</t>
 <t tx="amd.20160720215431.1">login.htm 套稿中的 Google 帳號登出跳轉
 
 使用 2016springwcm 郵件帳號登記憑證
@@ -1585,7 +1587,8 @@ def before_request():
     if request.url.startswith('http://'):
         url = request.url.replace('http://', 'https://', 1)
         code = 301
-        return redirect(url, code=code)</t>
+        return redirect(url, code=code)
+</t>
 <t tx="course-mde-tw.20140417093332.1998"></t>
 <t tx="course-mde-tw.20140417093332.1999">QSplitter::handle {
     background-color: #CAE1FF; /* lightSteelBlue1 */
@@ -1698,5 +1701,8 @@ Github 倉儲則為: https://github.com/coursemdetw/2014cda
 目前的規劃是讓參與協同者可以自由更新 Github 倉儲內容
 
 並且將 Github 倉儲與各組可以控制的 OpenShift 網站同步</t>
+<t tx="leo.20180721220705.1">for peewee 3.6.4
+
+db.get_conn() need change to db.connection()</t>
 </tnodes>
 </leo_file>

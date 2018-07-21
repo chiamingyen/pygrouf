@@ -113,7 +113,7 @@ else:
     data_dir = _curdir + "/local_data/"
     static_dir = _curdir + "/static"
     download_dir = _curdir + "/local_data/downloads/"
-    CALLBACK_URL = "http://localhost:5000"
+    CALLBACK_URL = "https://localhost:6443"
 
 # 利用 init.py 啟動, 建立所需的相關檔案
 initobj = init.Init()
@@ -253,7 +253,7 @@ def index():
     # 加入 flat = 1 時, 列出所有資料
     # 請注意這裡直接從 tasksearchform.html 中的關鍵字查詢, 指定以 tasklist 執行, 但是無法單獨列出具有關鍵字的 task 資料, 而是子緒有關鍵字時, 也是列出主緒資料
     # 單獨 db 連結與結束
-    db.get_conn()
+    db.connection()
     if keyword == None:
         if id == 0:
             if flat == 0:
@@ -354,7 +354,7 @@ def taskaction():
         content = str(content).replace('</br>', '')
         time_elapsed = round(time.time() - start_time, 5)
         # last insert id 為 data.id
-        db.get_conn()
+        db.connection()
         # peewee 版本
         ip = ""
         data = Task.create(owner=owner, name=str(name), type=type, time=str(now), follow=follow, content=content, ip=str(ip))
@@ -535,7 +535,7 @@ def taskeditform():
         return redirect("/login")
     else:
         try:
-            db.get_conn()
+            db.connection()
             # 用 get() 取單筆資料
             data = Task.select().where(Task.id==int(id)).get()
             output = "user:"+user+", owner:"+data.owner+"<br /><br />"
@@ -585,10 +585,10 @@ def taskedit(id=None, type=None, name=None, content=None):
     if user == "anonymous" and anonymous != "yes":
         return redirect("/login")
     try:
-        db.get_conn()
+        db.connection()
     except:
         time.sleep(0.300)
-        db.get_conn()
+        db.connection()
     data = Task.select().where(Task.id==int(id)).get()
     now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
     # 過濾資料
@@ -654,7 +654,7 @@ def taskdeleteform():
             # 若刪除子緒, 則 data 只包含子緒資料, 若為主緒, 則 data 必須包含所有資料
             # 先找出資料, 判定是否為主緒
             # 用 get() 取單筆資料
-            db.get_conn()
+            db.connection()
             data= Task.select().where(Task.id==int(id)).get()
             owner = data.owner
             if user != data.owner:
@@ -718,7 +718,7 @@ def taskdelete():
     if user == "anonymous" and anonymous != "yes":
         return redirect("/login")
     # 用 get() 取單筆資料
-    db.get_conn()
+    db.connection()
     data = Task.select().where(Task.id==int(id)).get()
     now = datetime.datetime.now(pytz.timezone('Asia/Taipei')).strftime('%Y-%m-%d %H:%M:%S')
     output = "user:"+user+", owner:"+data.owner+"<br /><br />"
